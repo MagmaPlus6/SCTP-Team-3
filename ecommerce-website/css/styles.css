@@ -1,0 +1,101 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+#navi-bg {
+    background-color: #91C788 !important;
+    font-weight: bold;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+#navigation-name {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#navigation-name:hover {
+    color: #FEFFDE;
+}
+
+#group-photo {
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+.about-us {
+    margin-top: 75px;
+    background-color: #DDFFBC;
+    padding: 50px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.col-sm ul {
+    padding-left: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-vertical-alignment {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.rounded-image {
+    border-radius: 100px;
+    width: 140px;
+}
+
+.team-profile {
+    padding: 10px;
+}
+
+.container.text-center {
+    padding: 30px;
+}
+
+.site-map {
+    background-color: #52734D;
+    color: white;
+    padding: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
+.col-2 span {
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.col-2 ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.site-map-link {
+    color: white;
+}
+
+.site-map-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.site-map .col-4 {
+    padding-bottom: 20px;
+}
+
+
+footer {
+    border-top: #FEFFDE solid;
+    padding-top: 20px;
+}
