@@ -50,8 +50,9 @@ h1, h2 {
 }
 
 .rounded-image {
-    border-radius: 100px;
-    width: 140px;
+    border-radius: 50%;
+    width: 100%;
+    max-width: 140px ;
 }
 
 .team-profile {
@@ -71,12 +72,12 @@ h1, h2 {
     width: 100%;
 }
 
-.col-2 span {
+.col-md-2 span {
     line-height: 40px;
     font-weight: bold;
 }
 
-.col-2 ul {
+.col-md-2 ul {
     list-style-type: none;
     padding-left: 0;
 }
@@ -90,8 +91,22 @@ h1, h2 {
     text-decoration: underline;
 }
 
-.site-map .col-4 {
+.site-map .col-md-4 {
     padding-bottom: 20px;
+}
+
+iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.find-us-on {
+    display: inline-flex;
+}
+
+div.find-us-on > ul {
+    margin-right: 8px;
 }
 
 
