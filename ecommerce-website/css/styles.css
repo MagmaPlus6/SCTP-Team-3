@@ -3,13 +3,10 @@
     font-size: medium;
 }
 
+/* ------------ Navigation bar ------------ section */
+
 #navi-bg {
     background-color: #91C788 !important;
-    font-weight: bold;
-}
-
-.material-icons {
-    vertical-align: middle;
 }
 
 #navigation-name {
@@ -20,97 +17,30 @@
     color: #FEFFDE;
 }
 
-#group-photo {
-    width: 70%;
-    display: block;
-    margin: auto;
-}
+/* ------------ About us ------------ section */
 
 .about-us {
-    margin-top: 75px;
     background-color: #DDFFBC;
-    padding: 50px;
 }
 
-h1, h2 {
-    text-align: center;
-}
+/* ------------ Team members ------------ section */
 
-.col-sm ul {
-    padding-left: 15px;
-}
 
-.text-center {
-    text-align: center;
-}
-
-.text-vertical-alignment {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.rounded-image {
-    border-radius: 50%;
-    width: 100%;
-    max-width: 140px ;
-}
-
-.team-profile {
-    padding: 10px;
-}
-
-.container.text-center {
-    padding: 30px;
-}
+/* ------------ Site map section ------------ */
 
 .site-map {
     background-color: #52734D;
-    color: white;
-    padding: 40px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 100%;
 }
 
-.col-md-2 span {
-    line-height: 40px;
-    font-weight: bold;
-}
-
-.col-md-2 ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.site-map-link {
+.site-map-link a {
     color: white;
 }
 
-.site-map-link:hover {
+.site-map-link a:hover {
     color: white;
     text-decoration: underline;
 }
 
-.site-map .col-md-4 {
-    padding-bottom: 20px;
-}
-
-iframe {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-div.find-us-on {
-    display: inline-flex;
-}
-
-div.find-us-on > ul {
-    margin-right: 8px;
-}
-
-
 footer {
     border-top: #FEFFDE solid;
-    padding-top: 20px;
 }
