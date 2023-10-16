@@ -1,0 +1,29 @@
+/*Nav-bar list */
+.navigation-bar{display:flex;justify-content: space-between;}
+.nav-list ol{list-style-type:none;display: flex;justify-content: right;gap: 10px;margin-right: 10px;margin-top: 20px;}
+
+
+/*left banner with the dress*/
+.left-banner{display:flex;justify-content: center;align-items: center 400px;width: 400px;;}
+.left-banner img {height:300px;width: 400px;margin-left:200px;}
+
+.right-banner{display:flex;
+              width: 60%;height: 300px;
+              float:right;
+              margin-top: -300px;
+}
+
+
+.right-banner-bottom{display: flex;justify-content:center;align-items: center;column-gap: 30px;}
+.price-tag{padding-bottom:5px;}
+
+
+/*Bottom Banner*/
+.bottom-banner .title{text-align: center;}
+.images{display: flex;justify-content: space-between;}
+.images img{width:300px;height: 300px;}
+
+
+/*Last Banner*/
+.circle1{border-radius:60px;background-color: black;height: 50px;width: 50px;margin-left: 20px;}
+.circle2{border-radius:60px;background-color: black;height: 50px;width: 50px;margin-top:30px;margin-left: 20px;margin-bottom: 10px;}
