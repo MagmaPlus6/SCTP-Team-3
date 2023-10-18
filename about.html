@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
+    <link rel="icon" href="/Image/shop-favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">    
 </head>
 
 <body>
 
+    <!--Navigation Bar Start-->    
     <nav class="navbar navbar-expand-sm navbar-light bg-light font-weight-bold" id="navi-bg">
-        <a href="#" class="navbar-brand" id="navigation-name"><img src="/Image/Shop Icon.png" alt="icon of BazHub"> BazHub</a>
+        <a href="#" class="navbar-brand" id="navigation-name"><img src="/Image/icons8-shop-48.png" alt="icon of BazHub"> BazHub</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,14 +38,16 @@
                 <a href="#" class="nav-link" id="navigation-name">About us</a>
              </li> 
              <li class="nav-item">
-                <a href="#" class="nav-link" id="navigation-name"><i class="material-icons align-middle">Your Cart</a>
+                <a href="#" class="nav-link" id="navigation-name"><i class="material-icons align-middle">shopping_cart</i> Your cart</a>
              </li>               
           </ul>
         </div>
+
     </nav>
+    <!--Navigation Bar End-->    
 
-    <hr>
 
+    <!-------------------Main Banner Start----------------------->
     <div class="main-banner">
 
         <div class="left-banner">
@@ -50,65 +58,116 @@
         <div class="right-banner">
     
             <div class="right-banner-title">
-                <h1>Product title</h1>
+                <h1>Red Dress</h1>
                 <hr>
 
-                <div class="right-banner-bottom">
-                        <div class="price-tag">
-                            <h3>$1000</h3>
-                        </div>
-
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Model Selection
-                            <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">HTML</a></li>
-                                <li><a href="#">CSS</a></li>
-                                <li><a href="#">JavaScript</a></li>
-                            </ul>
-                        </div>
-                </div>
+            <div class="right-banner-bottom">
+                <div class="price-tag">
+                <h3>$1000</h3>
+                    
+            
+            <div class="col-sm-6 pt-3">  <!-- column for category & brand only -->
+                <form action="">
+                    <div class="form-group row">
+                        <label for="brand" class="col-sm-3 col-form-label">Sizes</label>
+                        <select class="form-control col-sm-8" id="brand" name="brand" required form='form1'>
+                            <option value="beyond the vines">X-S</option>
+                            <option value="curious creatures">S</option>
+                            <option value="in good company">M</option>
+                            <option value="love, bonito">L</option>
+                            <option value="new brand">X-L</option>
+                        </select>
+                    </div>
+                </form>
             </div>
 
+            
+
+            </div>
+                   
+                <!--Sizes drop down list--> 
+                
+                <!--Navigation Bar End--> 
+
+            </div>
+                       
         </div>
     </div>
+    <!-------------------Main Banner End----------------------->
         
     <hr>
 
     <div class="bottom-banner">
+
         <div class="title">
             <h1>Similar Product</h1>
         </div>
 
         <div class="images">
-            <div class="left-image">
-                <img src="/Image/Blue dress.jpg">
+            <div class="card">
+               <img src="/Image/Blue dress.jpg" alt="Beautiful Blue Dress" style="width:100%">
+               <h1>Blue Dress</h1>
+               <p class="price">$19.99</p>
+               <p>The Blue Dress</p>
+               <p><button>Add to Cart</button></p>
             </div>
 
-            <div class="center-image">
-                <img src="/Image/Pink dress.jpg">
+            <div class="card">
+               <img src="/Image/Pink dress.jpg" alt="Beautiful Pink Dress" style="width:100%">
+               <h1>Pink Dress</h1>
+               <p class="price">$19.99</p>
+               <p>The Pink Dress</p>
+               <p><button>Add to Cart</button></p>
             </div>
 
-            <div class="right-image">
-                <img src="/Image/Purple dress.jpg">
+            <div class="card">
+               <img src="/Image/Purple dress.jpg" alt="Beautiful Purple Dress" style="width:100%">
+               <h1>Purple Dress</h1>
+               <p class="price">$19.99</p>
+               <p>The Purple Dress</p>
+               <p><button>Add to Cart</button></p>
             </div>
+
         </div>
     </div>
 
-    <hr>
+    <br>
 
     <div class="last-banner">
-        <div class="title">
-            <h2>Reviews</h2>
+
+        <div class="first">
+            <p>Get to Know Us
+            <p>About Us</p>    
+            <p>Careers</p>
+            <p>Press Releases</p>
+            <p>Bazhub Science</p>
         </div>
 
-
-        <div class="circle1">
+        <div class="second">
+            <p>Connect with Us</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>Instagram</p>
         </div>
 
-        <div class="circle2">
+        <div class="third">
+            <p>Make Money with Us</p>
+            <p>Protect and Build Your Brand</p>
+            <p>Advertise Your Products</p>
+            <p>Sell on Bazhub</p>
+            <p>Associates Programme</p>
+            <p>Fulfillment by Bazhub</p>
         </div>
 
+        <div class="fourth">
+            <p>Let Us Help You</p>
+            <p>COVID-19 and Bazhub</p>
+            <p>Your Account</p>
+            <p>Your Orders</p>
+            <p>Delivery Rates & Policies</p>
+            <p>Recycling</p>
+            <p>Help</p>
+        </div>
 
     </div>
 

@@ -53,7 +53,11 @@ hr{background-color:grey;height: 2px;}
 a.btn.btn-primary{justify-content: center;margin-left: 40px;}
 
 
+
+
+
 /*product listing css*/
+
 
 /*left banner with the dress*/
 .left-banner{display:flex;justify-content: center;align-items: center 400px;width: 400px;;}
@@ -72,12 +76,44 @@ a.btn.btn-primary{justify-content: center;margin-left: 40px;}
 
 /*Bottom Banner*/
 .bottom-banner .title{text-align: center;}
-.images{display: flex;justify-content: space-between;}
-.images img{width:300px;height: 300px;}
+.images{display: flex;justify-content: space-around;}
+.images img{width:400px;height: 300px;}
 
 
 /*Last Banner*/
-.circle1{border-radius:60px;background-color: black;height: 50px;width: 50px;margin-left: 20px;margin-top:30px;}
-.circle2{border-radius:60px;background-color: black;height: 50px;width: 50px;margin-top:30px;margin-left: 20px;margin-bottom: 10px;}
+.last-banner{display: flex;justify-content: space-around;font-weight: bolder;background-color: turquoise;}
+.last-banner.first{margin-top: 20px;}
+
+
+/*Card Configuration*/
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
 
 
