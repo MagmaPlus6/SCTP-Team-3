@@ -49,13 +49,10 @@
     </nav>
     
     <!-- ------------- Secondary Navigation section ------------- -->
-    <nav class="navbar navbar-expand-md navbar-light second-nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bold justify-content-center">
+    <nav class="navbar navbar-expand navbar-light second-nav">
+
+        <div class="d-flex justify-content-center" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bold">
             <li class="nav-item active">
               <a class="nav-link" href="#">Women<span class="sr-only">(current)</span></a>
             </li>
@@ -70,14 +67,32 @@
             </li>            
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search products" aria-label="Search">
-            <button class="btn my-2 my-sm-0 d-flex align-items-center" type="submit"><i class="material-icons">search</i></button>
+              <input class="form-control mr-sm-2" type="search" placeholder="Search products" aria-label="Search">
+              <button class="btn my-2 my-sm-0 d-flex align-items-center" type="submit"><i class="material-icons">search</i></button>
           </form>
         </div>
-      </nav>    
+      </nav>  
+      
+    <nav class="second-nav-mobile bg-light">
+      <div class="d-flex justify-content-around py-3">
+        <div class="image-woman"><a href="#"><img src="image/woman.png" alt="Women section icon"></a></div>
+        <div><a href="#"><img src="image/man.png" alt="Men section icon"></a></div>
+        <div><a href="#"><img src="image/children-2.png" alt="Kids section icon"></a></div>
+        <div><a href="#"><img src="image/stroller.png" alt="Baby section icon"></a></div>        
+      </div>
+      <div class="container-fluid px-4">
+        <form class="form-inline my-lg-0 row justify-content-center">
+          <div class="col-11">
+            <input class="form-control mr-sm-2 w-100" type="search" placeholder="Search products" aria-label="Search">
+          </div>
+          <button class="btn my-2 my-sm-0 d-flex align-items-center col-1" type="submit"><i class="material-icons">search</i></button>
+        </form>
+      </div>
+
+    </nav>
 
     <!-- ------------- Product List section ------------- -->
-    <div class="container-fluid px-4 product-list">
+    <div class="container-fluid px-4 product-list bg-light">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pt-4">
             <div class="col pb-4">
                 <a href="#/" class="text-decoration-none text-dark">
@@ -145,7 +160,7 @@
                         <img class="card-img-top" src="image/women-gym-pants.jpg" alt="Women gym pants">
                         <div class="card-body">
                           <p class="card-title text-muted">Curious Creatures</p>
-                          <h5 class="card-text">Joggin Gym Pants</h5>
+                          <h5 class="card-text">Jogging Gym Pants</h5>
                           <p class="card-text">$16.01</p>
                         </div>
                       </div>
@@ -180,7 +195,7 @@
     </div>
 
     <!-- ------------- Pagination section ------------- -->
-    <nav aria-label="Page navigation example" class="text-success">
+    <nav aria-label="Page navigation example" class="text-success bg-light">
         <ul class="pagination justify-content-center">
           <li class="page-item">
             <a class="page-link" href="#/">Previous</a>

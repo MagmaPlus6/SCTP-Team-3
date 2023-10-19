@@ -102,3 +102,29 @@ footer {
     background-color: #F5F5F5;
 }
 
+.second-nav-mobile {
+    display: none;
+}
+
+.second-nav-mobile img {
+    height: 40px;
+}
+
+@media (max-width: 576px) {
+
+    .second-nav {
+        display: none;
+    }
+
+    .second-nav form {
+        margin-left: auto
+    }
+
+    .second-nav-mobile {
+        display: block;
+    }
+
+    .second-nav-mobile woman {
+        border: 1px solid black;
+    }
+}
