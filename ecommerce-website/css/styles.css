@@ -19,8 +19,15 @@
 
 /* ------------ About us ------------ section */
 
-.about-us {
-    background-color: #DDFFBC;
+.about-us-description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 80px;
+    width: 300px;
+    padding: 40px;
+    background-color: rgba(23, 107, 135, 0.3);
+    color: rgb(238, 238, 238);
 }
 
 /* ------------ Team members ------------ section */
@@ -29,7 +36,7 @@
 /* ------------ Site map section ------------ */
 
 .site-map {
-    background-color: #52734D;
+    background-color: #364F6B;
 }
 
 .site-map-link a {
@@ -124,7 +131,4 @@ footer {
         display: block;
     }
 
-    .second-nav-mobile woman {
-        border: 1px solid black;
-    }
 }
