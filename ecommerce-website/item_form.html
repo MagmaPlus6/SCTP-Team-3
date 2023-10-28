@@ -37,13 +37,13 @@
                     <a href="#" class="nav-link" id="navigation-name">Home</a>
                 </li>
                 <li class="nav-item mr-2">
-                    <a href="#" class="nav-link" id="navigation-name">Product list</a>
+                    <a href="product_list.html" class="nav-link" id="navigation-name">Product</a>
                 </li>
                 <li class="nav-item mr-2">
-                    <a href="#" class="nav-link" id="navigation-name">Add product</a>
+                    <a href="#" class="nav-link" id="navigation-name">Create</a>
                 </li>
                 <li class="nav-item mr-2">
-                    <a href="#" class="nav-link" id="navigation-name">About us</a>
+                    <a href="about.html" class="nav-link" id="navigation-name">About us</a>
                 </li> 
                 <li class="nav-item">
                     <a href="#" class="nav-link" id="navigation-name"><i class="material-icons align-middle">shopping_cart</i> Your cart</a>
@@ -123,12 +123,12 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="brand" class="col-sm-3 col-form-label">Brand</label>
-                        <select class="form-control col-sm-8" id="brand" name="brand" required form='form1'>
-                            <option value="beyond the vines">Beyond the Vines</option>
-                            <option value="curious creatures">Curious Creatures</option>
-                            <option value="in good company">In Good Company</option>
-                            <option value="love, bonito">Love, Bonito.</option>
+                        <label for="productBrand" class="col-sm-3 col-form-label">Brand</label>
+                        <select class="form-control col-sm-8" id="productBrand" name="productBrand" required form='form1'>
+                            <option value="Beyond the Vines">Beyond the Vines</option>
+                            <option value="Curious Creatures">Curious Creatures</option>
+                            <option value="In Good Company">In Good Company</option>
+                            <option value="Love, Bonito.">Love, Bonito.</option>
                             <option value="new brand">* Add a new brand</option>
                         </select>
                     </div>
@@ -147,9 +147,22 @@
             </div>
         </div>
 
-        <div class="row p-2">   <!-- ------------- row for quantity and size ------------- -->
-            <div class="col-sm-6 pt-3">  <!-- column for quantity -->
+        <div class="row p-2">   <!-- ------------- row for price, quantity and size ------------- -->
+            <div class="col-sm-6 pt-3">  <!-- column for price & quantity -->
                 <form action="">
+                    <div class="form-group row">
+                        <label for="productPrice" class="col-sm-4 col-form-label">Price per item ($)</label>
+                        <div class="col-sm-8">
+                            <input 
+                              type="number"
+                              class="form-control" 
+                              id="productPrice" 
+                              name="productPrice" 
+                              min="0"
+                              step=".01"
+                              required form='form1'>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label for="productQuantity" class="col-sm-4 col-form-label">Quantity</label>
                         <div class="col-sm-8">
@@ -195,138 +208,30 @@
                         </div>
                     </fieldset>
                 </form>
-
-                <!-- 
-                <form action="">
-                    <fieldset class="form-group">
-                        <div class="row">
-                           <legend class="col-form-label col-sm-3">Size</legend>
-                           <div class="col-sm-8 pt-2">
-                               <div class="form-check form-check-inline">
-                                  <input class="form-check-input" 
-                                   type="radio" name="productSize" 
-                                   id="size-xs" value="size-XS" checked required form='form1'>
-                                   <label class="form-check-label" for="size-xs">
-                                      XS
-                                   </label>
-                               </div>
-                               <div class="form-check form-check-inline">
-                                   <input class="form-check-input" 
-                                    type="radio" name="productSize" 
-                                    id="size-s" value="size-S" required form='form1'>
-                                    <label class="form-check-label" for="size-s">
-                                      S
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" 
-                                     type="radio" name="productSize" 
-                                     id="size-m" value="size-M" required form='form1'>
-                                    <label class="form-check-label" for="size-m">
-                                     M
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" 
-                                     type="radio" name="productSize" 
-                                     id="size-l" value="size-L" required form='form1'>
-                                     <label class="form-check-label" for="size-l">
-                                       L
-                                     </label>
-                                 </div>
-                                 <div class="form-check form-check-inline">
-                                     <input class="form-check-input" 
-                                      type="radio" name="productSize" 
-                                      id="size-xl" value="size-XL" required form='form1'>
-                                     <label class="form-check-label" for="size-xl">
-                                      XL
-                                     </label>
-                                 </div>                                
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>                
-                   
-
-                <form action="">        radio button in boxes
-                    <fieldset class="form-group">
-                        <div class="row">
-                           <legend class="col-form-label col-sm-4">Size</legend>
-                           <div class="col-sm-8 btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-light active">
-                                  <input type="radio" name="options" id="option1" checked> XS
-                                </label>
-                                <label class="btn btn-light">
-                                  <input type="radio" name="options" id="option2"> S
-                                </label>
-                                <label class="btn btn-light">
-                                  <input type="radio" name="options" id="option3"> M
-                                </label>
-                                <label class="btn btn-light">
-                                  <input type="radio" name="options" id="option1"> L
-                                </label>
-                                <label class="btn btn-light">
-                                  <input type="radio" name="options" id="option2"> XL
-                                </label>
-                                <label class="btn btn-light">
-                                  <input type="radio" name="options" id="option3"> XXL
-                                <label>                   
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-
-                 -->
             </div>
         </div>
 
         <div class="row p-2">   <!-- ------------- row for upload product image ------------- -->
             <div class="col">
-                <form action="">
-                    <div class="form-group pt-2">
-                        <label for="productImage">Product image</label>
-                        <div class="file-upload-wrapper">
-                            <input type="file" id="productImage" name="productImage" class="file-upload" data-max-file-size="2M" required form='form1'>
-                        </div> <br>
-                        <textarea class="form-control w-50" id="productImage" rows="3" name="productImage" placeholder="Enter image description here" required form='form1'></textarea>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-     <!-- 
-         Upload image section including javascript 
-        <div class="row p-2">  
-            <div class="col">
-                <form action="">
-                    <div class="form-group pt-2">
-                        <label for="productImage">Product image</label>
-                        <div class="file-drop-area">
-                            <span class="choose-file-button">Choose files</span>
-                            <span class="file-message">or drag and drop files here</span>
-                            <input class="file-input" type="file" multiple>
+                <form action="" runat="server">
+                    <div class="form-group">
+                        <div>
+                            <label for="productImage">Upload image</label>
                         </div>
-                        <textarea class="form-control w-50" id="productImage" rows="3" name="productImage" placeholder="Enter image description here" required form='form1'></textarea>
+                        <input accept="image/*" type='file' id="productImage" name="productImage" data-max-file-size="2M" required form='form1'>
+                        <div class="product-image-size mt-3">
+                            <img id="upLoadImg" src="image/blank-image.png" alt="image placeholder" class="img-fluid">
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
-        <br>
-        <form action="" class="was-validated">
-            <div class="custom-file mb-3">
-                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-            </div>
-        </form>
-
-         -->
-
 
         <div class="row p-2">    <!-- ------------- row for buttons ------------- -->
             <div class="col">
                 <form action="" method="post" id="form1" target="_blank" >
-                    <button type="submit" class="btn btn-primary mr-4 mb-3" value="Preview">Preview</button>
-                    <button type="submit" class="btn btn-primary mr-4 mb-3 float-right" formtarget="_blank" formaction="/action_page2.php" value="Add Product">Add Product</button>
+                    <button class="btn btn-primary mr-4 mb-3" value="Preview">Preview</button>
+                    <button type="submit" class="btn btn-primary mr-4 mb-3 float-right" formtarget="_blank" formaction="/action_page2.php" value="Submit">Submit</button>
                 </form>
             </div>
         </div>
@@ -337,12 +242,48 @@
     <footer class="col text-white py-3">&copy; 2023 BazHub, Inc. All Rights Reserved.</footer>
 
 
+    <!-- ------------- toast section ------------- -->
+
+    <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 100px; bottom: 0;">
+        <div id="liveToast" class="toast" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="..." class="rounded mr-2" alt="...">
+            <strong class="mr-auto">Product added succesfully!</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="toast-body">
+            Close to visit the updated products list page.
+          </div>
+        </div>
+    </div>
+
+    <!-- Toast codes from Martin
+    <div aria-live="polite" aria-atomic="true" class=" d-none d-flex justify-content-center align-items-center" style="height: 100px;">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+            <div class="toast-header">
+                <strong class="mr-auto">Product added succesfully!</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                Close to visit the updated products list page.
+            </div>
+        </div>
+    </div>  -->
+
     <!-- jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
     <!-- Link to external javascript file -->
     <script src="javascript/script.js"></script>
+    <script src="javascript/controller.js"></script>
+    <script src="javascript/addproduct.js"></script> 
+    <script src="javascript/helpers.js"></script> 
 
 </body>
 </html>
