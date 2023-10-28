@@ -32,13 +32,13 @@
                 <a href="#" class="nav-link" id="navigation-name">Home</a>
              </li>
              <li class="nav-item mr-2">
-                <a href="#" class="nav-link" id="navigation-name">Product list</a>
+                <a href="#" class="nav-link" id="navigation-name">Product</a>
              </li>
              <li class="nav-item mr-2">
-                <a href="#" class="nav-link" id="navigation-name">Add product</a>
+                <a href="item_form.html" class="nav-link" id="navigation-name">Create</a>
              </li>
              <li class="nav-item mr-2">
-                <a href="#" class="nav-link" id="navigation-name">About us</a>
+                <a href="about.html" class="nav-link" id="navigation-name">About us</a>
              </li> 
              <li class="nav-item">
                 <a href="#" class="nav-link" id="navigation-name"><i class="material-icons align-middle">shopping_cart</i> Your cart</a>
@@ -90,92 +90,9 @@
     </nav>
 
     <!-- ------------- Product List section ------------- -->
-    <div class="container-fluid px-4 product-list bg-light">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pt-4">
-            <div class="col pb-4">
-                <a href="#/" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img class="card-img-top" src="image/women-tracksuit.jpg" alt="Women tracksuit">
-                        <div class="card-body">
-                          <p class="card-title text-muted">Adidas</p>
-                          <h5 class="card-text">3-stripes Tracksuit</h5>
-                          <p class="card-text">$43.10</p>
-                        </div>
-                      </div>
-                </a>
-            </div>
-            <div class="col pb-4">
-                <a href="#/" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img class="card-img-top" src="image/women-skirt.jpg" alt="Women skirt">
-                        <div class="card-body">
-                          <p class="card-title text-muted">Urban Coco</p>
-                          <h5 class="card-text">Pocket Skirt</h5>
-                          <p class="card-text">$57.88</p>
-                        </div>
-                      </div>
-                </a>
-            </div>
-            <div class="col pb-4">
-                <a href="#/" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img class="card-img-top img-fluid" src="image/women-long-sleeve.jpg" alt="Women long sleeve t shirt">
-                        <div class="card-body">
-                          <p class="card-title text-muted">Love, Bonito.</p>
-                          <h5 class="card-text">Long Sleeve T Shirt</h5>
-                          <p class="card-text">$8.99</p>
-                        </div>
-                      </div>
-                </a>
-            </div>
-            <div class="col pb-4">
-                <a href="#/" class="text-decoration-none text-dark"> 
-                    <div class="card">
-                        <img class="card-img-top" src="image/women-pants.jpg" alt="Women pants">
-                        <div class="card-body">
-                          <p class="card-title text-muted">Tommy Hilfiger</p>
-                          <h5 class="card-text">Pull Up Pants</h5>
-                          <p class="card-text">$12.17</p>
-                        </div>
-                      </div>
-                </a>
-            </div>
-            <div class="col pb-4">
-                <a href="#/" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img class="card-img-top" src="image/women-blouse.jpg" alt="Women blouse">
-                        <div class="card-body">
-                          <p class="card-title text-muted">Beyond the Vines</p>
-                          <h5 class="card-text">Button Down Blouse</h5>
-                          <p class="card-text">$10.83</p>
-                        </div>
-                      </div>
-                </a>
-            </div>
-            <div class="col pb-4">
-                <a href="#/" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img class="card-img-top" src="image/women-gym-pants.jpg" alt="Women gym pants">
-                        <div class="card-body">
-                          <p class="card-title text-muted">Curious Creatures</p>
-                          <h5 class="card-text">Jogging Gym Pants</h5>
-                          <p class="card-text">$16.01</p>
-                        </div>
-                      </div>
-                </a>
-            </div>
-            <div class="col pb-4">
-                <a href="#/" class="text-decoration-none text-dark">
-                    <div class="card">
-                        <img class="card-img-top" src="image/women-fitness-shirt.jpg" alt="Women fitness t shirt">
-                        <div class="card-body">
-                          <p class="card-title text-muted">In Good Company</p>
-                          <h5 class="card-text">Fitness T Shirt</h5>
-                          <p class="card-text">$29.63</p>
-                        </div>
-                      </div>
-                </a>
-            </div>
+    <div class="container-fluid px-4 bg-light pb-2 pre-product-list">
+        <div class="product-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pt-4">
+          <!-- Original html for product list
             <div class="col pb-4">
                 <a href="#/" class="text-decoration-none text-dark">
                     <div class="card">
@@ -187,13 +104,14 @@
                         </div>
                       </div>
                 </a>
-            </div>  
+            </div> 
+           -->
         </div>
 
     </div>
 
     <!-- ------------- Pagination section ------------- -->
-    <nav aria-label="Page navigation example" class="text-success bg-light">
+    <nav aria-label="Page navigation example" class="text-success bg-light py-1">
         <ul class="pagination justify-content-center">
           <li class="page-item">
             <a class="page-link" href="#/">Previous</a>
@@ -207,7 +125,7 @@
             <a class="page-link" href="#/">Next</a>
           </li>
         </ul>
-      </nav>
+    </nav>
 
     <!-- ------------- Footer section ------------- -->
             
@@ -218,7 +136,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
     <!-- Link to external javascript file -->
-    <script src="javascript/script.js"></script>
+    <script src="javascript/controller.js"></script>
+    <script src="javascript/helpers.js"></script> 
+    <script src="javascript/addproduct.js"></script> 
 
 </body>
 
