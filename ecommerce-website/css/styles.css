@@ -3,7 +3,7 @@
     font-size: medium;
 }
 
-/* ------------ Navigation bar ------------ section */
+/* ------------- Navigation bar for entire webpages------------- */
 
 #navi-bg {
     background-color: #3FC1C9 !important;
@@ -17,7 +17,7 @@
     color: #FEFFDE;
 }
 
-/* ------------ About us ------------ section */
+/* --------------------- About us page--------------------- */
 
 .about-us-description {
     position: absolute;
@@ -30,10 +30,10 @@
     color: rgb(238, 238, 238);
 }
 
-/* ------------ Team members ------------ section */
+/* Team members */
 
 
-/* ------------ Site map section ------------ */
+/* Site map section */
 
 .site-map {
     background-color: #364F6B;
@@ -54,56 +54,14 @@ footer {
 }
 
 
-/* --------------------------------------------------- */
-/*  Add new product page -> upload product image section 
+/* --------------------- Item form page--------------------- */
+/* upload product image section  */
 
-.file-drop-area {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 450px;
-    max-width: 100%;
-    padding: 25px;
-    border: 1px dashed #91C788;
-    border-radius: 3px;
-    transition: 0.2s;
-   
-  }
-  
-  .choose-file-button {
-    flex-shrink: 0;
-    background-color: rgba(47, 251, 88, 0.4);
-    border: 1px solid rgba(47, 251, 88, 0.8);
-    border-radius: 3px;
-    padding: 8px 15px;
-    margin-right: 10px;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-  
-  .file-message {
-    font-size: small;
-    font-weight: 300;
-    line-height: 1.4;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .file-input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
-    opacity: 0;  
-  }
-  
-*/
+.product-image-size {
+    width: 200px;
+}
 
-/* --------------------------------------------------- */
-/* ------------  Product list page ------------  */
+/* --------------------- Product list page--------------------- */
 
 .second-nav {
     background-color: #F5F5F5;
