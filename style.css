@@ -1,6 +1,6 @@
 /*Home page CSS */
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: cursive;
     font-size: medium;
 }
 
@@ -39,8 +39,6 @@
     justify-content: center;
 }
 
-.display-4 {font-family: fantasy;}
-h3{font-family: fantasy;}
 .jumbotron img{width:100%;}
 
 /*Mid Section 2nd part */
@@ -50,7 +48,8 @@ h3{font-family: fantasy;}
 
 /*flex container for cards item*/
 .flex-container{display: flex;justify-content: space-around;}
-.btn.btn-primary{margin-left:45px;}
+img.card-img-top{height: 300px;}
+.btn{display: block;}
 
 /*Bottom Section start */
 .bottom-banner-left{display: flex;gap: 400px;}
@@ -61,6 +60,7 @@ h3{font-family: fantasy;}
 /*Bottom background*/
 .bottom-bg{background-color:#6A9C89;height:225px;margin-bottom: -1000px;text-align: center;color:white;}
 .bottom-bg button{margin-left:75px;margin-top:10px;color: white;font-family: cursive;}
+.btn.btn-link-outline{display:inline;}
 .form-group{display:flex;width:300px;margin: 0 auto;}
 
 /* footer start */ 
