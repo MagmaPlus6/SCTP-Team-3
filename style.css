@@ -5,7 +5,7 @@
 }
 
 #navi-bg {
-    background-color: #6A9C89 !important;
+    background-color: #3FC1C9 !important;
 }
 
 #navigation-name {
@@ -65,7 +65,7 @@ img.card-img-top{height: 300px;}
 
 /* footer start */ 
 footer{margin-top:1000px;height: 50px;}
-.footer{background-color: #f5f5dc;}
+.footer{background-color: #364F6B;}
 /* footer end */
 
 /* Misc for home.html */
