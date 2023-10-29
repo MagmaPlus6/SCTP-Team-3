@@ -46,25 +46,36 @@
     font-family: cursive;
     font-weight:bolder;
     color: #6A9C89;
+    background-color: #EEEEEE;
 } 
 
 /* Mid Section end */
 
 /*flex container for cards item*/
-.flex-container { 
-    display: flex; 
+.flex-container {
+    background-color: #EEEEEE;
+    color: #176B87; 
+    display: flex;
+    text-align: center;
+    flex-direction:column ; 
     justify-content: space-around;
 }
 
-.flex-container .card-img-top {height: 300px;}
+.card-flex{display:flex;
+           justify-content: space-around;
+           padding-bottom: 20px;
+}
 
+.btn-info {background-color: #176B87;}
+.flex-container .card-img-top {height: 300px;}
 .flex-container .card .btn{display: block;}
 
 /*Bottom background*/
 .bottom-bg { 
-    background-color:#6A9C89;
+    background-color:#176B87;
     height:225px;
     margin-bottom: -1000px;
+    margin-top: -25px;
     text-align: center;
     color:white;
 }
@@ -87,7 +98,7 @@
 /* footer start */ 
 footer.footer { 
     margin-top:1000px;
-    height: 50px;
+    height: 60px;
     background-color: #364F6B;
 }
 
@@ -133,12 +144,6 @@ a.btn.btn-primary{justify-content: center;}
     color: white;
     text-decoration: underline;
 }
-
-footer {
-    border-top: #FEFFDE solid;
-    background-color: #364F6B;
-}
-
 
 /* --------------------- Item form page--------------------- */
 /* upload product image section  */
