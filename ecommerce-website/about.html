@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                  <li class="nav-item mr-2">
-                    <a href="#" class="nav-link" id="navigation-name">Home</a>
+                    <a href="home.html" class="nav-link" id="navigation-name">Home</a>
                  </li>
                  <li class="nav-item mr-2">
                     <a href="product_list.html" class="nav-link" id="navigation-name">Product</a>
@@ -48,65 +48,65 @@
           </nav>
  
         <!-- ------------- About us section ------------- -->
-        <section class="about-us position-relative">
-            <img src="image/happy-family.jpg" alt="Picture of happy family" class="img-fluid">
+        <section class="about-us">
             <div class="about-us-description">
                 <h1>About us</h1>
                 <p>At BazHub, we're your fashion destination for the whole family. We offer stylish and affordable clothing for men, women, babies, and kids. Our passion for fashion is all about making you look and feel great. Shop with us to express your style, your way.</p>
             </div>
         </section>
 
-        <!-- 
-        <section class="container about-us bg-light p-4 mw-100">   
-            <div class="row">
-                <div class="col-sm picture d-flex justify-content-center align-items-center"><img src="image/GenSG FSD02 group photo.jpg" alt="Group photo of GenSG FSD 02" class="img-fluid p-2"></div>
-                <div class="col-sm my-auto">
-                    <h1 class="text-center">About us</h1>
-                    <p>We are participants in Jr Full Stack Developer Train-and-Place Programme under Generation Singapore. For the final project, we created a functional E-commerce web application that consists of the following components:</p>
-                    <ul class="pl-3">
-                        <li>Frontend: JavaScript + CSS + HTML</li>
-                        <li>Backend: REST API with Java and Spring Boot</li>
-                        <li>Persistence: MySQL Database</li>
-                    </ul>
-                </div>   
-            </div>        
-        </section>
-        -->
-
         <!-- ------------- Team members section ------------- -->
 
-        <section class="container text-center p-4">
-            <h2 class="text-center">Founders</h2>
+        <section class="container p-4">
+            <h2 class="text-center">BazHub Team</h2>
             <div class="row justify-content-center">
-              <div class="col-3 py-1">
-                <img src="image/ZhengWei-photo.jpg" alt="Picture of Zheng Wei" class="rounded-circle img-fluid">
-                <p class="mt-2">Zheng Wei</p>
-                <p>Short bio</p>
-                <p>Role in project</p>
-              </div>
-              <div class="col-3 py-1">
-                <img src="image/KokYeu-photo.jpg" alt="Picture of Kok Yeu" class="rounded-circle img-fluid">
-                <p class="mt-2">Kok Yeu</p>
-                <p>Short bio</p>
-                <p>Role in project</p>
-              </div>
+                <div class="col d-flex mx-3 align-items-center">
+                    <div class="">
+                        <img src="image/ZhengWei-photo.jpg" alt="Picture of Zheng Wei" class="rounded-circle align-middle">
+                        <p class="mt-2 font-weight-bold text-center">Zheng Wei</p>
+                    </div>
+                    <div class=""> 
+                        <p class="px-4">Zheng Wei, the style-savvy co-founder of BazHub, is a fashionista with an addiction to funky socks. He believes in the magic of a well-chosen outfit and has an uncanny knack for spotting trends before they go viral.</p>
+                    </div>
+                </div>
+                <div class="col d-flex mx-3 align-items-center">
+                    <div class="">
+                        <img src="image/KokYeu-photo.jpg" alt="Picture of Kok Yeu" class="rounded-circle">
+                        <p class="mt-2 font-weight-bold text-center">Kok Yeu</p>
+                    </div>
+                    <div class="">
+                        <p class="px-4">Kok Yeu, the customer-service whiz, is a coffee enthusiast on a mission to find the world's best brew. With his meticulous nature, he's the reason why your BazHub shopping experience is as smooth as a perfectly brewed cup of joe</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- ------------- Site map section ------------- -->
 
         <section class="container site-map text-white p-4 mx-auto mw-100">
-            <div class="row">
-                <div class="col-12 col-sm-5 location">
-                    <div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2558.5453239904796!2d-77.04631829957596!3d38.90617478425149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7b8146aaaab%3A0xaea4710e4265fef6!2sGeneration%3A%20You%20Employed%2C%20Inc.!5e0!3m2!1sen!2ssg!4v1696416244338!5m2!1sen!2ssg" width="230" height="230" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="d-block mx-auto"></iframe>
+            <div class="row">  
+                <div class="col-12 col-sm-4 px-4 pb-4">                   
+                    <div class="form mb-3">
+                        <h5>Subscribe our newsletter</h5>
                     </div>
-                    <div class="mt-3 text-center">
-                        <p>1200 19th Street, NW Suite 1110 Washington, DC 20036</p>
-                    </div>
+                    <form>
+                        <div class="form-group row pb-2">
+                            <label for="ex1" class="col-sm-3 col-form-label">Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="ex1">
+                            </div>
+                        </div>
+                        <div class="form-group row pb-2">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="inputEmail3">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-light btn-lg">Sign me up!</button>
+                    </form>
                 </div>
     
-                <div class="col-12 col-sm-7">
+                <div class="col-12 offset-sm-1 col-sm-7">
                     <div class="row d-flex justify-content-between">
                         <div class="site-map-link col-6 col-sm-6 col-md-3">
                             <!-- "#/" prevents clicking on "#" link from jumping to top of page -->
@@ -159,7 +159,6 @@
             </div>
         </section>
 
-    
 
         <!-- jQuery and Bootstrap Bundle (includes Popper) -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

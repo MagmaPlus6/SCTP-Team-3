@@ -1,5 +1,6 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: cursive;
     font-size: medium;
 }
 
@@ -17,21 +18,106 @@
     color: #FEFFDE;
 }
 
-/* --------------------- About us page--------------------- */
+/*--------------------- Home page--------------------- */
 
-.about-us-description {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 80px;
-    width: 300px;
-    padding: 40px;
-    background-color: rgba(23, 107, 135, 0.3);
-    color: rgb(238, 238, 238);
+
+/*Mid Section start */
+.jumbotron{
+    width: 100%;
+    min-height: 700px;
+    color:gold;
+    font-size: larger;
+    padding-top: 20px;
+    margin-bottom: 0px;
+    padding:20px;
+    background-image:url(../image/Shopping2.jpg);
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* Team members */
+.jumbotron img{width:100%;}
 
+/*Mid Section 2nd part */
+.mid-section-2 h1 { 
+    text-align: center;
+    font-family: cursive;
+    font-weight:bolder;
+    color: #6A9C89;
+} 
+
+/* Mid Section end */
+
+/*flex container for cards item*/
+.flex-container { 
+    display: flex; 
+    justify-content: space-around;
+}
+
+.flex-container .card-img-top {height: 300px;}
+
+.flex-container .card .btn{display: block;}
+
+/*Bottom background*/
+.bottom-bg { 
+    background-color:#6A9C89;
+    height:225px;
+    margin-bottom: -1000px;
+    text-align: center;
+    color:white;
+}
+
+.bottom-bg button {
+    margin-left:75px;
+    margin-top:10px;
+    color: white;
+    font-family: cursive;
+}
+
+.btn.btn-link-outline{display:inline;}
+
+.bottom-bg .form-group {
+    display:flex;
+    width:300px;
+    margin: 0 auto;
+}
+
+/* footer start */ 
+footer.footer { 
+    margin-top:1000px;
+    height: 50px;
+    background-color: #364F6B;
+}
+
+/* footer end */
+
+/* Misc for home.html */
+
+/* Is this used in homepage? 
+Card1 button confi
+a.btn.btn-primary{justify-content: center;}
+*/
+
+
+/* --------------------- About us page--------------------- */
+
+.about-us {
+    background-image: url("../image/happy-family.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about-us-description {
+    width: 300px;
+    margin-left: auto;
+    color: rgb(238, 238, 238);
+    background-color: rgba(23, 107, 135, 0.3);
+    padding: 40px;
+    margin-right: 90px;
+}
 
 /* Site map section */
 
@@ -90,85 +176,3 @@ footer {
     }
 
 }
-
-
-/*Home page CSS */
-
-* {
-    font-family: cursive;
-    font-size: medium;
-}
-
-#navi-bg {
-    background-color: #3FC1C9 !important;
-}
-
-#navigation-name {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-#navi-bg img {
-    width:90px;
-}
-
-#navigation-name:hover {
-    color: #FEFFDE;
-}
-
-/*Nav bar end */
-
-
-
-/*Mid Section start */
-.jumbotron{
-    width: 100%;
-    min-height: 700px;
-    color:gold;
-    font-size: larger;
-    padding-top: 20px;
-    margin-bottom: 0px;
-    padding:20px;
-    background-image:url(/Image/Shopping2.jpg);
-    background-size: cover;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.jumbotron img{width:100%;}
-
-/*Mid Section 2nd part */
-.mid-section-2 h1{text-align: center;font-family: cursive;font-weight:bolder;color: #6A9C89;} 
-
-/* Mid Section end */
-
-/*flex container for cards item*/
-.flex-container{display: flex;justify-content: space-around;}
-img.card-img-top{height: 300px;}
-.btn{display: block;}
-
-/*Bottom Section start */
-.bottom-banner-left{display: flex;gap: 400px;}
-.bottom-banner-left h2{font-style: italic;padding-left: 30px;}
-.bottom-banner-left-caption{font-style: italic;padding-left: 30px;display: flex;flex-direction: column;margin-top: 100px;}
-
-
-/*Bottom background*/
-.bottom-bg{background-color:#6A9C89;height:225px;margin-bottom: -1000px;text-align: center;color:white;}
-.bottom-bg button{margin-left:75px;margin-top:10px;color: white;font-family: cursive;}
-.btn.btn-link-outline{display:inline;}
-.form-group{display:flex;width:300px;margin: 0 auto;}
-
-/* footer start */ 
-footer{margin-top:1000px;height: 50px;}
-.footer{background-color: #364F6B;}
-/* footer end */
-
-/* Misc for home.html */
-
-/*Card1 button confi */
-a.btn.btn-primary{justify-content: center;}
-
-/*--------------------------------------------------------------------product listing css---------------------------------------------------------------------------*/
-
