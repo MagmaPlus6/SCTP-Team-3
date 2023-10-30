@@ -146,6 +146,11 @@ a.btn.btn-primary{justify-content: center;}
     text-decoration: underline;
 }
 
+footer {
+    border-top: #FEFFDE solid;
+    background-color: #364F6B;
+}
+
 /* --------------------- Item form page--------------------- */
 /* upload product image section  */
 
