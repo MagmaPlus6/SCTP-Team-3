@@ -10,7 +10,7 @@ data = [
         // id: 1, 
         name: "3-stripes Tracksuit",
         brand: "Adidas",
-        price: 43.10,
+        price: 43.10.toFixed(2), // without toFixed(2) , 43.1 will be displayed
         image: "image/women-tracksuit.jpg", 
     },
     {

@@ -56,14 +56,14 @@
 
     <header class="p-4">
         <h1>Add New Product</h1>
-        <p>Please fill in all the required fields completely</p>
+        <p>Please fill in all the fields.</p>
     </header>
 
     <!-- ------------- Form section ------------- -->
 
     <div class="container-fluid">
-        <div class="row p-2"> <!-- ------------- row for name, gender, category, brand ------------- -->
-            <div class="col-sm-6 pt-3">  <!-- column for name & gender only -->
+        <div class="row p-2"> <!-- ------------- row for name, category, type, brand ------------- -->
+            <div class="col-sm-6 pt-3">  <!-- column for name & category only -->
                 <form action="">
                     <div class="form-group row">
                         <label for="productName" class="col-sm-4 col-form-label">
@@ -81,44 +81,54 @@
 
                     <fieldset class="form-group">
                         <div class="row">
-                          <legend class="col-form-label col-sm-4">Gender</legend>
+                          <legend class="col-form-label col-sm-4">Category</legend>
                           <div class="col-sm-8 pt-2">
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" 
-                              type="radio" name="productGender" 
-                              id="male" value="Male" checked required form='form1'>
-                              <label class="form-check-label" for="male">
-                                Male
-                              </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" 
-                              type="radio" name="productGender" id="female" value="Female" required form='form1'>
-                              <label class="form-check-label" for="female">
-                                Female
-                              </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="productGender" id="unisex" value="Unisex" required form='form1'>
-                              <label class="form-check-label" for="unisex">
-                                Unisex
-                              </label>
-                            </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" 
+                                    type="radio" name="productCategory" 
+                                    id="women" value="Women" checked required form='form1'>
+                                    <label class="form-check-label" for="women">
+                                        Women
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" 
+                                    type="radio" name="productCategory" id="men" value="Men" required form='form1'>
+                                    <label class="form-check-label" for="men">
+                                        Men
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="productCategory" id="kids" value="Kids" required form='form1'>
+                                    <label class="form-check-label" for="kids">
+                                        Kids
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="productCategory" id="baby" value="Baby" required form='form1'>
+                                    <label class="form-check-label" for="baby">
+                                    Baby
+                                    </label>
+                                </div>
                           </div>
                         </div>
                     </fieldset>
                 </form>
             </div>
-            <div class="col-sm-6 pt-3">  <!-- column for category & brand only -->
+            <div class="col-sm-6 pt-3">  <!-- column for type & brand only -->
                 <form action="">
                     <div class="form-group row">
-                        <label for="category" class="col-sm-3 col-form-label">Category</label>
-                        <select class="form-control col-sm-8" id="category" name="category" required form='form1'>
-                            <option value="shirts">Shirts</option>
-                            <option value="pants">Pants</option>
-                            <option value="shorts">Shorts</option>
-                            <option value="socks">Socks</option>
-                            <option value="new category">* Add a new category</option>
+                        <label for="type" class="col-sm-3 col-form-label">Type</label>
+                        <select class="form-control col-sm-8" id="type" name="type" required form='form1'>
+                            <option value="Dresses">Dresses</option>
+                            <option value="Jeans">Jeans</option>
+                            <option value="Pants">Pants</option>
+                            <option value="Polos">Polos</option>
+                            <option value="Shirts">Shirts</option>
+                            <option value="Shorts">Shorts</option>
+                            <option value="Skirts">Skirts</option>
+                            <option value="Socks">Socks</option>
+                            <option value="Tops">Tops</option>
                         </select>
                     </div>
 
@@ -126,9 +136,13 @@
                         <label for="productBrand" class="col-sm-3 col-form-label">Brand</label>
                         <select class="form-control col-sm-8" id="productBrand" name="productBrand" required form='form1'>
                             <option value="Beyond the Vines">Beyond the Vines</option>
+                            <option value="Chic Reverie">Chic Reverie</option>
                             <option value="Curious Creatures">Curious Creatures</option>
+                            <option value="Echo">Echo</option>
                             <option value="In Good Company">In Good Company</option>
+                            <option value="Kydra">Kydra</option>
                             <option value="Love, Bonito.">Love, Bonito.</option>
+                            <option value="ZestThreads">ZestThreads</option>
                             <option value="new brand">* Add a new brand</option>
                         </select>
                     </div>
