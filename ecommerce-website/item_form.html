@@ -241,10 +241,11 @@
             </div>
         </div>
 
-        <div class="row p-2">    <!-- ------------- row for buttons ------------- -->
-            <div class="col">
-                <form action="" method="post" id="form1" target="_blank" >
-                    <button class="btn btn-primary mr-4 mb-3" value="Preview">Preview</button>
+        <div class="row">    <!-- ------------- row for buttons ------------- -->
+            <div class="col">           
+                <form action="" method="post" id="form1" target="_blank"s>
+                    <!-- Problem: after click preview, toast comes out
+                        <button class="btn btn-primary ml-2 mr-4 mb-3" value="Preview">Preview</button> -->
                     <button type="submit" class="btn btn-primary mr-4 mb-3 float-right" formtarget="_blank" formaction="/action_page2.php" value="Submit">Submit</button>
                 </form>
             </div>
@@ -257,47 +258,31 @@
 
 
     <!-- ------------- toast section ------------- -->
-
-    <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 100px; bottom: 0;">
+    
+    <div class="position-fixed bottom-0 right-0 p-3">
         <div id="liveToast" class="toast" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header">
-            <img src="..." class="rounded mr-2" alt="...">
+          <div class="toast-header bg-success text-white">
             <strong class="mr-auto">Product added succesfully!</strong>
-            <small>11 mins ago</small>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
+              <span aria-hidden="true">X</span>
             </button>
           </div>
           <div class="toast-body">
             Close to visit the updated products list page.
           </div>
         </div>
-    </div>
+    </div>   
 
-    <!-- Toast codes from Martin
-    <div aria-live="polite" aria-atomic="true" class=" d-none d-flex justify-content-center align-items-center" style="height: 100px;">
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
-            <div class="toast-header">
-                <strong class="mr-auto">Product added succesfully!</strong>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="toast-body">
-                Close to visit the updated products list page.
-            </div>
-        </div>
-    </div>  -->
 
     <!-- jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
     <!-- Link to external javascript file -->
-    <script src="javascript/script.js"></script>
     <script src="javascript/controller.js"></script>
     <script src="javascript/addproduct.js"></script> 
     <script src="javascript/helpers.js"></script> 
+    <script src="javascript/script.js"></script>
 
 </body>
 </html>

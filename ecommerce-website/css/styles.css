@@ -105,14 +105,6 @@ footer.footer {
 
 /* footer end */
 
-/* Misc for home.html */
-
-/* Is this used in homepage? 
-Card1 button confi
-a.btn.btn-primary{justify-content: center;}
-*/
-
-
 /* --------------------- About us page--------------------- */
 
 .about-us {
@@ -156,6 +148,14 @@ footer {
 
 .product-image-size {
     width: 200px;
+}
+
+.position-fixed.bottom-0 {
+    z-index: 5; 
+    right: 50%; 
+    bottom: 10%;
+    min-width: 250px;
+    transform: translate(50%);
 }
 
 /* --------------------- Product list page--------------------- */
