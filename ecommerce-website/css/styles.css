@@ -187,3 +187,8 @@ footer {
     }
 
 }
+
+
+/*------------------Add Product Page----------------*/ 
+input#form1.form-control{text-align: center;}
+label.form-label{padding-left:25px;}
