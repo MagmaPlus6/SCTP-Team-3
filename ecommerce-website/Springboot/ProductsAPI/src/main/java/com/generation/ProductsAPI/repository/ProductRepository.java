@@ -3,6 +3,7 @@ package com.generation.ProductsAPI.repository;
 import com.generation.ProductsAPI.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called productRepository
@@ -16,6 +17,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     List<Product> findByOrderByPriceDesc();
 
-    List<Product> findByPriceBetween(Double startPrice, Double endPrice);
+    List<Product> findByPriceBetween(BigDecimal startPrice, BigDecimal endPrice);
 
 }
