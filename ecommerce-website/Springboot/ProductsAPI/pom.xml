@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.5</version>
+		<version>3.2.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.generation</groupId>
+	<groupId>com.generation</groupId>
 	<artifactId>ProductsAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ProductsAPI</name>
-	<description>GenSG SCTP FSD02 Final Project</description>
+	<description>Final project for Generation FSD Programme</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
@@ -27,31 +27,34 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.33</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>6.0.13</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.fasterxml.jackson.core</groupId>-->
+<!--			<artifactId>jackson-databind</artifactId>-->
+<!--			<version>2.15.3</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 	</dependencies>
-
-<!--	<repositories>-->
-<!--		<repository>-->
-<!--			<id>maven2-repository.dev.java.net</id>-->
-<!--			<name>Java.net Repository for Maven</name>-->
-<!--			<url>http://download.java.net/maven/2/</url>-->
-<!--			<layout>default</layout>-->
-<!--		</repository>-->
-<!--	</repositories>-->
 
 	<build>
 		<plugins>
@@ -59,9 +62,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<image>
-						<builder>paketobuildpacks/builder-jammy-base:latest</builder>
-					</image>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 		</plugins>
