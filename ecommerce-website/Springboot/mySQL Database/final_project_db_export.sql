@@ -29,7 +29,7 @@ CREATE TABLE `product` (
   `brand` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `price` double DEFAULT NULL,
+  `price` decimal(38,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,7 +40,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Adidas','image/women-tracksuit.jpg','3-stripes Tracksuit',43.1),(2,'Urban Coco','image/women-skirt.jpg','Pocket Skirt',57.88),(4,'Love, Bonito.','image/women-long-sleeve.jpg','Long Sleeve T Shirt',8.99);
+INSERT INTO `product` VALUES (1,'Adidas','image/women-tracksuit.jpg','3-stripes Tracksuit',43.10),(2,'Urban Coco','image/women-skirt.jpg','Pocket Skirt',57.88),(3,'Love, Bonito.','image/women-long-sleeve.jpg','Long Sleeve T Shirt',8.99),(4,'Tommy Hilfiger','image/women-pants.jpg','Pull Up Pants',12.17),(5,'Beyond the Vines','image/women-blouse.jpg','Button Down Blouse',10.83);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +62,7 @@ CREATE TABLE `your_sequence_generator` (
 
 LOCK TABLES `your_sequence_generator` WRITE;
 /*!40000 ALTER TABLE `your_sequence_generator` DISABLE KEYS */;
-INSERT INTO `your_sequence_generator` VALUES (5);
+INSERT INTO `your_sequence_generator` VALUES (6);
 /*!40000 ALTER TABLE `your_sequence_generator` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -75,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-27 23:02:13
+-- Dump completed on 2023-11-28  1:09:54

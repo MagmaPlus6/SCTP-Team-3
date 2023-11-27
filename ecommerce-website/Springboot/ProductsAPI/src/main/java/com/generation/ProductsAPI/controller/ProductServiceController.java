@@ -1,5 +1,6 @@
 package com.generation.ProductsAPI.controller;
 
+import com.generation.ProductsAPI.exception.ProductNotFoundException;
 import com.generation.ProductsAPI.model.Product;
 import com.generation.ProductsAPI.service.ProductService;
 
@@ -28,9 +29,9 @@ public class ProductServiceController {
 
         List<Product> result = productService.getAllProducts();
 
-//        if(result.isEmpty()) {
-//            throw new ProductNotFoundException();
-//        }
+        if(result.isEmpty()) {
+            throw new ProductNotFoundException();
+        }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
@@ -38,9 +39,7 @@ public class ProductServiceController {
     @GetMapping("/{id}")
     public ResponseEntity<Object> getSingleProduct(@PathVariable Integer id){
 
-        Optional<Product> result = productService.getProduct(id);
-
-//        Product result = productService.getProduct(id).orElseThrow(() -> new ProductNotFoundException());
+        Product result = productService.getProduct(id).orElseThrow(() -> new ProductNotFoundException());
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
@@ -50,9 +49,9 @@ public class ProductServiceController {
 
         List<Product> result = productService.sortAllProductsByPriceAscend();
 
-//        if(result.isEmpty()) {
-//            throw new ProductNotFoundException();
-//        }
+        if(result.isEmpty()) {
+            throw new ProductNotFoundException();
+        }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
@@ -62,9 +61,9 @@ public class ProductServiceController {
 
         List<Product> result = productService.sortAllProductsByPriceDescend();
 
-//        if(result.isEmpty()) {
-//            throw new ProductNotFoundException();
-//        }
+        if(result.isEmpty()) {
+            throw new ProductNotFoundException();
+        }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
@@ -74,9 +73,9 @@ public class ProductServiceController {
 
         List<Product> result = productService.getProductsWithName(productName);
 
-//        if(result.isEmpty()) {
-//            throw new ProductNotFoundException();
-//        }
+        if(result.isEmpty()) {
+            throw new ProductNotFoundException();
+        }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
@@ -86,24 +85,24 @@ public class ProductServiceController {
 
         List<Product> result = productService.getProductsWithBrand(brandName);
 
-//        if(result.isEmpty()) {
-//            throw new ProductNotFoundException();
-//        }
+        if(result.isEmpty()) {
+            throw new ProductNotFoundException();
+        }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 
     @PostMapping()
-    public ResponseEntity<Object> createTask(@RequestBody Product product) {
+    public ResponseEntity<Object> createTask(@Valid @RequestBody Product product) {
 
         return new ResponseEntity<>(productService.createNewProduct(product), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateProduct(@PathVariable Integer id ,@RequestBody Product product) {
+    public ResponseEntity<Object> updateProduct(@PathVariable Integer id ,@Valid @RequestBody Product product) {
 
-//        Product result = productService.updateProduct(id, product).orElseThrow(() -> new ProductNotFoundException(id));
+        Product checkProduct = productService.updateProduct(id, product).orElseThrow(() -> new ProductNotFoundException());
 
         Optional<Product> result = productService.updateProduct(id, product);
 
@@ -113,7 +112,7 @@ public class ProductServiceController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteProduct(@PathVariable Integer id) {
 
-//        productService.getProduct(id).orElseThrow(() -> new ProductNotFoundException());
+        productService.getProduct(id).orElseThrow(() -> new ProductNotFoundException());
 
         productService.deleteProduct(id);
 
