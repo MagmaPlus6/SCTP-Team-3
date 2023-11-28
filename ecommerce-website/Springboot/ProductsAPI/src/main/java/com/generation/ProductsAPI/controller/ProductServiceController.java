@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/products")
-//@CrossOrigin("http://localhost:8080")
 public class ProductServiceController {
 
     ProductService productService;
@@ -94,7 +94,7 @@ public class ProductServiceController {
 
 
     @PostMapping()
-    public ResponseEntity<Object> createTask(@Valid @RequestBody Product product) {
+    public ResponseEntity<Object> createNewProduct(@Valid @RequestBody Product product) {
 
         return new ResponseEntity<>(productService.createNewProduct(product), HttpStatus.CREATED);
     }
@@ -116,7 +116,7 @@ public class ProductServiceController {
 
         productService.deleteProduct(id);
 
-        return new ResponseEntity<>("Task is deleted successfully.", HttpStatus.OK);
+        return new ResponseEntity<>("Product is deleted successfully.", HttpStatus.OK);
     }
 
 
