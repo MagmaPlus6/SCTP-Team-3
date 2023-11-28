@@ -1,74 +1,40 @@
-// save temporary data to local storage
-//  ----------- area to invoke the functions ----------- 
 
-// temporary data
-var data = [];
+// ----------------------- Get all products from MySQL database -----------------------------
 
-data = [
+const productsController = new Controller();
 
-    { 
-        // id: 1, 
-        name: "3-stripes Tracksuit",
-        brand: "Adidas",
-        price: 43.10.toFixed(2), // without toFixed(2) , 43.1 will be displayed
-        image: "women-tracksuit.jpg", 
-    },
-    {
-        // id: 2, 
-        name: "Pocket Skirt",
-        brand: "Urban Coco",
-        price: 57.88,
-        image: "women-skirt.jpg", 
-    },
-    { 
-        // id: 3, 
-        name: "Long Sleeve T Shirt",
-        brand: "Love, Bonito.",
-        price: 8.99,
-        image: "women-long-sleeve.jpg", 
-    },
-    { 
-        // id: 4, 
-        name: "Pull Up Pants",
-        brand: "Tommy Hilfiger",
-        price: 12.17,
-        image: "women-pants.jpg", 
-    },
-    { 
-        // id: 5, 
-        name: "Button Down Blouse",
-        brand: "Beyond the Vines",
-        price: 10.83,
-        image: "women-blouse.jpg", 
-    },
-    { 
-        // id: 6, 
-        name: "Jogging Gym Pants",
-        brand: "Curious Creatures",
-        price: 16.01,
-        image: "women-gym-pants.jpg", 
-    },
+// Call the fetch function passing the url of the API AS a parameter
 
-]; 
+fetch('http://localhost:8080/products')
+.then(response => response.json())
+.then(data => {
+    // Codes for handling the data you get from the API
+    productsController.products = data;
+    productsController.displayCart(data);
 
-/*
-    {
-        // id: 7, 
-        name: "Fitness T Shirt",
-        brand: "In Good Company",
-        price: 29.63,
-        image: "women-fitness-shirt.jpg", 
-    },
-    { 
-        // id: 8, 
-        name: "Gym Training Top",
-        brand: "Just Cool",
-        price: 10.48,
-        image: "women-gym-top.jpg", 
-    },
-*/
+    console.log('Success:', data);
+})
+.catch((error) => {
+    // Run code if the server returns any errors 
+    console.error('Error:', error);
+});
 
+// Cannot work cuz need additional Library to run asyn operations 
+// const getAllProducts = async () => {
+//     try {
+//         const response = await fetch('http://localhost:8080/products');
 
-// Initialize a new TaskManager with currentId set based on the length of 'data' (number of elements in data)
-const productsController = new Controller(data.length, data);
-productsController.loadDataFromLocalStorage();
+//         if(response.ok) {
+//             const jsonResponse = await response.json();
+//             const productsController = new Controller(jsonResponse.length, jsonResponse);
+//             productsController.loadDataFromLocalStorage();
+
+//             console.log('Success:', jsonResponse);
+//         }
+//         throw new Error('Request failed!');
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// getAllProducts();
