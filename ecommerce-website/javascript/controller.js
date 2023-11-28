@@ -85,7 +85,7 @@ class Controller{
             subProductList.innerHTML = `
                 <a href="#/" class="text-decoration-none text-dark">
                     <div class="card">
-                        <img class="card-img-top" src="${data[index].image}">
+                        <img class="card-img-top" src="image/${data[index].image}">
                         <div class="card-body">
                             <p class="card-title text-muted">${data[index].brand}</p>
                             <h5 class="card-text">${data[index].name}</h5>

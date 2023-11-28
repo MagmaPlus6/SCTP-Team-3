@@ -20,7 +20,7 @@ newProductForm.addEventListener('submit', (event) => {
     const name = newProductName.value;
     const brand = newProductBrand.value;
     const price = newProductPrice.value;
-    const image = newProductImage.value;
+    const image = newProductImage.value.replace(/^.*[\\/]/, '');
 
     /*
         Validation code here
