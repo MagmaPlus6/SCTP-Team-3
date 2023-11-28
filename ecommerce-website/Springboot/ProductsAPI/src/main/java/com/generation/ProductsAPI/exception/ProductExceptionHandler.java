@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.util.HashMap;
 import java.util.Map;
 
-@Order(Ordered.HIGHEST_PRECEDENCE)  // For exceptions, TaskExceptionHandler takes precedence
+@Order(Ordered.HIGHEST_PRECEDENCE)  // For exceptions, ProductExceptionHandler takes precedence
 @ControllerAdvice   // Addresses exceptions across the entire application (globally)
 public class ProductExceptionHandler extends ResponseEntityExceptionHandler {
 
