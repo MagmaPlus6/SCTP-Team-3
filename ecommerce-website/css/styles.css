@@ -194,4 +194,17 @@ input#form1.form-control{text-align: center;}
 label.form-label{padding-left:25px;}
 .w-100{width:200px;height: 200px;}
 .px-3.me-2{height: 37px;} /* Button Size */ 
-.px-3.ms-2{height: 37px;} 
+.px-3.ms-2{height: 37px;}
+
+
+/*------------------Product Details -----------------*/
+hr{height:5px;}
+.img-fluid{height:500px}
+.form.pt-2{margin-top: 500px}
+.mid-section{display: flex;}
+.ms-text{width:100%; text-align:center; border: 5px solid black;}
+
+/*----------------Product Details (Sub-section)--------*/
+.similar-product{text-align: center;}
+.similar-product-img{display: flex; justify-content:space-around; width:100%; height:250px;}
+img.similar-product-img{width:150px;}
