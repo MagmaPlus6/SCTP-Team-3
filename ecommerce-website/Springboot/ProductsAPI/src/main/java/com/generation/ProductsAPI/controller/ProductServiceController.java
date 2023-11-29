@@ -102,15 +102,13 @@ public class ProductServiceController {
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateProduct(@PathVariable Integer id ,@Valid @RequestBody Product product) {
 
-        Product checkProduct = productService.updateProduct(id, product).orElseThrow(() -> new ProductNotFoundException());
-
-        Optional<Product> result = productService.updateProduct(id, product);
+        Product result = productService.updateProduct(id, product).orElseThrow(() -> new ProductNotFoundException());;
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteProduct(@PathVariable Integer id) {
+    public ResponseEntity<String> deleteProduct(@PathVariable Integer id) {
 
         productService.getProduct(id).orElseThrow(() -> new ProductNotFoundException());
 
