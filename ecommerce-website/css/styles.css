@@ -193,5 +193,5 @@ footer {
 input#form1.form-control{text-align: center;}
 label.form-label{padding-left:25px;}
 .w-100{width:200px;height: 200px;}
-.px-3.me-2{height: 37px;}
-.px-3.ms-2{height: 37px;}
+.px-3.me-2{height: 37px;} /* Button Size */ 
+.px-3.ms-2{height: 37px;} 
