@@ -39,7 +39,7 @@ public class Product {
     // @DecimalMin @Digits do not support Double
 
     @Column
-    @NotBlank(message = "Please enter the image link.")
+    @NotBlank(message = "Please enter the image name.")
     private String image;
 
     public Product(String name, String brand, BigDecimal price, String image){
