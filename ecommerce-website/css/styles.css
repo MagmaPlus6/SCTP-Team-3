@@ -197,12 +197,12 @@ label.form-label{padding-left:25px;}
 .px-3.ms-2{height: 37px;}
 
 
-/*------------------Product Details -----------------*/
+/*------------------Product Details Page-----------------*/
 hr{height:5px;}
 .img-fluid{height:500px}
-.form.pt-2{margin-top: 500px}
+.form.pt-2{margin-top: 60px}
 .mid-section{display: flex;}
-.ms-text{width:100%; text-align:center; border: 5px solid black;}
+.ms-text{width:100%; text-align:center;}
 
 /*----------------Product Details (Sub-section)--------*/
 .similar-product{text-align: center;}
@@ -210,8 +210,9 @@ hr{height:5px;}
 img.similar-product-img{width:150px;}
 
 /*---------------Product Details (Sub-section,reviewer)---*/
-.reviewer-img{display: flex;border: 5px solid black;}
+.reviewer-img{display: flex;}
 p{margin-left: 30px;}
-Strong{margin-left:30px;}
-h3#review{margin-left:180px;}
+Strong{margin-left:20px;}
+h3#review{margin-left:30px;}
+#zw{margin-left: 5px;}
 .checked {color: orange;} /*Configuration for stars*/
