@@ -208,3 +208,10 @@ hr{height:5px;}
 .similar-product{text-align: center;}
 .similar-product-img{display: flex; justify-content:space-around; width:100%; height:250px;}
 img.similar-product-img{width:150px;}
+
+/*---------------Product Details (Sub-section,reviewer)---*/
+.reviewer-img{display: flex;border: 5px solid black;}
+p{margin-left: 30px;}
+Strong{margin-left:30px;}
+h3#review{margin-left:180px;}
+.checked {color: orange;} /*Configuration for stars*/
