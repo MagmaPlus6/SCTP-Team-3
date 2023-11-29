@@ -3,54 +3,11 @@ class Controller{
 
     // constructor of a class is typically used for initialisation
     // 'this' is a keyword, properties that belong to this class are declared here
-    // start the current id based on the passed in value (or default to zero)
-    // and store the passed-in param 'data' to localStorage via storeDataTolocalStorage
 
-    constructor(currentId = 0, data = []){
+    constructor(data = []){
         this.products = data !== null && data;  // class Controller's property: products
-        this.currentId = currentId;             // class Controller's property: currentId
-
-        this.storeDataToLocalStorage(data);
-        
+        // this.displayCart(data); cannot work, will display empty product message even though it's not empty
     };
-
-    // storeDataToLocalStorage() method belongs to class Controller
-    // if localStorage 'productList' doesn't exist
-    // ensure there are values in 'data' before storing the data
-    // current id is used here to determine the currentId in this instance of the object
-    // stores the param's data into the web browser's localStorage
-    // the localStorage variable is defined with the name 'productList'
-
-    storeDataToLocalStorage(data){
-        if(!localStorage.getItem("productList")){
-            const sampleItems = [];
-            if(data.length > 0){
-                for (let index = 0; index < this.currentId; index++) {
-                    sampleItems.push({
-                        id: index+1,  // increment the id
-                        name: data[index].name,
-                        brand: data[index].brand,
-                        price: data[index].price,
-                        image: data[index].image,
-                    })
-                }
-            }
-            localStorage.setItem("productList", JSON.stringify(sampleItems));
-        }
-    }
-
-    // loadDataFromLocalStorage() method belongs to class Controller
-    // loads data called 'productList' from localStorage - see helpers.js
-    // after 'productList' is loaded from localStorage to local constant 'products'
-    // pass the values from 'products' to method displayCart() to display the contents
-
-    loadDataFromLocalStorage() {
-        const storageItems = localStorage.getItem("productList");
-        if (storageItems) {
-            const products = JSON.parse(storageItems);
-            this.displayCart(products);
-        }
-    }
 
     // displayCart() method belongs to class Controller
     // it receives an array of Objects
@@ -89,7 +46,7 @@ class Controller{
                         <div class="card-body">
                             <p class="card-title text-muted">${data[index].brand}</p>
                             <h5 class="card-text">${data[index].name}</h5>
-                            <p class="card-text">$${data[index].price}</p>
+                            <p class="card-text">$${data[index].price.toFixed(2)}</p>
                         </div>
                     </div>
                 </a>
@@ -97,50 +54,76 @@ class Controller{
             showProductList.appendChild(subProductList);
         }
 
+        // Alternative: parseFloat(data[index].price).toFixed(2)
+        // if don't put, 43.10 will be displayed as 43.1
+
     };
 
-    // addProduct() method belongs to class Controller
-    // when called, addProduct instnatiates a constant that stores the passed-in params 
-    // and pushes each new product into products property (refer to constructor)
-    // and adds each product to localStorage via its method setItem()
+    // use the Fetch API to consume the save item endpoint
+    // implement a new function called save that will POST the new item's data using the fetch function
 
-    // (A) if 'productList' exists in localStorage, append to it and exit (return)
-    // (B) otherwise, use the products property of Controller
-
-    addProduct(name, brand, price, image){
-
-        const storageItems = localStorage.getItem("productList");
-        
-        // (A)
-        if (storageItems) {
-            const products = JSON.parse(storageItems);
-            console.log(`Testing products length ${products.length}`);
-            const product = {
-                id: products.length+1,  // increment the id for each newly added product
-                name: name,
-                brand: brand,
-                price: price,
-                image: image,
-            }
-            products.push(product);
-            localStorage.setItem("productList", JSON.stringify(products));
-            return;
-        }
-        
-        // (B)
-        const setId = !storageItems ? 1 : storageItems.length++;
-
-        const product = {
-            id: setId, // this.currentId++,   
+    createNewProduct(name, brand, price, image){
+        const data = { 
             name: name,
-            brand: brand,
-            price: price,
-            image: image,
-        }
-        this.products.push(product);
-        localStorage.setItem("productList", JSON.stringify(this.products));
-    };
+            brand: brand, 
+            price: price, 
+            image: image, 
+        };
+
+        fetch('http://localhost:8080/products', {
+        // Call the fetch function passing the url of the API AS a parameter
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Codes for handling the data you get from the API
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            // Run code if the server returns any errors 
+            console.error('Error:', error);
+        });
+    }
+
+    // to edit
+    update({name, brand, price, image}){
+        const data = { name, brand, price, image };
+
+        fetch('http://localhost:8080/products/{id}', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });    
+    }
+
+    // to edit
+    delete(id){
+        fetch('http://localhost:8080/products/{id}', {
+            method: 'DELETE'
+        })
+    }
+
+    // to edit
+    findById(id){
+        fetch('http://localhost:8080/products/{id}', {
+            method: 'GET'
+        })    
+    }
 
 }
+
 
 
