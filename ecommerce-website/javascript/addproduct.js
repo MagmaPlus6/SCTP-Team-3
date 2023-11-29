@@ -32,11 +32,7 @@ if(newProductForm) {
         newProductImage.value.replace(/^.*[\\/]/, '') 
         will show as: women-gym-pants.jpg 
         */
-    
-        /*
-            Validation code here
-        */
-    
+     
         // Add the product to the ItemsController (add to database)
         productsController.createNewProduct(name, brand, price, image);
     
@@ -50,6 +46,7 @@ if(newProductForm) {
         // newProductImage.value = '';  
     
         // think of how to reset entire field after submit
+        newProductForm.reset();
     
     });
 }
