@@ -46,7 +46,7 @@ class ProductServiceControllerTest {
         // set up some initializations before we can run the test
     void init(){
         product1 = new Product("Grey casual shirt", "Tommy Hilfiger", new BigDecimal("50.10"), "casual-shirt.jpg");
-        product2 = new Product("Blue Khakis", "Adidas", new BigDecimal("27.83"), "blue-khakis.jpg");
+        product2 = new Product("Blue khakis", "Adidas", new BigDecimal("27.83"), "blue-khakis.jpg");
         updatedProduct = new Product("Grey casual shirt", "Tommy Hilfiger", new BigDecimal("45.10"), "casual-shirt.jpg");
     }
 

@@ -5,6 +5,8 @@
 // Select the New Item Form
 const newProductForm = document.querySelector('#form1');
 
+const defaultImage = document.querySelector('#upLoadImg')
+
 // To fix the "cannot read property 'addEventListener' of null" error, check that the element is not null before calling the addEventListener() method on it.
 if(newProductForm) {
 
@@ -32,14 +34,14 @@ if(newProductForm) {
         newProductImage.value.replace(/^.*[\\/]/, '') 
         will show as: women-gym-pants.jpg 
         */
-     
+    
         // Add the product to the ItemsController (add to database)
         productsController.createNewProduct(name, brand, price, image);
     
         // Run BootStrap4's toast to show the activity is complete.
         $('.toast').toast('show');
     
-        // Clear the form
+        // Clear individual inputs
         // newProductName.value = '';
         // newProductBrand.value = '';   
         // newProductPrice.value = '';  
@@ -47,6 +49,7 @@ if(newProductForm) {
     
         // think of how to reset entire field after submit
         newProductForm.reset();
+        defaultImage.src = "image/blank-image.png"
     
     });
 }
