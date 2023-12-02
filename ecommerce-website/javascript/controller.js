@@ -29,7 +29,7 @@ class Controller{
             let noProductList = document.createElement("div");
             let preProductList = document.querySelector(".pre-product-list")
             noProductList.style.textAlign = "center";
-            noProductList.innerHTML = `<span class=\"no-products\">There are no products at the moment. Stay tuned for future updates!</span>`
+            noProductList.innerHTML = `<span class=\"no-products\">There are no product(s).</span>`
             preProductList.appendChild(noProductList);
             document.querySelector("nav .pagination").style.display = "none";
             return;
@@ -56,7 +56,6 @@ class Controller{
 
         // Alternative: parseFloat(data[index].price).toFixed(2)
         // if don't put, 43.10 will be displayed as 43.1
-
     };
 
     // use the Fetch API to consume the save item endpoint
