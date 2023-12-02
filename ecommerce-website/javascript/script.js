@@ -51,17 +51,7 @@ productImage.onchange = evt => {
   if (file) {
     upLoadImg.src = URL.createObjectURL(file)
   }
-
-  console.log(upLoadImg.src)
-  console.log(file.name)
-  console.log(productImage.value)
-
 }
-
-console.log(upLoadImg.src)
-console.log(file.name)
-console.log(productImage.value)
-
 
 /*
 $(document).on('change', '.file-input', function() {
