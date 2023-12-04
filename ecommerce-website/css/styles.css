@@ -195,6 +195,7 @@ label.form-label{padding-left:25px;}
 .w-100{width:200px;height: 200px;}
 .px-3.me-2{height: 37px;} /* Button Size */ 
 .px-3.ms-2{height: 37px;}
+.ms-image{width: 100%;}
 
 
 /*------------------Product Details Page-----------------*/
@@ -202,7 +203,10 @@ hr{height:5px;}
 .img-fluid{height:500px}
 .form.pt-2{margin-top: 60px}
 .mid-section{display: flex;}
-.ms-text{width:100%; text-align:center;}
+#Reebok-title{margin-left:30px;}
+.ms-text-2{display: flex; justify-content: center;justify-content:space-around;margin-right:260px;}
+h2{margin-right:500px;margin-left:30px;}
+.the-stars{margin-left:30px;}
 
 /*----------------Product Details (Sub-section)--------*/
 .similar-product{text-align: center;}
@@ -211,8 +215,9 @@ img.similar-product-img{width:150px;}
 
 /*---------------Product Details (Sub-section,reviewer)---*/
 .reviewer-img{display: flex;}
-p{margin-left: 30px;}
-Strong{margin-left:20px;}
+#wording{margin-left: 30px;}
 h3#review{margin-left:30px;}
 #zw{margin-left: 5px;}
+#Add-to-cart-button{margin-left:30px ;}
+p#stars{margin-left: 10px;}
 .checked {color: orange;} /*Configuration for stars*/
