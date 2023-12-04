@@ -92,6 +92,17 @@ public class ProductServiceController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    @GetMapping("/")
+    public ResponseEntity<List<Product>> searchforProducts(@RequestParam String name, @RequestParam String brand) {
+
+        List<Product> result = productService.searchProducts(name, brand);
+
+        if(result.isEmpty()) {
+            throw new ProductNotFoundException();
+        }
+
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 
     @PostMapping()
     public ResponseEntity<Object> createNewProduct(@Valid @RequestBody Product product) {

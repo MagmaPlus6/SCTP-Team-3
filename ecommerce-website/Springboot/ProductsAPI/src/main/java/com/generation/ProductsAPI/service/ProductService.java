@@ -15,7 +15,6 @@ public interface ProductService {
     public abstract List<Product> sortAllProductsByPriceDescend();
     public abstract Optional<Product> getProduct(Integer id);
     public abstract List<Product> getProductsWithName(String productName);
-    public abstract List<Product> getProductsWithBrand(String brandName);
-
-
+    public abstract List<Product> getProductsWithBrand(String productBrand);
+    public abstract List<Product> searchProducts(String productName, String productBrand);
 }
