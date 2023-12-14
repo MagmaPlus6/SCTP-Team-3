@@ -6,7 +6,7 @@ class Controller{
 
     constructor(data = []){
         this.products = data !== null && data;  // class Controller's property: products
-        // this.displayCart(data); cannot work, will display empty product message even though it's not empty
+        this.displayCart(data); // cannot work, will display empty product message even though it's not empty
     };
 
     // displayCart() method belongs to class Controller
@@ -27,12 +27,17 @@ class Controller{
         // (A)
         if(!data.length){
             let noProductList = document.createElement("div");
+            noProductList.className = "no-products";
             let preProductList = document.querySelector(".pre-product-list")
             noProductList.style.textAlign = "center";
-            noProductList.innerHTML = `<span class=\"no-products\">There are no product(s).</span>`
+            noProductList.innerHTML = `<span>No product(s) found.</span>`
             preProductList.appendChild(noProductList);
             document.querySelector("nav .pagination").style.display = "none";
             return;
+        } else {
+            let noProductList = document.querySelector(".no-products");
+            noProductList.parentNode.removeChild(noProductList);
+            document.querySelector("nav .pagination").style.display = "";
         }
 
         // (B) 
