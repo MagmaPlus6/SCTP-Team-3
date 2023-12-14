@@ -46,12 +46,12 @@ class Controller{
             subProductList.className = "col pb-4";
             subProductList.innerHTML = `
                 <a href="#/" class="text-decoration-none text-dark">
-                    <div class="card">
+                    <div class="card h-100">
                         <img class="card-img-top" src="image/${data[index].image}">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <p class="card-title text-muted">${data[index].brand}</p>
                             <h5 class="card-text">${data[index].name}</h5>
-                            <p class="card-text">$${data[index].price.toFixed(2)}</p>
+                            <p class="card-text mt-auto">$${data[index].price.toFixed(2)}</p>
                         </div>
                     </div>
                 </a>
