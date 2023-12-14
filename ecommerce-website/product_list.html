@@ -11,6 +11,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <title>Product List</title>
@@ -32,7 +33,7 @@
                 <a href="home.html" class="nav-link" id="navigation-name">Home</a>
              </li>
              <li class="nav-item mr-2">
-                <a href="#" class="nav-link" id="navigation-name">Product</a>
+                <a href="" class="nav-link" id="navigation-name">Product</a>
              </li>
              <li class="nav-item mr-2">
                 <a href="item_form.html" class="nav-link" id="navigation-name">Create</a>
@@ -50,26 +51,26 @@
     
     <!-- ------------- Secondary Navigation section ------------- -->
     <nav class="navbar navbar-expand justify-content-between navbar-light second-nav">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bold">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Women<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Men</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Kids</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Baby</a>
-              </li>            
-            </ul>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bold">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Women<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Men</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Kids</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Baby</a>
+        </li>            
+      </ul>
 
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search products" aria-label="Search" required>
-              <button class="btn my-2 my-sm-0 d-flex align-items-center" type="submit"><i class="material-icons">search</i></button>
-           </form>
-      </nav>  
+      <form class="form-inline my-2 my-lg-0" action="" method="post" id="searchForm">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search products" aria-label="Search" required>
+        <button class="btn my-2 my-sm-0 d-flex align-items-center" type="submit"><i class="material-icons">search</i></button>
+      </form>
+    </nav>  
       
     <nav class="second-nav-mobile bg-light">
       <div class="d-flex justify-content-around py-3">
@@ -91,11 +92,165 @@
 
     <!-- ------------- Product List section ------------- -->
     <div class="container-fluid px-4 bg-light pb-2 pre-product-list">
-        <div class="product-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pt-4">
+      <!-- class pre-product-list is for controller.js to display message to products found-->
+      
+      <div class="filter-sort-bar row pt-2">
+        <h4 class="col-3 my-auto">Filter by</h4>
+        <div class="col-3">
+          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <option selected>Sort by</option>
+            <option value="Popular">Popular</option>
+            <option value="Latest">Latest</option>
+            <option value="Ascending Price">Price (Low to High)</option>
+            <option value="Descending Price">Price (High to Low)</option>         
+          </select>
+        </div>
+        <p class="col my-auto text-right">8 products found</p>
+      </div>
+
+      <div class="row">
+        <div class="filter-products pt-3 col-3">
+          <div class="card">
+            <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <div class="card-header" id="headingOne">
+                <span>Type</span>
+                <i class="bi bi-chevron-down float-right"></i>
+              </div>
+            </button>
+        
+            <div id="collapseOne" class="collapse multi-collapse" aria-labelledby="headingOne">
+              <div class="card-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="form-check-label" for="defaultCheck1">
+                    Dresses  
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                  <label class="form-check-label" for="defaultCheck2">
+                    Jeans
+                  </label>
+                </div>     
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                  <label class="form-check-label" for="defaultCheck3">
+                    Pants
+                  </label>
+                </div> 
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                  <label class="form-check-label" for="defaultCheck4">
+                    Polos
+                  </label>
+                </div> 
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                  <label class="form-check-label" for="defaultCheck5">
+                    Shirts
+                  </label>
+                </div>  
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <div class="card-header" id="headingTwo">
+                <span>Brand</span>
+                <i class="bi bi-chevron-down float-right"></i>
+              </div>
+            </button>
+
+            <div id="collapseTwo" class="collapse multi-collapse" aria-labelledby="headingTwo">
+              <div class="card-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckVines">
+                  <label class="form-check-label" for="defaultCheckVines">
+                    Beyond the Vines
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckReverie">
+                  <label class="form-check-label" for="defaultCheckReverie">
+                    Chic Reverie
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckCreature">
+                  <label class="form-check-label" for="defaultCheckCreature">
+                    Curious Creature
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckEcho">
+                  <label class="form-check-label" for="defaultCheckEcho">
+                    Echo
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckCompany">
+                  <label class="form-check-label" for="defaultCheckCompany">
+                    In Good Company
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <div class="card-header" id="headingThree">
+                <span>Size</span>
+                <i class="bi bi-chevron-down float-right"></i>
+              </div>
+            </button>
+
+            <div id="collapseThree" class="collapse multi-collapse" aria-labelledby="headingThree">
+              <div class="card-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckXS">
+                  <label class="form-check-label" for="defaultCheckXS">
+                    XS
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckS">
+                  <label class="form-check-label" for="defaultCheckS">
+                    S
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckM">
+                  <label class="form-check-label" for="defaultCheckM">
+                    M
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckL">
+                  <label class="form-check-label" for="defaultCheckL">
+                    L
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckXL">
+                  <label class="form-check-label" for="defaultCheckXL">
+                    XL
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+        <div class="product-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pt-3 col">
+          <!-- class product list is for controller.js to populate products from backend/database after fetching -->
+
           <!-- Original html for product list
             <div class="col pb-4">
                 <a href="#/" class="text-decoration-none text-dark">
-                    <div class="card">
+                    <div class="card h-100">
                         <img class="card-img-top" src="image/women-gym-top.jpg" alt="Women gym top">
                         <div class="card-body">
                           <p class="card-title text-muted">Just Cool</p>
@@ -105,8 +260,9 @@
                       </div>
                 </a>
             </div> 
-           -->
+          -->
         </div>
+      </div>
 
     </div>
 
