@@ -74,25 +74,25 @@ class Controller{
             image: image, 
         };
 
-        // saveProduct(data);
+        saveProduct(data);
 
-        fetch('http://localhost:8080/products', {
-        // Call the fetch function passing the url of the API AS a parameter
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Codes for handling the data you get from the API
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            // Run code if the server returns any errors 
-            console.error('Error:', error);
-        });
+        // fetch('http://localhost:8080/products', {
+        // // Call the fetch function passing the url of the API AS a parameter
+        // method: 'POST',
+        // headers: {
+        //     'Content-Type': 'application/json',
+        // },
+        // body: JSON.stringify(data),
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     // Codes for handling the data you get from the API
+        //     console.log('Success:', data);
+        // })
+        // .catch((error) => {
+        //     // Run code if the server returns any errors 
+        //     console.error('Error:', error);
+        // });
     }
 
     // to edit
@@ -130,6 +130,13 @@ class Controller{
     }
 
 }
+
+// ------------------------------------------------------------------------------------
+
+const productsController = new Controller();
+productsController.displayCart([]);
+
+getAllProducts();
 
 
 
