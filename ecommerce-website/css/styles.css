@@ -68,7 +68,7 @@
 }
 
 .btn-info {background-color: #176B87;}
-.flex-container .card-img-top {height: 300px;}
+.flex-container .homepage-card {height: 300px;}
 .flex-container .card .btn{display: block;}
 
 /*Bottom background*/
@@ -170,6 +170,12 @@ footer {
 
 .second-nav-mobile img {
     height: 40px;
+}
+
+.card-img-fit {
+    /* width: 100%; */
+    height: 15vw;
+    object-fit: contain;
 }
 
 @media (max-width: 576px) {
