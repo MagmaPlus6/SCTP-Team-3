@@ -1,6 +1,6 @@
 
 // Initialize a new ItemsController with currentId set to 0
-// const productsController = new Controller();
+const productsController1 = new Controller();
 
 // Select the New Item Form
 const newProductForm = document.querySelector('#form1');
@@ -12,6 +12,8 @@ if(newProductForm) {
 
     // Add an 'onsubmit' event listener
     newProductForm.addEventListener('submit', (event) => {
+
+        console.log('submitting')
         // Prevent default action
         event.preventDefault();
     
@@ -36,7 +38,7 @@ if(newProductForm) {
         */
     
         // Add the product to the ItemsController (add to database)
-        productsController.createNewProduct(name, brand, price, image);
+        productsController1.createNewProduct(name, brand, price, image);
     
         // Run BootStrap4's toast to show the activity is complete.
         $('.toast').toast('show');

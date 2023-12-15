@@ -6,7 +6,7 @@ class Controller{
 
     constructor(data = []){
         this.products = data !== null && data;  // class Controller's property: products
-        this.displayCart(data); // cannot work, will display empty product message even though it's not empty
+        // this.displayCart(data); // cannot work, will display empty product message even though it's not empty
     };
 
     // displayCart() method belongs to class Controller
@@ -47,7 +47,7 @@ class Controller{
             subProductList.innerHTML = `
                 <a href="#/" class="text-decoration-none text-dark">
                     <div class="card h-100">
-                        <img class="card-img-top" src="image/${data[index].image}">
+                        <img class="card-img-top card-img-fit" src="image/${data[index].image}">
                         <div class="card-body d-flex flex-column">
                             <p class="card-title text-muted">${data[index].brand}</p>
                             <h5 class="card-text">${data[index].name}</h5>
@@ -74,25 +74,25 @@ class Controller{
             image: image, 
         };
 
-        saveProduct(data);
+        // saveProduct(data);
 
-        // fetch('http://localhost:8080/products', {
-        // // Call the fetch function passing the url of the API AS a parameter
-        // method: 'POST',
-        // headers: {
-        //     'Content-Type': 'application/json',
-        // },
-        // body: JSON.stringify(data),
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     // Codes for handling the data you get from the API
-        //     console.log('Success:', data);
-        // })
-        // .catch((error) => {
-        //     // Run code if the server returns any errors 
-        //     console.error('Error:', error);
-        // });
+        fetch('http://localhost:8080/products', {
+        // Call the fetch function passing the url of the API AS a parameter
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Codes for handling the data you get from the API
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            // Run code if the server returns any errors 
+            console.error('Error:', error);
+        });
     }
 
     // to edit
