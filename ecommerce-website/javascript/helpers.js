@@ -1,5 +1,5 @@
-const productsController = new Controller();
-productsController.displayCart([]);
+
+// Function to get all products
 
 const getAllProducts = async () => {
     try {
@@ -19,28 +19,27 @@ const getAllProducts = async () => {
 }
 
 
-getAllProducts();
+// Function to get save product
 
+const saveProduct = async (data) => {
+    try {
+        const response = await fetch('http://localhost:8080/products', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),            
+        });
 
-// const saveProduct = async (data) => {
-//     try {
-//         const response = await fetch('http://localhost:8080/products', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify(data),            
-//         });
-
-//         if(response.ok) {
-//             const jsonResponse = await response.json();
-//             console.log('Success:', jsonResponse);
-//         }
-//         // throw new Error('Request failed!');
-//     } catch (error) {
-//         console.log('Error:', error);
-//     }
-// }
+        if(response.ok) {
+            const jsonResponse = await response.json();
+            console.log('Success:', jsonResponse);
+        }
+        // throw new Error('Request failed!');
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}
 
 
 

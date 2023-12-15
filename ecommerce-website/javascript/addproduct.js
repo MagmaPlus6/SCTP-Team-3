@@ -1,9 +1,9 @@
 
 // Initialize a new ItemsController with currentId set to 0
-const productsController1 = new Controller();
+// const productsController = new Controller();
 
 // Select the New Item Form
-const newProductForm = document.querySelector('#form1');
+const newProductForm = document.querySelector('#createNewProductForm');
 
 const defaultImage = document.querySelector('#upLoadImg')
 
@@ -38,7 +38,7 @@ if(newProductForm) {
         */
     
         // Add the product to the ItemsController (add to database)
-        productsController1.createNewProduct(name, brand, price, image);
+        productsController.createNewProduct(name, brand, price, image);
     
         // Run BootStrap4's toast to show the activity is complete.
         $('.toast').toast('show');
