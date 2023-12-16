@@ -13,7 +13,6 @@ if(newProductForm) {
     // Add an 'onsubmit' event listener
     newProductForm.addEventListener('submit', (event) => {
 
-        console.log('submitting')
         // Prevent default action
         event.preventDefault();
     
