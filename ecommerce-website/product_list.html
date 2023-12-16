@@ -66,12 +66,20 @@
         </li>            
       </ul>
 
-      <form class="form-inline my-2 my-lg-0" action="" method="post" id="searchForm">
+      <!-- <form class="form-inline my-2 my-lg-0" action="" method="get" id="searchProductsForm">
         <input class="form-control mr-sm-2" type="search" placeholder="Search products" aria-label="Search" required>
         <button class="btn my-2 my-sm-0 d-flex align-items-center" type="submit"><i class="material-icons">search</i></button>
+      </form> -->
+
+      <form class="form-inline my-2 my-lg-0" method="get" id="searchProductsForm" autocomplete="on">
+        <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search products" aria-label="Search" required>
+        <button class="btn my-2 my-sm-0 d-flex align-items-center" type="submit" value="Submit"><i class="material-icons">search</i></button>
       </form>
+
+
     </nav>  
       
+    <!-- ------------------- Mobile version ---------------------------- -->
     <nav class="second-nav-mobile bg-light">
       <div class="d-flex justify-content-around py-3">
         <div class="image-woman"><a href="#"><img src="image/face_3_FILL0_wght400_GRAD0_opsz24.svg" alt="Women section icon"></a></div>
@@ -80,11 +88,11 @@
         <div><a href="#"><img src="image/crib_FILL0_wght400_GRAD0_opsz24.svg" alt="Baby section icon"></a></div>        
       </div>
       <div class="container-fluid px-4">
-        <form class="form-inline my-lg-0 row justify-content-center">
+        <form class="form-inline my-lg-0 row justify-content-center" method="get" id="searchProductsForm" autocomplete="on">
           <div class="col-11">
-            <input class="form-control mr-sm-2 w-100" type="search" placeholder="Search products" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search products" aria-label="Search">
           </div>
-          <button class="btn my-2 my-sm-0 d-flex align-items-center col-1" type="submit"><i class="material-icons">search</i></button>
+          <button class="btn my-2 my-sm-0 d-flex align-items-center col-1" type="submit" value="Submit"><i class="material-icons">search</i></button>
         </form>
       </div>
 
@@ -97,7 +105,7 @@
       <div class="filter-sort-bar row pt-2">
         <h4 class="col-3 my-auto">Filter by</h4>
         <div class="col-3">
-          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+          <select class="custom-select my-1 mr-sm-2" id="sortProducts">
             <option selected>Sort by</option>
             <option value="Popular">Popular</option>
             <option value="Latest">Latest</option>
@@ -105,36 +113,36 @@
             <option value="Descending Price">Price (High to Low)</option>         
           </select>
         </div>
-        <p class="col my-auto text-right">8 products found</p>
+        <p class="col my-auto text-right number-of-products">8 products found</p>
       </div>
 
       <div class="row mx-auto">
         <div class="filter-products pt-3 col-3 pl-0">
           <div class="card">
-            <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              <div class="card-header" id="headingOne">
+            <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseType" aria-expanded="false" aria-controls="collapseType">
+              <div class="card-header" id="headingType">
                 <span>Type</span>
                 <i class="bi bi-chevron-down float-right"></i>
               </div>
             </button>
         
-            <div id="collapseOne" class="collapse multi-collapse" aria-labelledby="headingOne">
+            <div id="collapseType" class="collapse multi-collapse" aria-labelledby="headingType">
               <div class="card-body">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                  <label class="form-check-label" for="defaultCheck1">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckDresses">
+                  <label class="form-check-label" for="defaultCheckDresses">
                     Dresses  
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                  <label class="form-check-label" for="defaultCheck2">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckJeans">
+                  <label class="form-check-label" for="defaultCheckJeans">
                     Jeans
                   </label>
                 </div>     
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                  <label class="form-check-label" for="defaultCheck3">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckPants">
+                  <label class="form-check-label" for="defaultCheckPants">
                     Pants
                   </label>
                 </div> 
@@ -145,8 +153,8 @@
                   </label>
                 </div> 
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
-                  <label class="form-check-label" for="defaultCheck5">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckShirts">
+                  <label class="form-check-label" for="defaultCheckShirts">
                     Shirts
                   </label>
                 </div>  
@@ -155,14 +163,14 @@
           </div>
 
           <div class="card">
-            <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              <div class="card-header" id="headingTwo">
+            <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseBrand" aria-expanded="false" aria-controls="collapseBrand">
+              <div class="card-header" id="headingBrand">
                 <span>Brand</span>
                 <i class="bi bi-chevron-down float-right"></i>
               </div>
             </button>
 
-            <div id="collapseTwo" class="collapse multi-collapse" aria-labelledby="headingTwo">
+            <div id="collapseBrand" class="collapse multi-collapse" aria-labelledby="headingBrand">
               <div class="card-body">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="defaultCheckVines">
@@ -199,14 +207,14 @@
           </div>
 
           <div class="card">
-            <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              <div class="card-header" id="headingThree">
+            <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseSize" aria-expanded="false" aria-controls="collapseSize">
+              <div class="card-header" id="headingSize">
                 <span>Size</span>
                 <i class="bi bi-chevron-down float-right"></i>
               </div>
             </button>
 
-            <div id="collapseThree" class="collapse multi-collapse" aria-labelledby="headingThree">
+            <div id="collapseSize" class="collapse multi-collapse" aria-labelledby="headingSize">
               <div class="card-body">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="defaultCheckXS">
@@ -292,10 +300,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
     <!-- Link to external javascript file -->
-    <script src="javascript/helpers.js"></script> 
-    <script src="javascript/controller.js"></script>
-    <script src="javascript/addproduct.js"></script> 
-
+    <script type="text/javascript" src="javascript/helpers.js"></script> 
+    <script type="text/javascript" src="javascript/controller.js"></script>
 </body>
 
 </html>
