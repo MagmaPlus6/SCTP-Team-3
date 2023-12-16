@@ -24,20 +24,40 @@ class Controller{
     displayCart(data){
         const showProductList = document.querySelector(".product-list");
 
+        // Clear off existing products displayed on the page
+        
+        while (showProductList.hasChildNodes()) {
+            showProductList.removeChild(showProductList.firstChild);
+        }
+
         // (A)
         if(!data.length){
             let noProductList = document.createElement("div");
             noProductList.className = "no-products";
-            let preProductList = document.querySelector(".pre-product-list")
             noProductList.style.textAlign = "center";
-            noProductList.innerHTML = `<span>No product(s) found.</span>`
-            preProductList.appendChild(noProductList);
-            document.querySelector("nav .pagination").style.display = "none";
+            noProductList.innerHTML = `<span>No product(s) found.</span>`;
+            let preProductList = document.querySelector(".pre-product-list")
+
+            if(!document.querySelector(".no-products")) {
+                preProductList.appendChild(noProductList);
+                document.querySelector("nav .pagination").style.display = "none";   
+            } 
+            
+            document.querySelector(".filter-sort-bar").style.display = "none"; 
+            document.querySelector(".filter-products").style.display = "none"; 
+
             return;
         } else {
+
+            document.querySelector(".filter-sort-bar").style.display = ""; 
+            document.querySelector(".filter-products").style.display = ""; 
+
             let noProductList = document.querySelector(".no-products");
-            noProductList.parentNode.removeChild(noProductList);
-            document.querySelector("nav .pagination").style.display = "";
+
+            if(noProductList) {
+                noProductList.parentNode.removeChild(noProductList);
+                document.querySelector("nav .pagination").style.display = "";
+            }
         }
 
         // (B) 
@@ -58,6 +78,9 @@ class Controller{
             `
             showProductList.appendChild(subProductList);
         }
+
+        const numberOfProducts = document.querySelector(".number-of-products");
+        numberOfProducts.innerHTML = data.length + ' product(s) found';
 
         // Alternative: parseFloat(data[index].price).toFixed(2)
         // if don't put, 43.10 will be displayed as 43.1
@@ -137,6 +160,59 @@ const productsController = new Controller();
 productsController.displayCart([]);
 
 getAllProducts();
+
+// ------------------------------------------------------------------------------------
+// Invoke searh product function
+
+// Select the New Item Form
+const newSearchProduct = document.querySelector('#searchProductsForm');
+
+// To fix the "cannot read property 'addEventListener' of null" error, check that the element is not null before calling the addEventListener() method on it.
+if(newSearchProduct) {
+
+    // Add an 'onsubmit' event listener
+    newSearchProduct.addEventListener('submit', (event) => {
+
+        // Prevent default action
+        event.preventDefault();
+    
+        // Select the inputs
+        const newSearchInput = document.querySelector('#searchInput');
+    
+        // Get the values of the inputs
+        const input = newSearchInput.value.trim();
+
+        console.log('search input:' + input)
+
+        // console.log(productsController.products)
+        // productsController.displayCart(productsController.products);
+
+        searchforProducts(input)
+
+        // think of how to reset entire field after submit
+        newSearchProduct.reset();   
+    });
+}
+
+// ------------------------------------------------------------------------------------
+// Invoke sort product function
+
+const sortProduct = document.querySelector('#sortProducts');
+
+sortProduct.addEventListener('change', function() {
+
+    if(this.value === "Ascending Price") {
+        sortAllProductsByPriceAscend();
+        return;
+    } else if (this.value === "Descending Price") {
+        sortAllProductsByPriceDescend();
+        return;       
+    }
+
+
+}, false);
+
+
 
 
 
