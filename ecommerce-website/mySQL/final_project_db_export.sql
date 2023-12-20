@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `final_project_db` /*!40100 DEFAULT CHARACTER SET
 USE `final_project_db`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: final_project_db
+-- Host: localhost    Database: final_project_db
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -40,7 +40,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Adidas','image/women-tracksuit.jpg','3-stripes Tracksuit',43.10),(2,'Urban Coco','image/women-skirt.jpg','Pocket Skirt',57.88),(3,'Love, Bonito.','image/women-long-sleeve.jpg','Long Sleeve T Shirt',8.99),(4,'Tommy Hilfiger','image/women-pants.jpg','Pull Up Pants',12.17),(5,'Beyond the Vines','image/women-blouse.jpg','Button Down Blouse',10.83);
+INSERT INTO `product` VALUES (1,'Beyond the Vines','women-blouse.jpg','Button Down Blouse',10.83),(2,'Urban Coco','women-skirt.jpg','Pocket Skirt',57.88),(3,'Love, Bonito.','women-long-sleeve.jpg','Long Sleeve T Shirt',8.99),(4,'Tommy Hilfiger','women-pants.jpg','Pull Up Pants',12.17),(5,'Adidas','women-tracksuit.jpg','3-stripes Tracksuit',43.10),(8,'Curious Creatures','women-gym-pants.jpg','Jogging Gym Pants',16.01),(12,'Chic Reverie','Blue dress.jpg','blue dress',7.00);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +62,7 @@ CREATE TABLE `your_sequence_generator` (
 
 LOCK TABLES `your_sequence_generator` WRITE;
 /*!40000 ALTER TABLE `your_sequence_generator` DISABLE KEYS */;
-INSERT INTO `your_sequence_generator` VALUES (6);
+INSERT INTO `your_sequence_generator` VALUES (17);
 /*!40000 ALTER TABLE `your_sequence_generator` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -75,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-28  1:09:54
+-- Dump completed on 2023-12-20 11:00:27
