@@ -24,7 +24,7 @@
 /*Mid Section start */
 .jumbotron{
     width: 100%;
-    min-height: 500px;
+    min-height: 700px;
     color:gold;
     font-size: larger;
     padding-top: 20px;
@@ -195,62 +195,35 @@ footer {
 }
 
 
-/*------------------Order Cart Page----------------*/ 
-/* input#form1.form-control{text-align: center;}
+/*------------------Add Product Page----------------*/ 
+input#form1.form-control{text-align: center;}
 label.form-label{padding-left:25px;}
 .w-100{width:200px;height: 200px;}
-.px-3.me-2{height: 37px;} Button Size  */
-/* .px-3.ms-2{height: 37px;}
-.ms-image{width: 100%;} */
+.px-3.me-2{height: 37px;} /* Button Size */ 
+.px-3.ms-2{height: 37px;}
+.ms-image{width: 100%;}
 
-.btn-group .notActive{
-    color: #3276b1;
-    background-color: #fff;
-}
-
-.btn-group a {
-    width: 40px;
-}
-
-.quantity-input {
-    max-width: 70px;
-}
 
 /*------------------Product Details Page-----------------*/
-
-.shopping-cart-img {
-    max-height: 300px;
-}
-
-
-/* hr{height:5px;} */
+hr{height:5px;}
 /* .img-fluid{height:500px} */
-/* .form.pt-2{margin-top: 60px}
+.form.pt-2{margin-top: 60px}
 .mid-section{display: flex;}
 #Reebok-title{margin-left:30px;}
-.ms-text-2{display: flex; justify-content: center;justify-content:space-around;margin-right:260px;} */
-/* h2{margin-right:500px;margin-left:30px;} */
-/* .the-stars{margin-left:30px;} */
+.ms-text-2{display: flex; justify-content: center;justify-content:space-around;margin-right:260px;}
+h2{margin-right:500px;margin-left:30px;}
+.the-stars{margin-left:30px;}
 
 /*----------------Product Details (Sub-section)--------*/
-/* .similar-product{text-align: center;}
+.similar-product{text-align: center;}
 .similar-product-img{display: flex; justify-content:space-around; width:100%; height:250px;}
-img.similar-product-img{width:150px;} */
+img.similar-product-img{width:150px;}
 
 /*---------------Product Details (Sub-section,reviewer)---*/
-/* .reviewer-img{display: flex;}
+.reviewer-img{display: flex;}
 #wording{margin-left: 30px;}
 h3#review{margin-left:30px;}
 #zw{margin-left: 5px;}
 #Add-to-cart-button{margin-left:30px ;}
-p#stars{margin-left: 10px;} */
-
-
-/*Configuration for stars*/
-.fa-star.checked {
-    color: orange;
-} 
-
-.fa-star.unchecked {
-    color: lightgrey;
-} 
+p#stars{margin-left: 10px;}
+.checked {color: orange;} /*Configuration for stars*/
