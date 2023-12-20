@@ -173,9 +173,12 @@ footer {
 }
 
 .card-img-fit {
-    /* width: 100%; */
-    height: 15vw;
-    object-fit: contain;
+    width: 100%;
+    /* height: 15vw; */
+    /* object-fit: cover; */
+    /* height: 200px;
+    width:max-content;
+    background-size: cover; */
 }
 
 @media (max-width: 576px) {

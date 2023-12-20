@@ -65,7 +65,7 @@ class Controller{
             let subProductList = document.createElement("div");
             subProductList.className = "col pb-4";
             subProductList.innerHTML = `
-                <a href="#/" class="text-decoration-none text-dark">
+                <a href="product-id-${data[index].id}.html" class="text-decoration-none text-dark">
                     <div class="card h-100">
                         <img class="card-img-top card-img-fit" src="image/${data[index].image}">
                         <div class="card-body d-flex flex-column">
