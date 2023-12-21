@@ -94,31 +94,32 @@
             </div>
             <div class="card-body p-0 order-list">
 
-              <!-- Item 1 -->
-              <div class="row border-bottom m-1 py-2 align-items-center">
+              <!-- Sample item -->
+              <!-- <div class="row border-bottom m-1 py-2 align-items-center">
+
                 <div class="col-lg-4 col-md mb-4 mb-lg-0 text-center">
                   <img
-                    src="image/women-blouse.jpg"
+                    src="image/${data.image}"
                     class="img-fluid shopping-cart-img"
-                    alt="women in blouse"
+                    alt=""
                   />
                 </div>
 
                 <div class="col-lg-8 col-md mb-4 mb-lg-0">
-                  <p><strong>Button Down Blouse</strong></p>
+                  <p><strong>${data.name}</strong></p>
 
                   <div class="form-group row">
-                    <label for="size" class="col-lg-3 col-md-5 col-sm-3 col-form-label">Size</label>
+                    <label for="size${i}" class="col-lg-3 col-md-5 col-sm-3 col-form-label">Size</label>
                     <div class="col-lg col-md-8 col-sm">
                       <div class="input-group">
-                        <div id="radioBtn1" class="btn-group">
-                          <a class="btn btn-primary btn-sm active" data-toggle="size1" data-title="XS">XS</a>
-                          <a class="btn btn-primary btn-sm notActive" data-toggle="size1" data-title="S">S</a>
-                          <a class="btn btn-primary btn-sm notActive" data-toggle="size1" data-title="M">M</a>
-                          <a class="btn btn-primary btn-sm notActive" data-toggle="size1" data-title="L">L</a>
-                          <a class="btn btn-primary btn-sm notActive" data-toggle="size1" data-title="XL">XL</a> 
+                        <div id="radioBtn${i}" class="btn-group">
+                          <a class="btn btn-primary btn-sm active" data-toggle="size${i}" data-title="XS">XS</a>
+                          <a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="S">S</a>
+                          <a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="M">M</a>
+                          <a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="L">L</a>
+                          <a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="XL">XL</a> 
                         </div>
-                        <input type="hidden" name="size1" id="size1">
+                        <input type="hidden" name="size${i}" id="size${i}">
                       </div>
                     </div>
                   </div>
@@ -129,11 +130,15 @@
                     <div class="col-lg-5 col-md-8 col-sm-4">
                       <div class="input-group number-spinner">
                         <span class="input-group-btn btn-light">
-                          <button class="btn btn-default" data-dir="dwn"><span class="fas fa-minus"></span></button>
+                          <button class="btn btn-default" data-dir="dwn">
+                            <span class="fas fa-minus"></span>
+                          </button>
                         </span>
                         <input type="text" class="form-control text-center quantity-input" value="1">
                         <span class="input-group-btn btn-light">
-                          <button class="btn btn-default" data-dir="up"><span class="fas fa-plus"></span></button>
+                          <button class="btn btn-default" data-dir="up">
+                            <span class="fas fa-plus"></span>
+                          </button>
                         </span>
                       </div>
                     </div>
@@ -144,7 +149,7 @@
                       <p>Price</p>
                     </div>
                     <div class="col-md-8 col-sm">
-                      <p><strong>$<span class="price" data="10.83">10.83</span>
+                      <p><strong>$<span class="price" data="${data.price}">${data.price}</span>
                       </strong></p>
                     </div>   
                   </div>
@@ -160,94 +165,21 @@
                   <button
                     type="button"
                     class="btn btn-secondary btn-sm mb-2 float-right"
+                    data=${i}
                     data-mdb-toggle="tooltip"
                     title="Remove item"
                   >
                     <i class="fas fa-trash"></i>
                   </button>
                 </div>
-              </div>  
+              </div>   -->
               
-              <!-- Item 2 -->
-              <div class="row border-bottom m-1 py-2 align-items-center">
-                <div class="col-lg-4 col-md mb-4 mb-lg-0 text-center">
-                  <img
-                    src="image/women-skirt.jpg"
-                    class="img-fluid shopping-cart-img"
-                    alt="women in skirt"
-                  />
-                </div>
-
-                <div class="col-lg-8 col-md mb-4 mb-lg-0">
-                  <p><strong>Pocket Skirt</strong></p>
-
-                  <div class="form-group row">
-                    <label for="size" class="col-lg-3 col-md-5 col-sm-3 col-form-label">Size</label>
-                    <div class="col-lg col-md-8 col-sm">
-                      <div class="input-group">
-                        <div id="radioBtn2" class="btn-group">
-                          <a class="btn btn-primary btn-sm active" data-toggle="size2" data-title="XS">XS</a>
-                          <a class="btn btn-primary btn-sm notActive" data-toggle="size2" data-title="S">S</a>
-                          <a class="btn btn-primary btn-sm notActive" data-toggle="size2" data-title="M">M</a>
-                          <a class="btn btn-primary btn-sm notActive" data-toggle="size2" data-title="L">L</a>
-                          <a class="btn btn-primary btn-sm notActive" data-toggle="size2" data-title="XL">XL</a> 
-                        </div>
-                        <input type="hidden" name="size2" id="size2">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="quantity" class="col-lg-3 col-md-6 col-sm-3 col-form-label">Quantity</label>
-
-                    <div class="col-lg-5 col-md-8 col-sm-4">
-                      <div class="input-group number-spinner">
-                        <span class="input-group-btn btn-light">
-                          <button class="btn btn-default" data-dir="dwn"><span class="fas fa-minus"></span></button>
-                        </span>
-                        <input type="text" class="form-control text-center quantity-input" value="1">
-                        <span class="input-group-btn btn-light">
-                          <button class="btn btn-default" data-dir="up"><span class="fas fa-plus"></span></button>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-5 col-sm-3">
-                      <p>Price</p>
-                    </div>
-                    <div class="col-md-8 col-sm">
-                      <p><strong>$<span class="price" data="57.88">57.88</span>
-                      </strong></p>
-                    </div>   
-                  </div>
-
-                  <button
-                    type="button"
-                    class="btn btn-danger btn-sm mb-2"
-                    data-mdb-toggle="tooltip"
-                    title="Move to the wish list"
-                  >
-                    <i class="fas fa-heart"></i>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-secondary btn-sm mb-2 float-right"
-                    data-mdb-toggle="tooltip"
-                    title="Remove item"
-                  >
-                    <i class="fas fa-trash"></i>
-                  </button>
-                </div>
-              </div>
-
             </div>
           </div>
           <div class="card mb-4">
             <div class="card-body">
-              <p><strong>Expected shipping delivery</strong></p>
-              <p class="mb-0">29.12.2023 - 31.12.2023</p>
+              <p><strong>Expected delivery dates</strong></p>
+              <p class="mb-0 delivery-dates"></p>
             </div>
           </div>
           <div class="card mb-4 mb-lg-0">
@@ -325,7 +257,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
     <!-- Link to external javascript file -->
-
     <script type="text/javascript" src="javascript/helpers.js"></script> 
     <script type="text/javascript" src="javascript/ordercart.js"></script> 
 
