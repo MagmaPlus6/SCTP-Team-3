@@ -162,7 +162,7 @@ productsController.displayCart([]);
 getAllProducts();
 
 // ------------------------------------------------------------------------------------
-// Invoke searh product function
+// Invoke search product function
 
 // Select the New Item Form
 const newSearchProduct = document.querySelector('#searchProductsForm');
@@ -187,10 +187,7 @@ if(newSearchProduct) {
         // console.log(productsController.products)
         // productsController.displayCart(productsController.products);
 
-        searchforProducts(input)
-
-        // think of how to reset entire field after submit
-        newSearchProduct.reset();   
+        searchforProducts(input) 
     });
 }
 
