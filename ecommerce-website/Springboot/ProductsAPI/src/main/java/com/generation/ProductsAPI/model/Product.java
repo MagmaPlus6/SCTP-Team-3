@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,15 +20,17 @@ import java.math.BigDecimal;
 public class Product {
 
     @Id
-    @SequenceGenerator(name="yourSequenceGenerator", allocationSize=1)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="yourSequenceGenerator")
+    @SequenceGenerator(name = "yourSequenceGenerator", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "yourSequenceGenerator")
     private Integer id;
 
     @Column
+//    @Column(length = 100) restricts VARCHAR in mySQL to 100
     @NotBlank(message = "Please enter the product name.")
     private String name;
 
     @Column
+//    @Column(length = 100) restricts VARCHAR in mySQL to 100
     @NotBlank(message = "Please enter the product brand.")
     private String brand;
 
@@ -39,8 +42,14 @@ public class Product {
     // @DecimalMin @Digits do not support Double
 
     @Column
+ //    @Column(length = 100) restricts VARCHAR in mySQL to 100
     @NotBlank(message = "Please enter the image name.")
     private String image;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+//    private Set<OrderDetail> orderDetails = new HashSet<>();
+    private List<OrderDetail> orderDetails;
+
 
     public Product(String name, String brand, BigDecimal price, String image){
         this.name = name;
@@ -49,14 +58,11 @@ public class Product {
         this.image = image;
     }
 
-
 //    @Override
 //    public String toString()
 //    {
 //        return "Product{" + "id=" + id + ", name='" + name + '\'' + ", brand='" + brand + '\'' + ", price='$" + price + '\'' + ", image='"
 //                + image + '\'' + '}';
 //    }
-
-
 
 }

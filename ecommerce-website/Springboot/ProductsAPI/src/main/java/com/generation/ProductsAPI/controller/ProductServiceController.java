@@ -1,6 +1,6 @@
 package com.generation.ProductsAPI.controller;
 
-import com.generation.ProductsAPI.exception.ProductNotFoundException;
+import com.generation.ProductsAPI.exception.ResourceNotFoundException;
 import com.generation.ProductsAPI.model.Product;
 import com.generation.ProductsAPI.service.ProductService;
 
@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -30,7 +29,7 @@ public class ProductServiceController {
         List<Product> result = productService.getAllProducts();
 
         if(result.isEmpty()) {
-            throw new ProductNotFoundException();
+            throw new ResourceNotFoundException("No product(s) found");
         }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
@@ -39,7 +38,7 @@ public class ProductServiceController {
     @GetMapping("/{id}")
     public ResponseEntity<Object> getSingleProduct(@PathVariable Integer id){
 
-        Product result = productService.getProduct(id).orElseThrow(() -> new ProductNotFoundException());
+        Product result = productService.getProduct(id).orElseThrow(() -> new ResourceNotFoundException("Product of id " + id + " is not found"));
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
@@ -50,7 +49,7 @@ public class ProductServiceController {
         List<Product> result = productService.sortAllProductsByPriceAscend();
 
         if(result.isEmpty()) {
-            throw new ProductNotFoundException();
+            throw new ResourceNotFoundException("No product(s) found");
         }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
@@ -62,7 +61,7 @@ public class ProductServiceController {
         List<Product> result = productService.sortAllProductsByPriceDescend();
 
         if(result.isEmpty()) {
-            throw new ProductNotFoundException();
+            throw new ResourceNotFoundException("No product(s) found");
         }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
@@ -74,7 +73,7 @@ public class ProductServiceController {
         List<Product> result = productService.getProductsWithName(productName);
 
         if(result.isEmpty()) {
-            throw new ProductNotFoundException();
+            throw new ResourceNotFoundException("There are no product(s) with name " + productName);
         }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
@@ -86,7 +85,7 @@ public class ProductServiceController {
         List<Product> result = productService.getProductsWithBrand(brandName);
 
         if(result.isEmpty()) {
-            throw new ProductNotFoundException();
+            throw new ResourceNotFoundException("There are no product(s) with brand " + brandName);
         }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
@@ -98,7 +97,7 @@ public class ProductServiceController {
         List<Product> result = productService.searchProducts(name, brand);
 
         if(result.isEmpty()) {
-            throw new ProductNotFoundException();
+            throw new ResourceNotFoundException("No product(s) found");
         }
 
         return new ResponseEntity<>(result, HttpStatus.OK);
@@ -113,7 +112,7 @@ public class ProductServiceController {
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateProduct(@PathVariable Integer id ,@Valid @RequestBody Product product) {
 
-        Product result = productService.updateProduct(id, product).orElseThrow(() -> new ProductNotFoundException());;
+        Product result = productService.updateProduct(id, product).orElseThrow(() -> new ResourceNotFoundException("Product of id " + id + " is not found"));;
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
@@ -121,12 +120,11 @@ public class ProductServiceController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteProduct(@PathVariable Integer id) {
 
-        productService.getProduct(id).orElseThrow(() -> new ProductNotFoundException());
+        productService.getProduct(id).orElseThrow(() -> new ResourceNotFoundException("Product of id " + id + " is not found"));
 
         productService.deleteProduct(id);
 
         return new ResponseEntity<>("Product is deleted successfully.", HttpStatus.OK);
     }
-
 
 }
