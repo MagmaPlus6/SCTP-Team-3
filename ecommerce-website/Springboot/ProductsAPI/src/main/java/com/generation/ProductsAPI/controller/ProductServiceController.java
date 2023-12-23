@@ -67,17 +67,17 @@ public class ProductServiceController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping("/name/{productName}")
-    public ResponseEntity<Object> getProductsWithName(@PathVariable String productName) {
-
-        List<Product> result = productService.getProductsWithName(productName);
-
-        if(result.isEmpty()) {
-            throw new ResourceNotFoundException("There are no product(s) with name " + productName);
-        }
-
-        return new ResponseEntity<>(result, HttpStatus.OK);
-    }
+//    @GetMapping("/name/{productName}")
+//    public ResponseEntity<Object> getProductsWithName(@PathVariable String productName) {
+//
+//        List<Product> result = productService.getProductsWithName(productName);
+//
+//        if(result.isEmpty()) {
+//            throw new ResourceNotFoundException("There are no product(s) with name " + productName);
+//        }
+//
+//        return new ResponseEntity<>(result, HttpStatus.OK);
+//    }
 
     @GetMapping("/brand/{brandName}")
     public ResponseEntity<Object> getProductsWithBrand(@PathVariable String brandName) {
@@ -91,13 +91,25 @@ public class ProductServiceController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping("/")
-    public ResponseEntity<List<Product>> searchforProducts(@RequestParam String name, @RequestParam String brand) {
+//    @GetMapping("/")
+//    public ResponseEntity<List<Product>> searchforProducts(@RequestParam String name, @RequestParam String brand) {
+//
+//        List<Product> result = productService.searchProducts(name, brand);
+//
+//        if(result.isEmpty()) {
+//            throw new ResourceNotFoundException("No product(s) found");
+//        }
+//
+//        return new ResponseEntity<>(result, HttpStatus.OK);
+//    }
 
-        List<Product> result = productService.searchProducts(name, brand);
+    @GetMapping("/")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String name) {
+
+        List<Product> result = productService.getProductsWithName(name);
 
         if(result.isEmpty()) {
-            throw new ResourceNotFoundException("No product(s) found");
+            throw new ResourceNotFoundException("There are no product(s) with name " + name);
         }
 
         return new ResponseEntity<>(result, HttpStatus.OK);

@@ -50,61 +50,54 @@
     </nav>
     
     <!-- ------------- Secondary Navigation section ------------- -->
-    <nav class="navbar navbar-expand justify-content-between navbar-light second-nav">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bold">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Women<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Men</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Kids</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Baby</a>
-        </li>            
-      </ul>
 
-      <!-- <form class="form-inline my-2 my-lg-0" action="" method="get" id="searchProductsForm">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search products" aria-label="Search" required>
-        <button class="btn my-2 my-sm-0 d-flex align-items-center" type="submit"><i class="material-icons">search</i></button>
-      </form> -->
-
-      <form class="form-inline my-2 my-lg-0" method="get" id="searchProductsForm" autocomplete="on">
-        <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search products" aria-label="Search" required>
-        <button class="btn my-2 my-sm-0 d-flex align-items-center" type="submit" value="Submit"><i class="material-icons">search</i></button>
-      </form>
-
-
-    </nav>  
-      
-    <!-- ------------------- Mobile version ---------------------------- -->
-    <nav class="second-nav-mobile bg-light">
-      <div class="d-flex justify-content-around py-3">
-        <div class="image-woman"><a href="#"><img src="image/face_3_FILL0_wght400_GRAD0_opsz24.svg" alt="Women section icon"></a></div>
-        <div><a href="#"><img src="image/face_6_FILL0_wght400_GRAD0_opsz24.svg" alt="Men section icon"></a></div>
-        <div><a href="#"><img src="image/child_care_FILL0_wght400_GRAD0_opsz24.svg" alt="Kids section icon"></a></div>
-        <div><a href="#"><img src="image/crib_FILL0_wght400_GRAD0_opsz24.svg" alt="Baby section icon"></a></div>        
-      </div>
-      <div class="container-fluid px-4">
-        <form class="form-inline my-lg-0 row justify-content-center" method="get" id="searchProductsForm" autocomplete="on">
-          <div class="col-11">
-            <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search products" aria-label="Search" required>
-          </div>
-          <button class="btn my-2 my-sm-0 d-flex align-items-center col-1" type="submit" value="Submit"><i class="material-icons">search</i></button>
-        </form>
-      </div>
-
+    <!-- Mobile version -->
+    <nav class="second-nav-mobile pt-3">
+      <div class="image-woman"><a href="#"><img src="image/face_3_FILL0_wght400_GRAD0_opsz24.svg" alt="Women section icon"></a></div>
+      <div><a href="#"><img src="image/face_6_FILL0_wght400_GRAD0_opsz24.svg" alt="Men section icon"></a></div>
+      <div><a href="#"><img src="image/child_care_FILL0_wght400_GRAD0_opsz24.svg" alt="Kids section icon"></a></div>
+      <div><a href="#"><img src="image/crib_FILL0_wght400_GRAD0_opsz24.svg" alt="Baby section icon"></a></div>        
     </nav>
+
+    <!-- Desktop version -->
+    <nav class="navbar navbar-expand navbar-light second-nav row mx-auto">
+        <div class="col-sm category-desktop">
+          <ul class="navbar-nav font-weight-bold">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Women<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Men</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kids</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Baby</a>
+            </li>            
+          </ul> 
+        </div>
+
+
+        <div class="col-sm mt-1">
+          <form class="row" method="get" id="searchProductsForm" autocomplete="on">
+              <div class="col pr-1">
+                <input class="form-control" id="searchInput" type="search" placeholder="Search products" aria-label="Search" required>
+              </div>
+                <button class="btn" type="submit" value="Submit"><i class="material-icons">search</i></button>
+          </form>
+        </div>
+    </nav>  
+
 
     <!-- ------------- Product List section ------------- -->
     <div class="container-fluid px-4 bg-light pb-2 pre-product-list">
       <!-- class pre-product-list is for controller.js to display message no products found-->
       
-      <div class="filter-sort-bar row pt-2 px-3">
-        <h4 class="col-3 my-auto">Filter by</h4>
-        <div class="col-3">
+      <div class="filter-sort-bar row pt-3 mx-3">
+        <p class="col-sm order-sm-12 my-auto number-of-products">products found</p>
+        <a href="#/" class="btn btn-outline-secondary text-dark col-sm-3 order-sm-1 my-auto bg-white">Filter by</a>
+        <div class="col-sm-4 order-sm-3 sort-by">
           <select class="custom-select my-1 mr-sm-2" id="sortProducts">
             <option selected>Sort by</option>
             <option value="Popular">Popular</option>
@@ -113,48 +106,48 @@
             <option value="Descending Price">Price (High to Low)</option>         
           </select>
         </div>
-        <p class="col my-auto text-right number-of-products">8 products found</p>
       </div>
 
-      <div class="row mx-auto">
-        <div class="filter-products pt-3 col-3 pl-0">
+      <div class="row mx-auto justify-content-center">
+        <div class="filter-products pt-3 col-3">
           <div class="card">
             <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseType" aria-expanded="false" aria-controls="collapseType">
               <div class="card-header" id="headingType">
                 <span>Type</span>
                 <i class="bi bi-chevron-down float-right"></i>
+                <i class="bi bi-chevron-up float-right"></i>
               </div>
             </button>
         
             <div id="collapseType" class="collapse multi-collapse" aria-labelledby="headingType">
               <div class="card-body">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckDresses">
-                  <label class="form-check-label" for="defaultCheckDresses">
+                  <input class="form-check-input" type="checkbox" value="Dresses" id="dresses">
+                  <label class="form-check-label" for="dresses">
                     Dresses  
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckJeans">
-                  <label class="form-check-label" for="defaultCheckJeans">
+                  <input class="form-check-input" type="checkbox" value="Jeans" id="jeans">
+                  <label class="form-check-label" for="jeans">
                     Jeans
                   </label>
                 </div>     
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckPants">
-                  <label class="form-check-label" for="defaultCheckPants">
+                  <input class="form-check-input" type="checkbox" value="Pants" id="pants">
+                  <label class="form-check-label" for="pants">
                     Pants
                   </label>
                 </div> 
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-                  <label class="form-check-label" for="defaultCheck4">
+                  <input class="form-check-input" type="checkbox" value="Polos" id="polos">
+                  <label class="form-check-label" for="polos">
                     Polos
                   </label>
                 </div> 
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckShirts">
-                  <label class="form-check-label" for="defaultCheckShirts">
+                  <input class="form-check-input" type="checkbox" value="Shirts" id="shirts">
+                  <label class="form-check-label" for="shirts">
                     Shirts
                   </label>
                 </div>  
@@ -167,39 +160,52 @@
               <div class="card-header" id="headingBrand">
                 <span>Brand</span>
                 <i class="bi bi-chevron-down float-right"></i>
+                <i class="bi bi-chevron-up float-right"></i>
               </div>
             </button>
 
             <div id="collapseBrand" class="collapse multi-collapse" aria-labelledby="headingBrand">
               <div class="card-body">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckVines">
-                  <label class="form-check-label" for="defaultCheckVines">
+                  <input class="form-check-input" type="checkbox" value="Beyond the Vines" id="beyondTheVines">
+                  <label class="form-check-label" for="beyondTheVines">
                     Beyond the Vines
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckReverie">
-                  <label class="form-check-label" for="defaultCheckReverie">
+                  <input class="form-check-input" type="checkbox" value="Chic Reverie" id="chicReverie">
+                  <label class="form-check-label" for="chicReverie">
                     Chic Reverie
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckCreature">
-                  <label class="form-check-label" for="defaultCheckCreature">
+                  <input class="form-check-input" type="checkbox" value="Curious Creature" id="curiousCreature">
+                  <label class="form-check-label" for="curiousCreature">
                     Curious Creature
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckEcho">
-                  <label class="form-check-label" for="defaultCheckEcho">
+                  <input class="form-check-input" type="checkbox" value="Echo" id="echo">
+                  <label class="form-check-label" for="echo">
                     Echo
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheckCompany">
-                  <label class="form-check-label" for="defaultCheckCompany">
+                  <input class="form-check-input" type="checkbox" value="In Good Company" id="inGoodCompany">
+                  <label class="form-check-label" for="inGoodCompany">
                     In Good Company
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Kydra" id="kydra">
+                  <label class="form-check-label" for="kydra">
+                    Kydra
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Love, Bonito" id="loveBonito">
+                  <label class="form-check-label" for="loveBonito">
+                    Love, Bonito
                   </label>
                 </div>
               </div>
@@ -211,6 +217,7 @@
               <div class="card-header" id="headingSize">
                 <span>Size</span>
                 <i class="bi bi-chevron-down float-right"></i>
+                <i class="bi bi-chevron-up float-right"></i>
               </div>
             </button>
 
@@ -249,6 +256,7 @@
               </div>
             </div>
           </div>
+
         </div>
       
 
@@ -302,6 +310,7 @@
     <!-- Link to external javascript file -->
     <script type="text/javascript" src="javascript/helpers.js"></script> 
     <script type="text/javascript" src="javascript/controller.js"></script>
+    <script type="text/javascript" src="javascript/productlist.js"></script>
 </body>
 
 </html>

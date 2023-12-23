@@ -19,5 +19,5 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     List<Product> findByPriceBetween(BigDecimal startPrice, BigDecimal endPrice);
 
-    List<Product> findByNameContainingOrBrandContaining(String name, String brand);
+//    List<Product> findByNameContainingOrBrandContaining(String name, String brand);
 }
