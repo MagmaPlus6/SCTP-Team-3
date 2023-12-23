@@ -74,9 +74,9 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findByBrandContaining(productBrand);
     }
 
-    @Override
-    public List<Product> searchProducts(String productName, String productBrand) {
-        return productRepository.findByNameContainingOrBrandContaining(productName, productBrand);
-    }
+//    @Override
+//    public List<Product> searchProducts(String productName, String productBrand) {
+//        return productRepository.findByNameContainingOrBrandContaining(productName, productBrand);
+//    }
 
 }

@@ -14,8 +14,17 @@ async function productDetailPageData(id) {
 	productBrand.innerHTML = data.brand
 }
 
-productDetailPageData(1)
-productDetailPageData(2)
+const productDetailPage = document.querySelector('.container-fluid.product-detail')
+
+let productID;
+
+if(productDetailPage) {
+	productID = parseInt(productDetailPage.getAttribute('data'));
+}
+
+productDetailPageData(productID)
+
+
 
 const orderForm = document.querySelector('form.order-product');
 

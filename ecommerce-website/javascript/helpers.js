@@ -55,9 +55,9 @@ const saveProduct = async (data) => {
 }
 
 //Function to get products based on search input
-const searchforProducts = async (string) => {
+const searchProducts = async (string) => {
     try {
-        const response = await fetch(`http://localhost:8080/products/?name=${string}&brand=${string}`);
+        const response = await fetch(`http://localhost:8080/products/?name=${string}`);
 
         if(response.ok) {
             const jsonResponse = await response.json();

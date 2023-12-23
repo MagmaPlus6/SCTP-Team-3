@@ -65,7 +65,7 @@ class Controller{
             let subProductList = document.createElement("div");
             subProductList.className = "col pb-4";
             subProductList.innerHTML = `
-                <a href="product-id-${data[index].id}.html" class="text-decoration-none text-dark">
+                <a href="product-id-${data[index].id}.html" class="text-decoration-none text-dark" target="product${data[index].id}page">
                     <div class="card h-100">
                         <img class="card-img-top card-img-fit" src="image/${data[index].image}">
                         <div class="card-body d-flex flex-column">
@@ -81,6 +81,7 @@ class Controller{
 
         const numberOfProducts = document.querySelector(".number-of-products");
         numberOfProducts.innerHTML = data.length + ' product(s) found';
+
 
         // Alternative: parseFloat(data[index].price).toFixed(2)
         // if don't put, 43.10 will be displayed as 43.1
@@ -153,63 +154,4 @@ class Controller{
     }
 
 }
-
-// ------------------------------------------------------------------------------------
-
-const productsController = new Controller();
-productsController.displayCart([]);
-
-getAllProducts();
-
-// ------------------------------------------------------------------------------------
-// Invoke search product function
-
-// Select the New Item Form
-const newSearchProduct = document.querySelector('#searchProductsForm');
-
-// To fix the "cannot read property 'addEventListener' of null" error, check that the element is not null before calling the addEventListener() method on it.
-if(newSearchProduct) {
-
-    // Add an 'onsubmit' event listener
-    newSearchProduct.addEventListener('submit', (event) => {
-
-        // Prevent default action
-        event.preventDefault();
-    
-        // Select the inputs
-        const newSearchInput = document.querySelector('#searchInput');
-    
-        // Get the values of the inputs
-        const input = newSearchInput.value.trim();
-
-        console.log('search input:' + input)
-
-        // console.log(productsController.products)
-        // productsController.displayCart(productsController.products);
-
-        searchforProducts(input) 
-    });
-}
-
-// ------------------------------------------------------------------------------------
-// Invoke sort product function
-
-const sortProduct = document.querySelector('#sortProducts');
-
-sortProduct.addEventListener('change', function() {
-
-    if(this.value === "Ascending Price") {
-        sortAllProductsByPriceAscend();
-        return;
-    } else if (this.value === "Descending Price") {
-        sortAllProductsByPriceDescend();
-        return;       
-    }
-
-
-}, false);
-
-
-
-
 
