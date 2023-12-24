@@ -1,5 +1,3 @@
-const productsController = new Controller();
-productsController.displayCart([]);
 
 getAllProducts();
 
@@ -50,22 +48,16 @@ sortProducts.addEventListener('change', function() {
 // ------------------------------------------------------------------------------------
 // Show/hide filter side bar
 
-document.querySelector('.filter-sort-bar a').addEventListener('click', function (event) {
+// document.querySelector('.filter-sort-bar a').addEventListener('click', function (event) {
 
-    const filterSideBar = document.querySelector('.filter-products')
+//     const filterSideBar = document.querySelector('.filter-products')
 
-    console.log(filterSideBar.style.display)
+//     console.log(filterSideBar.style.display)
 
-    if(window.innerWidth > 575 && filterSideBar) {
+//     if(window.innerWidth > 575 && filterSideBar) {
+//           filterSideBar.style.display === "" ?
+//             filterSideBar.style.display = "none" :
+//             filterSideBar.style.display = "";
+//     } 
 
-          filterSideBar.style.display === "" ?
-            filterSideBar.style.display = "none" :
-            filterSideBar.style.display = "";
-
-    }
-
-
-
-  
-
-});
+// });

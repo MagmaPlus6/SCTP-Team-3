@@ -1,5 +1,6 @@
 package com.generation.ProductsAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
@@ -46,7 +47,8 @@ public class Product {
     @NotBlank(message = "Please enter the image name.")
     private String image;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
 //    private Set<OrderDetail> orderDetails = new HashSet<>();
     private List<OrderDetail> orderDetails;
 

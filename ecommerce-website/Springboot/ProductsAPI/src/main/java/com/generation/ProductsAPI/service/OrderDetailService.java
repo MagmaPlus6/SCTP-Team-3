@@ -9,11 +9,11 @@ import java.util.Optional;
 public interface OrderDetailService {
 
     public abstract List<OrderDetail> getAllOrderDetails();
-    public abstract List<OrderDetail> getOrderDetailsByOrderId(Integer orderId);
-    public abstract List<OrderDetail> getOrderDetailsByProductId(Integer productId);
     public abstract Optional<OrderDetail> getOrderDetail(Integer id);
     public abstract OrderDetail createNewOrderDetail(OrderDetail orderDetail);
     public abstract Optional<OrderDetail> updateOrderDetail(Integer id, OrderDetail orderDetail);
     public abstract void deleteOrderDetail(Integer id);
+    public abstract List<OrderDetail> getAllOrderDetailsByOrderId(Integer orderId);
+    public abstract List<OrderDetail> getAllOrderDetailsByProductId(Integer productId);
     public abstract void deleteAllOrderDetailByOrderId(Integer orderId);
 }
