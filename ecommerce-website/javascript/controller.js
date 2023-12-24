@@ -9,6 +9,36 @@ class Controller{
         // this.displayCart(data); // cannot work, will display empty product message even though it's not empty
     };
 
+    storeDataToLocalStorage(data){
+
+        if(localStorage.getItem("productList")){
+            localStorage.removeItem("productList")
+        }
+
+        const sampleItems = [];
+        if(data.length > 0){
+            for (let index = 0; index < data.length; index++) {
+                sampleItems.push({
+                    id: data[index].id,
+                    name: data[index].name,
+                    brand: data[index].brand,
+                    price: data[index].price,
+                    image: data[index].image,
+                })
+            }
+        
+        }
+        localStorage.setItem("productList", JSON.stringify(sampleItems));  
+    }
+
+    loadDataFromLocalStorage() {
+        const storageItems = localStorage.getItem("productList");
+        if (storageItems) {
+            const products = JSON.parse(storageItems);
+            this.displayCart(products);
+        }
+    }
+
     // displayCart() method belongs to class Controller
     // it receives an array of Objects
     // an instance unorderedlist is instantiated to reference classname "product-list"
@@ -155,3 +185,4 @@ class Controller{
 
 }
 
+const productsController = new Controller();

@@ -53,100 +53,97 @@ const addProductToShoppingCart = async () => {
 
     const orderList = document.querySelector('.order-list')
 
-	if(orderList) {
+	if(orderList && parsedOrderListStorage) {
 	
-	if(parsedOrderListStorage) {
-		
 	for (let i = 0; i < parsedOrderListStorage.length; i++) {
 
 		const data = await getSingleProduct(parsedOrderListStorage[i].productID);
 
-	const subOrderList = document.createElement("div");
-	subOrderList.className = "row border-bottom m-1 py-2 align-items-center";
+		const subOrderList = document.createElement("div");
+		subOrderList.className = "row border-bottom m-1 py-2 align-items-center";
 
-	subOrderList.innerHTML = `
+		subOrderList.innerHTML = `
 
-		<div class="col-lg-4 col-md mb-4 mb-lg-0 text-center">
-			<img
-				src="image/${data.image}"
-				class="img-fluid shopping-cart-img"
-				alt=""
-			/>
-		</div>
+			<div class="col-lg-4 col-md mb-4 mb-lg-0 text-center">
+				<img
+					src="image/${data.image}"
+					class="img-fluid shopping-cart-img"
+					alt=""
+				/>
+			</div>
 
-		<div class="col-lg-8 col-md mb-4 mb-lg-0">
-			<p><strong>${data.name}</strong></p>
+			<div class="col-lg-8 col-md mb-4 mb-lg-0">
+				<p><strong>${data.name}</strong></p>
 
-			<div class="form-group row">
-				<label for="size${i}" class="col-lg-3 col-md-5 col-sm-3 col-form-label">Size</label>
-				<div class="col-lg col-md-8 col-sm">
-					<div class="input-group">
-						<div id="radioBtn${i}" class="btn-group">
-							<a class="btn btn-primary btn-sm active" data-toggle="size${i}" data-title="XS">XS</a>
-							<a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="S">S</a>
-							<a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="M">M</a>
-							<a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="L">L</a>
-							<a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="XL">XL</a> 
+				<div class="form-group row">
+					<label for="size${i}" class="col-lg-3 col-md-5 col-sm-3 col-form-label">Size</label>
+					<div class="col-lg col-md-8 col-sm">
+						<div class="input-group">
+							<div id="radioBtn${i}" class="btn-group">
+								<a class="btn btn-primary btn-sm active" data-toggle="size${i}" data-title="XS">XS</a>
+								<a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="S">S</a>
+								<a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="M">M</a>
+								<a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="L">L</a>
+								<a class="btn btn-primary btn-sm notActive" data-toggle="size${i}" data-title="XL">XL</a> 
+							</div>
+							<input type="hidden" name="size${i}" id="size${i}">
 						</div>
-						<input type="hidden" name="size${i}" id="size${i}">
 					</div>
 				</div>
-			</div>
 
-			<div class="form-group row">
-				<label for="quantity" class="col-lg-3 col-md-6 col-sm-3 col-form-label">Quantity</label>
+				<div class="form-group row">
+					<label for="quantity" class="col-lg-3 col-md-6 col-sm-3 col-form-label">Quantity</label>
 
-				<div class="col-lg-5 col-md-8 col-sm-4">
-					<div class="input-group number-spinner">
-						<span class="input-group-btn btn-light">
-							<button class="btn btn-default" data-dir="dwn">
-								<span class="fas fa-minus"></span>
-							</button>
-						</span>
-						<input type="text" class="form-control text-center quantity-input" value="1">
-						<span class="input-group-btn btn-light">
-							<button class="btn btn-default" data-dir="up">
-								<span class="fas fa-plus"></span>
-							</button>
-						</span>
+					<div class="col-lg-5 col-md-8 col-sm-4">
+						<div class="input-group number-spinner">
+							<span class="input-group-btn btn-light">
+								<button class="btn btn-default" data-dir="dwn">
+									<span class="fas fa-minus"></span>
+								</button>
+							</span>
+							<input type="text" class="form-control text-center quantity-input" value="1">
+							<span class="input-group-btn btn-light">
+								<button class="btn btn-default" data-dir="up">
+									<span class="fas fa-plus"></span>
+								</button>
+							</span>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="col-lg-3 col-md-5 col-sm-3">
-					<p>Price</p>
+				<div class="row">
+					<div class="col-lg-3 col-md-5 col-sm-3">
+						<p>Price</p>
+					</div>
+					<div class="col-md-8 col-sm">
+						<p><strong>$<span class="price" data="${data.price}">${data.price}</span>
+						</strong></p>
+					</div>   
 				</div>
-				<div class="col-md-8 col-sm">
-					<p><strong>$<span class="price" data="${data.price}">${data.price}</span>
-					</strong></p>
-				</div>   
+
+				<button
+					type="button"
+					class="btn btn-danger btn-sm mb-2"
+					data-mdb-toggle="tooltip"
+					title="Move to the wish list"
+				>
+					<i class="fas fa-heart"></i>
+				</button>
+				<button
+					type="button"
+					class="btn btn-secondary btn-sm mb-2 float-right"
+					data="${parsedOrderListStorage[i].keyID}"
+					data-mdb-toggle="tooltip"
+					title="Remove item"
+				>
+					<i class="fas fa-trash"></i>
+				</button>
 			</div>
+		`
 
-			<button
-				type="button"
-				class="btn btn-danger btn-sm mb-2"
-				data-mdb-toggle="tooltip"
-				title="Move to the wish list"
-			>
-				<i class="fas fa-heart"></i>
-			</button>
-			<button
-				type="button"
-				class="btn btn-secondary btn-sm mb-2 float-right"
-				data="${parsedOrderListStorage[i].keyID}"
-				data-mdb-toggle="tooltip"
-				title="Remove item"
-			>
-				<i class="fas fa-trash"></i>
-			</button>
-		</div>
-	`
-
-	orderList.appendChild(subOrderList);
-
+		orderList.appendChild(subOrderList);
 	}
-	}
+	
 	selectProductSizeinCart()
 	removeProductInCart();
 	shoppingCartSummary();
@@ -223,3 +220,53 @@ const getDeliveryDates = (numberofDaysFromToday) => {
 
 const deliveryDates = document.querySelector('.delivery-dates');
 deliveryDates.innerHTML = getDeliveryDates(2) + ' - ' + getDeliveryDates(5)
+
+
+document.querySelector('.order-purchase-button').addEventListener('click', function () {
+
+	let orderInfo = []
+
+    const stringSubtotal = document.querySelector('.subtotal').innerHTML
+	const subtotal = parseFloat(stringSubtotal).toFixed(2)
+
+    const stringShippingFee = document.querySelector('.shipping-fee').innerHTML
+	const shippingFee = parseFloat(stringShippingFee).toFixed(2)
+
+    const stringTotal = document.querySelector('.total').innerHTML
+    const total = parseFloat(stringTotal).toFixed(2)
+
+	orderInfo.push({
+		username: "Matt",
+		subtotal: subtotal,
+		shippingFee: shippingFee,
+		total: total
+	})
+
+	console.log(orderInfo)
+
+
+	let orderDetailInfo = [];
+
+	document.querySelectorAll('.row.border-bottom.m-1.py-2.align-items-center').forEach(function (element) {
+
+		const orderProductName = element.querySelector('.col-lg-8.col-md.mb-4.mb-lg-0 strong').innerText
+
+		const orderProductSize = element.querySelector('a.btn-primary.btn-sm.active').innerText
+
+		const stringOrderProductQuantity = element.querySelector('input.quantity-input').value
+		const orderProductQuantity = parseInt(stringOrderProductQuantity)
+
+		const stringOrderProductPrice = element.querySelector('.col-md-8.col-sm .price').innerText
+		const orderProductPrice = parseFloat(stringOrderProductPrice).toFixed(2)
+
+		orderDetailInfo.push({
+			name: orderProductName,
+			size: orderProductSize,
+			quantity: orderProductQuantity,
+			price: orderProductPrice
+		})
+	})
+
+	console.log(orderDetailInfo)
+
+})

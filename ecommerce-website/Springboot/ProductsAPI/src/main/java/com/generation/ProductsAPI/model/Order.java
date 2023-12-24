@@ -1,6 +1,7 @@
 package com.generation.ProductsAPI.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
@@ -61,7 +62,8 @@ public class Order {
 //    @UpdateTimestamp(source = SourceType.DB)
 //    private Instant lastUpdatedOn;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    private Set<OrderDetail> orderDetails = new HashSet<>();
     private List<OrderDetail> orderDetails;
 

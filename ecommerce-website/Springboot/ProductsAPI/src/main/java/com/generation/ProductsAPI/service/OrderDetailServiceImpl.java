@@ -24,16 +24,6 @@ public class OrderDetailServiceImpl implements OrderDetailService{
     }
 
     @Override
-    public List<OrderDetail> getOrderDetailsByOrderId(Integer orderId) {
-        return orderDetailRepository.findByOrderId(orderId);
-    }
-
-    @Override
-    public List<OrderDetail> getOrderDetailsByProductId(Integer productId) {
-        return orderDetailRepository.findByProductId(productId);
-    }
-
-    @Override
     public Optional<OrderDetail> getOrderDetail(Integer id) {
         return orderDetailRepository.findById(id);
     }
@@ -64,6 +54,16 @@ public class OrderDetailServiceImpl implements OrderDetailService{
     @Override
     public void deleteOrderDetail(Integer id) {
         orderDetailRepository.deleteById(id);
+    }
+
+    @Override
+    public List<OrderDetail> getAllOrderDetailsByOrderId(Integer orderId) {
+        return orderDetailRepository.findByOrderId(orderId);
+    }
+
+    @Override
+    public List<OrderDetail> getAllOrderDetailsByProductId(Integer productId) {
+        return orderDetailRepository.findByProductId(productId);
     }
 
     @Override

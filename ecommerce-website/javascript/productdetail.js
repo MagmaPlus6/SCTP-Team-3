@@ -1,10 +1,10 @@
 
 async function productDetailPageData(id) {
 
-	const productName = document.querySelector(`.productName-${id}`);
-	const productImage = document.querySelector(`.productImage-${id}`);
-	const productPrice = document.querySelector(`.productPrice-${id}`);
-	const productBrand = document.querySelector(`.productBrand-${id}`);
+	const productName = document.querySelector('.productName');
+	const productImage = document.querySelector('.productImage');
+	const productPrice = document.querySelector('.productPrice');
+	const productBrand = document.querySelector('.productBrand');
 
 	const data = await getSingleProduct(id);
 

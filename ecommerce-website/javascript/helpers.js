@@ -8,6 +8,8 @@ const getAllProducts = async () => {
             const jsonResponse = await response.json();
             productsController.products = jsonResponse;
             productsController.displayCart(jsonResponse);
+            productsController.storeDataToLocalStorage(jsonResponse);
+            // productsController.loadDataFromLocalStorage();
 
             console.log('Success:', productsController.products);
         }
@@ -63,6 +65,8 @@ const searchProducts = async (string) => {
             const jsonResponse = await response.json();
             productsController.products = jsonResponse;
             productsController.displayCart(jsonResponse);
+            productsController.storeDataToLocalStorage(jsonResponse);
+            // productsController.loadDataFromLocalStorage();
 
             console.log('Search results:', productsController.products);
         }
@@ -74,6 +78,8 @@ const searchProducts = async (string) => {
             console.log(jsonResponse)
             productsController.products = [];
             productsController.displayCart([]);
+            productsController.storeDataToLocalStorage([]);
+            // productsController.loadDataFromLocalStorage();
         }
 
     } catch (error) {
@@ -90,6 +96,8 @@ const sortAllProductsByPriceAscend = async () => {
             const jsonResponse = await response.json();
             productsController.products = jsonResponse;
             productsController.displayCart(jsonResponse);
+            productsController.storeDataToLocalStorage(jsonResponse);
+            // productsController.loadDataFromLocalStorage();
 
             console.log('Success:', productsController.products);
         }
@@ -108,6 +116,8 @@ const sortAllProductsByPriceDescend = async () => {
             const jsonResponse = await response.json();
             productsController.products = jsonResponse;
             productsController.displayCart(jsonResponse);
+            productsController.storeDataToLocalStorage(jsonResponse);
+            // productsController.loadDataFromLocalStorage();
 
             console.log('Success:', productsController.products);
         }

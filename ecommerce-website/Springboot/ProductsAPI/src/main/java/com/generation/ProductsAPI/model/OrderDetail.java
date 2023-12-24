@@ -1,6 +1,7 @@
 package com.generation.ProductsAPI.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
@@ -22,12 +23,14 @@ public class OrderDetail {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "orderDetailSequenceGenerator")
     private Integer id;
 
+    @JsonIgnore
 //    By default, @ManyToOne association uses FetchType.EAGER for fetch type, but it is bad for performance
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "order_id")
     private Order order;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "product_id")
     private Product product;
 
@@ -45,9 +48,15 @@ public class OrderDetail {
     @Digits(integer = 10, fraction = 2, message = "Price must be in 2 decimal place.")
     private BigDecimal price;
 
-    public OrderDetail(Order order, Product product, String size, Integer quantity, BigDecimal price) {
-        this.order = order;
-        this.product = product;
+//    public OrderDetail(Order order, Product product, String size, Integer quantity, BigDecimal price) {
+//        this.order = order;
+//        this.product = product;
+//        this.size = size;
+//        this.quantity = quantity;
+//        this.price = price;
+//    }
+
+    public OrderDetail(String size, Integer quantity, BigDecimal price) {
         this.size = size;
         this.quantity = quantity;
         this.price = price;
