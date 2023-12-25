@@ -19,6 +19,8 @@
 
 <body>
 
+    <div class="bs-canvas-overlay bg-dark position-fixed w-100 h-100"></div>
+
     <!-- ------------- Navigation bar section ------------- -->  
     <nav class="navbar navbar-expand-sm navbar-light bg-light font-weight-bold" id="navi-bg">
         <a href="#" class="navbar-brand" id="navigation-name"><img src="image/BaZHubLatest (1).png" alt="icon of BazHub">  BazHub</a>
@@ -95,8 +97,9 @@
       <!-- class pre-product-list is for controller.js to display message no products found-->
       
       <div class="filter-sort-bar row pt-3 mx-3">
-        <p class="col-sm order-sm-12 my-auto number-of-products">products found</p>
-        <a href="#/" class="btn btn-outline-secondary text-dark col-sm-3 order-sm-1 my-auto bg-white"><i class="bi bi-filter"></i> Filter by</a>
+        <p class="col-sm order-sm-12 pr-0 my-auto number-of-products">No product(s) found</p>
+        <a href="#/" class="btn btn-outline-secondary text-dark col-sm-3 order-sm-1 my-auto bg-white" data-toggle="canvas" data-target="#bs-canvas-left" aria-expanded="false" aria-controls="bs-canvas-left"><i class="bi bi-filter"></i> Filter by</a>
+
         <div class="col-sm-4 order-sm-3 sort-by">
           <select class="custom-select my-1 mr-sm-2" id="sortProducts">
             <option selected>Sort by</option>
@@ -109,8 +112,10 @@
       </div>
 
       <div class="row mx-auto justify-content-center">
-        <div class="filter-products pt-3 col-3">
-          <div class="card">
+        <div id="bs-canvas-left" class="filter-products py-3 col-3 bs-canvas bs-canvas-left">
+          <!-- <div class="filter-products py-3 col-3"> -->
+          <!-- id="bs-canvas-left" class="bs-canvas bs-canvas-left -->
+          <div class="card mb-3">
             <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseType" aria-expanded="false" aria-controls="collapseType">
               <div class="card-header" id="headingType">
                 <span>Type</span>
@@ -155,7 +160,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card mb-3">
             <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseBrand" aria-expanded="false" aria-controls="collapseBrand">
               <div class="card-header" id="headingBrand">
                 <span>Brand</span>
@@ -212,7 +217,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card mb-3">
             <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseSize" aria-expanded="false" aria-controls="collapseSize">
               <div class="card-header" id="headingSize">
                 <span>Size</span>
@@ -257,6 +262,8 @@
             </div>
           </div>
 
+          <button class="btn btn-info uncheckAll">Clear all</button>
+
         </div>
       
 
@@ -283,7 +290,7 @@
     </div>
 
     <!-- ------------- Pagination section ------------- -->
-    <nav aria-label="Page navigation example" class="text-success bg-light py-1">
+    <!-- <nav aria-label="Page navigation example" class="text-success bg-light py-1">
         <ul class="pagination justify-content-center">
           <li class="page-item">
             <a class="page-link" href="#/">Previous</a>
@@ -297,7 +304,7 @@
             <a class="page-link" href="#/">Next</a>
           </li>
         </ul>
-    </nav>
+    </nav> -->
 
     <!-- ------------- Footer section ------------- -->
             

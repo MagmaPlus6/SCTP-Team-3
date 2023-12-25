@@ -97,7 +97,7 @@
               <!-- Sample item -->
               <!-- <div class="row border-bottom m-1 py-2 align-items-center">
 
-                <div class="col-lg-4 col-md mb-4 mb-lg-0 text-center">
+                <div class="col-lg-4 col-md mb-4 mb-lg-0 text-center" data-id="${data.id}>
                   <img
                     src="image/${data.image}"
                     class="img-fluid shopping-cart-img"
@@ -165,7 +165,7 @@
                   <button
                     type="button"
                     class="btn btn-secondary btn-sm mb-2 float-right"
-                    data=${i}
+                    data="${parsedOrderListStorage[i].keyID}"
                     data-mdb-toggle="tooltip"
                     title="Remove item"
                   >
@@ -237,7 +237,7 @@
               </ul>
 
               <button type="button" class="btn btn-primary btn-lg btn-block order-purchase-button">
-                Go to checkout
+                Place Order
               </button>
             </div>
           </div>

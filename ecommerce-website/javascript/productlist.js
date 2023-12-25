@@ -1,4 +1,3 @@
-
 getAllProducts();
 
 // ------------------------------------------------------------------------------------
@@ -61,3 +60,46 @@ sortProducts.addEventListener('change', function() {
 //     } 
 
 // });
+
+var bsOverlay = $('.bs-canvas-overlay');
+$('[data-toggle="canvas"]').on('click', function(){
+
+    if(window.innerWidth < 576){
+    
+    var ctrl = $(this), 
+        elm = ctrl.is('a') ? ctrl.data('target') : ctrl.attr('href');
+    $(elm).addClass('ml-0 px-3');
+    $(elm).removeClass('col-3');
+    $(elm + ' .bs-canvas-close').attr('aria-expanded', "true");
+    $('[data-target="' + elm + '"], a[href="' + elm + '"]').attr('aria-expanded', "true");
+    if(bsOverlay.length)
+        bsOverlay.addClass('show');
+    return false;
+    }
+});
+
+$('.bs-canvas-close, .bs-canvas-overlay').on('click', function(){
+    var elm;
+    if($(this).hasClass('bs-canvas-close')) {
+        elm = $(this).closest('.bs-canvas');
+        $('[data-target="' + elm + '"], a[href="' + elm + '"]').attr('aria-expanded', "false");
+    } else {
+        elm = $('.bs-canvas')
+        $('[data-toggle="canvas"]').attr('aria-expanded', "false");	
+    }
+    elm.removeClass('ml-0 px-3');
+    elm.addClass('col-3');
+    $('.bs-canvas-close', elm).attr('aria-expanded', "false");
+    if(bsOverlay.length)
+        bsOverlay.removeClass('show');
+    return false;
+});
+
+  
+document.querySelector('button.uncheckAll').addEventListener('click', function (){
+
+    document.querySelectorAll('input[type="checkbox"]')
+      .forEach(el => el.checked = false);
+
+})
+
