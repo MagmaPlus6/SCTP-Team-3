@@ -127,3 +127,47 @@ const sortAllProductsByPriceDescend = async () => {
     }
 }
 
+// Function to create a new order
+const createNewOrder = async (data) => {
+    try {
+        const response = await fetch('http://localhost:8080/orders', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),            
+        });
+
+        if(response.ok) {
+            const jsonResponse = await response.json();
+            // console.log('New order is created:', jsonResponse);
+            return(jsonResponse.id)
+        }
+        // throw new Error('Request failed!');
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}
+
+
+// Function to create ordered products in the new order
+const placeProductsInNewOrder = async (orderId, productId, productData) => {
+
+    try {
+        const response = await fetch(`http://localhost:8080/orders/${orderId}/products/${productId}/order-details`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(productData),            
+        });
+
+        if(response.ok) {
+            const jsonResponse = await response.json();
+            console.log('New order detail is created:', jsonResponse);
+        }
+        // throw new Error('Request failed!');
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}

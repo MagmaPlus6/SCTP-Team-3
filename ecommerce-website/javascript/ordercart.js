@@ -64,7 +64,7 @@ const addProductToShoppingCart = async () => {
 
 		subOrderList.innerHTML = `
 
-			<div class="col-lg-4 col-md mb-4 mb-lg-0 text-center">
+			<div class="col-lg-4 col-md mb-4 mb-lg-0 text-center" data-id="${data.id}">
 				<img
 					src="image/${data.image}"
 					class="img-fluid shopping-cart-img"
@@ -222,9 +222,7 @@ const deliveryDates = document.querySelector('.delivery-dates');
 deliveryDates.innerHTML = getDeliveryDates(2) + ' - ' + getDeliveryDates(5)
 
 
-document.querySelector('.order-purchase-button').addEventListener('click', function () {
-
-	let orderInfo = []
+document.querySelector('.order-purchase-button').addEventListener('click', async function () {
 
     const stringSubtotal = document.querySelector('.subtotal').innerHTML
 	const subtotal = parseFloat(stringSubtotal).toFixed(2)
@@ -235,21 +233,23 @@ document.querySelector('.order-purchase-button').addEventListener('click', funct
     const stringTotal = document.querySelector('.total').innerHTML
     const total = parseFloat(stringTotal).toFixed(2)
 
-	orderInfo.push({
+	const orderInfo = {
 		username: "Matt",
 		subtotal: subtotal,
 		shippingFee: shippingFee,
 		total: total
-	})
+	}
 
 	console.log(orderInfo)
-
+	const newOrderId = await createNewOrder(orderInfo)
 
 	let orderDetailInfo = [];
 
 	document.querySelectorAll('.row.border-bottom.m-1.py-2.align-items-center').forEach(function (element) {
 
-		const orderProductName = element.querySelector('.col-lg-8.col-md.mb-4.mb-lg-0 strong').innerText
+		const stringOrderProductId = element.querySelector('.col-lg-4.col-md.mb-4.mb-lg-0.text-center').getAttribute('data-id')
+
+		const orderProductId = parseInt(stringOrderProductId)
 
 		const orderProductSize = element.querySelector('a.btn-primary.btn-sm.active').innerText
 
@@ -260,13 +260,21 @@ document.querySelector('.order-purchase-button').addEventListener('click', funct
 		const orderProductPrice = parseFloat(stringOrderProductPrice).toFixed(2)
 
 		orderDetailInfo.push({
-			name: orderProductName,
-			size: orderProductSize,
-			quantity: orderProductQuantity,
-			price: orderProductPrice
+			id: orderProductId,
+			detailInfo: {
+				size: orderProductSize,
+				quantity: orderProductQuantity,
+				price: orderProductPrice
+			}
 		})
 	})
 
-	console.log(orderDetailInfo)
+
+	for (let i = 0; i < orderDetailInfo.length; i++) {
+		placeProductsInNewOrder(newOrderId, orderDetailInfo[i].id, orderDetailInfo[i].detailInfo)
+	}
+
+	// Clear shopping cart after placing order successfully
+	// localStorage.removeItem("orderListStorage");
 
 })

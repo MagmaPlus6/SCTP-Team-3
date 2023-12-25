@@ -185,6 +185,20 @@ button[aria-expanded=false] .bi-chevron-up {
     aspect-ratio: 1/1;
 }
 
+.bs-canvas-overlay {
+    opacity: 0;
+    z-index: -1;
+}
+
+
+
+.bs-canvas-overlay, .bs-canvas {
+    transition: all .4s ease-out;
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -ms-transition: all .4s ease-out;
+}
+
 @media (max-width: 576px) {
 
     .second-nav .category-desktop {
@@ -206,8 +220,7 @@ button[aria-expanded=false] .bi-chevron-up {
     .second-nav-mobile img {
         height: 40px;
     }
-
-        
+    
     .filter-sort-bar a {
         margin-left: 0.8em;
         margin-right: 1em;
@@ -222,12 +235,33 @@ button[aria-expanded=false] .bi-chevron-up {
     .filter-sort-bar .number-of-products {
         text-align: left;
         padding-bottom: 1em;
+    }  
+    
+    .bs-canvas {
+        top: 0;
+        z-index: 1110;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 250px;
+        position: fixed;
+        background-color: #F5F5F5;
+        height: 100%;	
     }
 
-    .filter-products {
-        display: none;
-    }   
+    .bs-canvas-left {
+        left: 0;
+        margin-left: -250px;
+    }
+    
+    .bs-canvas-right {
+        right: 0;
+        margin-right: -250px;
+    }
 
+    .bs-canvas-overlay.show {
+        opacity: 0.85;
+        z-index: 1100;
+    }
 
 }
 

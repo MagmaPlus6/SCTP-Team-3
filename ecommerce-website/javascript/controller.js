@@ -63,14 +63,14 @@ class Controller{
         // (A)
         if(!data.length){
             let noProductList = document.createElement("div");
-            noProductList.className = "no-products";
+            noProductList.className = "no-products pb-2";
             noProductList.style.textAlign = "center";
             noProductList.innerHTML = `<span>No product(s) found.</span>`;
             let preProductList = document.querySelector(".pre-product-list")
 
             if(!document.querySelector(".no-products")) {
                 preProductList.appendChild(noProductList);
-                document.querySelector("nav .pagination").style.display = "none";   
+                // document.querySelector("nav .pagination").style.display = "none";   
             } 
             
             document.querySelector(".filter-sort-bar").style.display = "none"; 
@@ -86,7 +86,7 @@ class Controller{
 
             if(noProductList) {
                 noProductList.parentNode.removeChild(noProductList);
-                document.querySelector("nav .pagination").style.display = "";
+                // document.querySelector("nav .pagination").style.display = "";
             }
         }
 
@@ -186,3 +186,4 @@ class Controller{
 }
 
 const productsController = new Controller();
+productsController.displayCart([]);
