@@ -20,9 +20,43 @@
 
 /*--------------------- Home page--------------------- */
 
+.bazhub-icon {
+    height: 40px;
+}
+
+.new-arrival {
+    background-color: #3FC1C9;
+    border-radius: 4%;
+}
+
+.jumbotron {
+    background-image:url(../image/giftcard.png);
+    background-size: cover; 
+    /* background-size: contain;
+    background-repeat: no-repeat; */
+}
+
+.subscribe-newsletter {
+    /* background-color: #99206C; */
+    background-color: #e9d6cf;
+}
+
+.subscribe-font {
+    font-size: 2em;
+    font-weight: bolder;
+    color: #cd3679;
+}
+
+.subscribe-button {
+    background-color: #cd3679;
+}
+
+i.bi.bi-play-fill {
+    color: #e9d6cf;
+}
 
 /*Mid Section start */
-.jumbotron{
+/* .jumbotron{
     width: 100%;
     min-height: 500px;
     color:gold;
@@ -36,74 +70,66 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+} */
 
-.jumbotron img{width:100%;}
-#navigation-name img{height:50px;}
+/* .jumbotron img{width:100%;} */
 
-/*Mid Section 2nd part */
-.mid-section-2 h1 { 
+/* .mid-section-2 h1 { 
     text-align: center;
     font-family: cursive;
     font-weight:bolder;
     color: #6A9C89;
     background-color: #EEEEEE;
-} 
+}  */
 
-/* Mid Section end */
 
-/*flex container for cards item*/
-.flex-container {
+/* .flex-container {
     background-color: #EEEEEE;
     color: #176B87; 
     display: flex;
     text-align: center;
     flex-direction:column ; 
     justify-content: space-around;
-}
+} */
 
-.card-flex{display:flex;
+/* .card-flex{display:flex;
            justify-content: space-around;
            padding-bottom: 20px;
-}
+} */
 
-.btn-info {background-color: #176B87;}
-.flex-container .homepage-card {height: 300px;}
-.flex-container .card .btn{display: block;}
+/* .flex-container .homepage-card {height: 300px;}
+.flex-container .card .btn{display: block;} */
 
-/*Bottom background*/
-.bottom-bg { 
+/* .bottom-bg { 
     background-color:#176B87;
     height:225px;
     margin-bottom: -1000px;
     margin-top: -25px;
     text-align: center;
     color:white;
-}
+} */
 
-.bottom-bg button {
+/* .bottom-bg button {
     margin-left:75px;
     margin-top:10px;
     color: white;
     font-family: cursive;
-}
+} */
 
-.btn.btn-link-outline{display:inline;}
+/* .btn.btn-link-outline{display:inline;} */
 
-.bottom-bg .form-group {
+/* .bottom-bg .form-group {
     display:flex;
     width:300px;
     margin: 0 auto;
-}
+} */
 
-/* footer start */ 
-footer.footer { 
+/* footer.footer { 
     margin-top:1000px;
     height: 60px;
     background-color: #364F6B;
-}
+} */
 
-/* footer end */
 
 /* --------------------- About us page--------------------- */
 
@@ -159,6 +185,10 @@ footer {
 }
 
 /* --------------------- Product list page--------------------- */
+
+.btn-info {
+    background-color: #176B87;
+}
 
 .second-nav {
     background-color: #F5F5F5;
