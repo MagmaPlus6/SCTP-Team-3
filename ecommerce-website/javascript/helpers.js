@@ -56,6 +56,25 @@ const saveProduct = async (data) => {
     }
 }
 
+
+// Function to upload image
+const uploadImage = async (formData) => {
+    try {
+        const response = await fetch('http://localhost:8080/image', {
+            method: 'POST',
+            body: formData           
+        });
+
+        if(response.ok) {
+            return response.text();
+        }
+        // throw new Error('Request failed!');
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}
+
+
 //Function to get products based on search input
 const searchProducts = async (string) => {
     try {

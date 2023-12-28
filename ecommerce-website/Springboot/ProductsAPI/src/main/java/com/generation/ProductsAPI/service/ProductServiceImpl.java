@@ -22,6 +22,13 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.save(product);
     }
 
+//    @Override
+//    public Product createNewProduct(Product product, String imageName) {
+//
+//        product.setImage(imageName);
+//        return productRepository.save(product);
+//    }
+
     @Override
     public Optional<Product> updateProduct(Integer id, Product product) {
 
@@ -32,7 +39,7 @@ public class ProductServiceImpl implements ProductService {
             temp.setName(product.getName());
             temp.setBrand(product.getBrand());
             temp.setPrice(product.getPrice());
-            temp.setImage(product.getImage());
+//            temp.setImage(product.getImage());
             return Optional.of(productRepository.save(temp));
         }catch(Exception e){
             return result;

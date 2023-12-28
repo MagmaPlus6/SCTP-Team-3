@@ -57,6 +57,18 @@ class ProductServiceImplTest {
         assertThat(newProduct.getName()).isNotEqualTo("Blue khakis");
     }
 
+//    @Test
+//    void createNewProduct() {
+//
+//        when(productRepo.save(any(Product.class))).thenReturn(product1);
+//
+//        Product newProduct = productServiceImpl.createNewProduct(product1, any(String.class));
+//
+//        assertNotNull(newProduct);
+//        assertThat(newProduct.getName()).isEqualTo("Grey casual shirt");
+//        assertThat(newProduct.getName()).isNotEqualTo("Blue khakis");
+//    }
+
     @Test
     void updateProduct() {
 
