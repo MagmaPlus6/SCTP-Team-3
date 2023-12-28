@@ -55,7 +55,6 @@ class Controller{
         const showProductList = document.querySelector(".product-list");
 
         // Clear off existing products displayed on the page
-        
         while (showProductList.hasChildNodes()) {
             showProductList.removeChild(showProductList.firstChild);
         }
@@ -129,24 +128,6 @@ class Controller{
         };
 
         saveProduct(data);
-
-        // fetch('http://localhost:8080/products', {
-        // // Call the fetch function passing the url of the API AS a parameter
-        // method: 'POST',
-        // headers: {
-        //     'Content-Type': 'application/json',
-        // },
-        // body: JSON.stringify(data),
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     // Codes for handling the data you get from the API
-        //     console.log('Success:', data);
-        // })
-        // .catch((error) => {
-        //     // Run code if the server returns any errors 
-        //     console.error('Error:', error);
-        // });
     }
 
     // to edit

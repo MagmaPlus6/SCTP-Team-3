@@ -119,6 +119,24 @@ class ProductServiceControllerTest {
                 .andExpect(jsonPath("$.image", is(product1.getImage())));
     }
 
+//    @Test
+//    void createNewProduct() throws Exception{
+//
+//        when(productService.createNewProduct(any(Product.class), any(String.class))).thenReturn(product1);
+//
+//        ResultActions response = mockMvc.perform(post("/products")
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(objectMapper.writeValueAsString(product1)));
+//
+//        response.andDo(print())
+//                .andExpect(status().isCreated())
+//                .andExpect(jsonPath("$.id", is(product1.getId())))
+//                .andExpect(jsonPath("$.name", is(product1.getName())))
+//                .andExpect(jsonPath("$.brand", is(product1.getBrand())))
+//                .andExpect(jsonPath("$.price", is(product1.getPrice().doubleValue())))
+//                .andExpect(jsonPath("$.image", is(product1.getImage())));
+//    }
+
     @Test
     void updateProduct() throws Exception{
 

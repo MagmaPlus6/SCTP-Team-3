@@ -241,7 +241,7 @@ document.querySelector('.order-purchase-button').addEventListener('click', async
 	}
 
 	console.log(orderInfo)
-	const newOrderId = await createNewOrder(orderInfo)
+	const newOrderId = await createNewOrder(orderInfo);
 
 	let orderDetailInfo = [];
 
@@ -275,6 +275,6 @@ document.querySelector('.order-purchase-button').addEventListener('click', async
 	}
 
 	// Clear shopping cart after placing order successfully
-	// localStorage.removeItem("orderListStorage");
+	localStorage.removeItem("orderListStorage");
 
 })

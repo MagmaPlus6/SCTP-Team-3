@@ -45,21 +45,7 @@ sortProducts.addEventListener('change', function() {
 
 
 // ------------------------------------------------------------------------------------
-// Show/hide filter side bar
-
-// document.querySelector('.filter-sort-bar a').addEventListener('click', function (event) {
-
-//     const filterSideBar = document.querySelector('.filter-products')
-
-//     console.log(filterSideBar.style.display)
-
-//     if(window.innerWidth > 575 && filterSideBar) {
-//           filterSideBar.style.display === "" ?
-//             filterSideBar.style.display = "none" :
-//             filterSideBar.style.display = "";
-//     } 
-
-// });
+// Make filter option rensponsive in mobile size
 
 var bsOverlay = $('.bs-canvas-overlay');
 $('[data-toggle="canvas"]').on('click', function(){
@@ -95,7 +81,9 @@ $('.bs-canvas-close, .bs-canvas-overlay').on('click', function(){
     return false;
 });
 
-  
+
+// ------------------------------------------------------------------------------------ 
+// Clear all checks in the filter options
 document.querySelector('button.uncheckAll').addEventListener('click', function (){
 
     document.querySelectorAll('input[type="checkbox"]')

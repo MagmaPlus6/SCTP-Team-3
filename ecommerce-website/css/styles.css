@@ -55,82 +55,6 @@ i.bi.bi-play-fill {
     color: #e9d6cf;
 }
 
-/*Mid Section start */
-/* .jumbotron{
-    width: 100%;
-    min-height: 500px;
-    color:gold;
-    font-size: larger;
-    padding-top: 20px;
-    margin-bottom: 0px;
-    padding:20px;
-    background-image:url(../image/Shopping2.jpg);
-    background-size: cover;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
-
-/* .jumbotron img{width:100%;} */
-
-/* .mid-section-2 h1 { 
-    text-align: center;
-    font-family: cursive;
-    font-weight:bolder;
-    color: #6A9C89;
-    background-color: #EEEEEE;
-}  */
-
-
-/* .flex-container {
-    background-color: #EEEEEE;
-    color: #176B87; 
-    display: flex;
-    text-align: center;
-    flex-direction:column ; 
-    justify-content: space-around;
-} */
-
-/* .card-flex{display:flex;
-           justify-content: space-around;
-           padding-bottom: 20px;
-} */
-
-/* .flex-container .homepage-card {height: 300px;}
-.flex-container .card .btn{display: block;} */
-
-/* .bottom-bg { 
-    background-color:#176B87;
-    height:225px;
-    margin-bottom: -1000px;
-    margin-top: -25px;
-    text-align: center;
-    color:white;
-} */
-
-/* .bottom-bg button {
-    margin-left:75px;
-    margin-top:10px;
-    color: white;
-    font-family: cursive;
-} */
-
-/* .btn.btn-link-outline{display:inline;} */
-
-/* .bottom-bg .form-group {
-    display:flex;
-    width:300px;
-    margin: 0 auto;
-} */
-
-/* footer.footer { 
-    margin-top:1000px;
-    height: 60px;
-    background-color: #364F6B;
-} */
-
-
 /* --------------------- About us page--------------------- */
 
 .about-us {
@@ -219,8 +143,6 @@ button[aria-expanded=false] .bi-chevron-up {
     opacity: 0;
     z-index: -1;
 }
-
-
 
 .bs-canvas-overlay, .bs-canvas {
     transition: all .4s ease-out;

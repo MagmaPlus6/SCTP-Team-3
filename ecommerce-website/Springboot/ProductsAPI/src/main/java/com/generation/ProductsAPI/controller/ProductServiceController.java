@@ -2,6 +2,8 @@ package com.generation.ProductsAPI.controller;
 
 import com.generation.ProductsAPI.exception.ResourceNotFoundException;
 import com.generation.ProductsAPI.model.Product;
+import com.generation.ProductsAPI.service.ImageService;
+import com.generation.ProductsAPI.service.ImageServiceImpl;
 import com.generation.ProductsAPI.service.ProductService;
 
 import jakarta.validation.Valid;
@@ -9,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -19,8 +23,11 @@ public class ProductServiceController {
 
     ProductService productService;
 
-    public ProductServiceController(@Autowired ProductService productService){
+    ImageService imageService;
+
+    public ProductServiceController(@Autowired ProductService productService, @Autowired ImageService imageService){
         this.productService = productService;
+        this.imageService = imageService;
     }
 
     @GetMapping
@@ -121,6 +128,14 @@ public class ProductServiceController {
         return new ResponseEntity<>(productService.createNewProduct(product), HttpStatus.CREATED);
     }
 
+//    @PostMapping()
+//    public ResponseEntity<Object> createNewProduct(@Valid @RequestBody Product product, MultipartFile imageFile) throws IOException{
+//
+//        String newImageName = imageService.uploadImageToFileSystem(imageFile);
+//
+//        return new ResponseEntity<>(productService.createNewProduct(product, newImageName), HttpStatus.CREATED);
+//    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateProduct(@PathVariable Integer id ,@Valid @RequestBody Product product) {
 
@@ -130,11 +145,14 @@ public class ProductServiceController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteProduct(@PathVariable Integer id) {
+    public ResponseEntity<String> deleteProduct(@PathVariable Integer id) throws IOException {
 
-        productService.getProduct(id).orElseThrow(() -> new ResourceNotFoundException("Product of id " + id + " is not found"));
+        Product result = productService.getProduct(id).orElseThrow(() -> new ResourceNotFoundException("Product of id " + id + " is not found"));
+
+        String imageToDelete = result.getImage();
 
         productService.deleteProduct(id);
+        imageService.deleteImage(imageToDelete);
 
         return new ResponseEntity<>("Product is deleted successfully.", HttpStatus.OK);
     }

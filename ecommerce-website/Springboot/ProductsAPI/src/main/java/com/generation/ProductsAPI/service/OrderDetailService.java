@@ -1,7 +1,6 @@
 package com.generation.ProductsAPI.service;
 
 import com.generation.ProductsAPI.model.OrderDetail;
-import com.generation.ProductsAPI.model.Product;
 
 import java.util.List;
 import java.util.Optional;
