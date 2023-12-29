@@ -151,6 +151,13 @@ button[aria-expanded=false] .bi-chevron-up {
     -ms-transition: all .4s ease-out;
 }
 
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    gap: 32px 32px;    
+}
+
 @media (max-width: 576px) {
 
     .second-nav .category-desktop {

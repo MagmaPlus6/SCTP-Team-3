@@ -92,17 +92,15 @@ class Controller{
         // (B) 
         for (let index = 0; index < data.length; index++) {
             let subProductList = document.createElement("div");
-            subProductList.className = "col pb-4";
+            subProductList.className = "bg-white";
             subProductList.innerHTML = `
                 <a href="product-id-${data[index].id}.html" class="text-decoration-none text-dark" target="product${data[index].id}page">
-                    <div class="card h-100">
                         <img class="card-img-top card-img-fit" src="image/${data[index].image}">
-                        <div class="card-body d-flex flex-column">
-                            <p class="card-title text-muted">${data[index].brand}</p>
-                            <h5 class="card-text">${data[index].name}</h5>
-                            <p class="card-text mt-auto">$${data[index].price.toFixed(2)}</p>
+                        <div class="px-3 pt-3">
+                            <p class="text-muted">${data[index].brand}</p>
+                            <h5 class="">${data[index].name}</h5>
+                            <p class="">$${data[index].price.toFixed(2)}</p>
                         </div>
-                    </div>
                 </a>
             `
             showProductList.appendChild(subProductList);

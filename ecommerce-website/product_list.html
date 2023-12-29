@@ -62,7 +62,7 @@
     </nav>
 
     <!-- Desktop version -->
-    <nav class="navbar navbar-expand navbar-light second-nav row mx-auto">
+    <nav class="navbar navbar-expand navbar-light second-nav row mx-auto px-4">
         <div class="col-sm category-desktop">
           <ul class="navbar-nav font-weight-bold">
             <li class="nav-item active">
@@ -96,8 +96,8 @@
     <div class="container-fluid px-4 bg-light pb-2 pre-product-list">
       <!-- class pre-product-list is for controller.js to display message no products found-->
       
-      <div class="filter-sort-bar row pt-3 mx-3">
-        <p class="col-sm order-sm-12 pr-0 my-auto number-of-products">No product(s) found</p>
+      <div class="filter-sort-bar row pt-3 mx-1">
+        <p class="col-sm order-sm-12 my-auto number-of-products">No product(s) found</p>
         <a href="#/" class="btn btn-outline-secondary text-dark col-sm-3 order-sm-1 my-auto bg-white" data-toggle="canvas" data-target="#bs-canvas-left" aria-expanded="false" aria-controls="bs-canvas-left"><i class="bi bi-filter"></i> Filter by</a>
 
         <div class="col-sm-4 order-sm-3 sort-by">
@@ -111,8 +111,8 @@
         </div>
       </div>
 
-      <div class="row mx-auto justify-content-center">
-        <div id="bs-canvas-left" class="filter-products py-3 col-3 bs-canvas bs-canvas-left">
+      <div class="row mx-1 pb-3">
+        <div id="bs-canvas-left" class="filter-products py-3 col-3 bs-canvas bs-canvas-left pl-0">
           <div class="card mb-3">
             <button class="btn text-left p-0" type="button" data-toggle="collapse" data-target="#collapseType" aria-expanded="false" aria-controls="collapseType">
               <div class="card-header" id="headingType">
@@ -265,23 +265,25 @@
         </div>
       
 
-        <div class="product-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pt-3 col">
-          <!-- class product list is for controller.js to populate products from backend/database after fetching -->
+        <div class="col pt-3">
+          <div class="product-list">
+            <!-- class product list is for controller.js to populate products from backend/database after fetching -->
 
-          <!-- Original html for product list
-            <div class="col pb-4">
-                <a href="#/" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="image/women-gym-top.jpg" alt="Women gym top">
-                        <div class="card-body">
-                          <p class="card-title text-muted">Just Cool</p>
-                          <h5 class="card-text">Gym Training Top</h5>
-                          <p class="card-text">$10.48</p>
-                        </div>
-                    </div>
-                </a>
-            </div> 
-          -->
+            <!-- Original html for product list
+              <div class="col pb-4">
+                  <a href="#/" class="text-decoration-none text-dark">
+                      <div class="card h-100">
+                          <img class="card-img-top" src="image/women-gym-top.jpg" alt="Women gym top">
+                          <div class="card-body">
+                            <p class="card-title text-muted">Just Cool</p>
+                            <h5 class="card-text">Gym Training Top</h5>
+                            <p class="card-text">$10.48</p>
+                          </div>
+                      </div>
+                  </a>
+              </div> 
+            -->
+          </div>
         </div>
       </div>
 
