@@ -277,4 +277,10 @@ document.querySelector('.order-purchase-button').addEventListener('click', async
 	// Clear shopping cart after placing order successfully
 	localStorage.removeItem("orderListStorage");
 
+	const orderList = document.querySelector('.order-list')
+
+	while (orderList.hasChildNodes()) {
+		orderList.removeChild(orderList.firstChild);
+	}
+
 })

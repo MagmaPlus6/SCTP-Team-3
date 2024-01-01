@@ -39,18 +39,6 @@ class Controller{
         }
     }
 
-    // displayCart() method belongs to class Controller
-    // it receives an array of Objects
-    // an instance unorderedlist is instantiated to reference classname "product-list"
-
-    // (A) in the event there are NO products
-    // displays feedback that there are no products at the moment
-    // and exit the function displayCart() prematurely - via return;
-
-    // (B) in the event there are products
-    // a for loop is used to iteratively populate class name "product-list"
-    // with a list of items representing each product received from param 'data'
-
     displayCart(data){
         const showProductList = document.querySelector(".product-list");
 
@@ -126,40 +114,6 @@ class Controller{
         };
 
         saveProduct(data);
-    }
-
-    // to edit
-    update({name, brand, price, image}){
-        const data = { name, brand, price, image };
-
-        fetch('http://localhost:8080/products/{id}', {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-        console.log('Success:', data);
-        })
-        .catch((error) => {
-        console.error('Error:', error);
-        });    
-    }
-
-    // to edit
-    delete(id){
-        fetch('http://localhost:8080/products/{id}', {
-            method: 'DELETE'
-        })
-    }
-
-    // to edit
-    findById(id){
-        fetch('http://localhost:8080/products/{id}', {
-            method: 'GET'
-        })    
     }
 
 }

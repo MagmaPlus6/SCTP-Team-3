@@ -1,6 +1,5 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
-    /* font-family: cursive; */
     font-size: medium;
 }
 
@@ -134,7 +133,6 @@ button[aria-expanded=false] .bi-chevron-up {
 }
 
 .card-img-fit {
-    /* width: 100%; */
     object-fit: contain;
     aspect-ratio: 1/1;
 }

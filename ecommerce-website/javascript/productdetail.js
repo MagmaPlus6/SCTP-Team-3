@@ -24,7 +24,7 @@ if(productDetailPage) {
 
 productDetailPageData(productID)
 
-
+//--------------------------------------------------------------------
 
 const orderForm = document.querySelector('form.order-product');
 

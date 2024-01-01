@@ -20,9 +20,6 @@ if(newSearchProduct) {
 
         console.log('search input:' + input)
 
-        // console.log(productsController.products)
-        // productsController.displayCart(productsController.products);
-
         searchProducts(input) 
     });
 }
@@ -34,10 +31,10 @@ const sortProducts = document.querySelector('#sortProducts');
 sortProducts.addEventListener('change', function() {
 
     if(this.value === "Ascending Price") {
-        sortAllProductsByPriceAscend();
+        sortAllProductsByPrice('asc');
         return;
     } else if (this.value === "Descending Price") {
-        sortAllProductsByPriceDescend();
+        sortAllProductsByPrice('desc');
         return;       
     }
 

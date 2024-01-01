@@ -37,9 +37,6 @@
              <li class="nav-item mr-2">
                 <a href="" class="nav-link" id="navigation-name">Product</a>
              </li>
-             <!-- <li class="nav-item mr-2">
-                <a href="create_product.html" class="nav-link" id="navigation-name">Create</a>
-             </li> -->
              <li class="nav-item mr-2">
                 <a href="about.html" class="nav-link" id="navigation-name">About us</a>
              </li> 
@@ -170,6 +167,12 @@
             <div id="collapseBrand" class="collapse multi-collapse" aria-labelledby="headingBrand">
               <div class="card-body">
                 <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Adidas" id="adidas">
+                  <label class="form-check-label" for="adidas">
+                    Adidas
+                  </label>
+                </div>
+                <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="Beyond the Vines" id="beyondTheVines">
                   <label class="form-check-label" for="beyondTheVines">
                     Beyond the Vines
@@ -188,18 +191,6 @@
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Echo" id="echo">
-                  <label class="form-check-label" for="echo">
-                    Echo
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="In Good Company" id="inGoodCompany">
-                  <label class="form-check-label" for="inGoodCompany">
-                    In Good Company
-                  </label>
-                </div>
-                <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="Kydra" id="kydra">
                   <label class="form-check-label" for="kydra">
                     Kydra
@@ -211,6 +202,19 @@
                     Love, Bonito
                   </label>
                 </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Tommy Hilfiger" id="tommyHilfiger">
+                  <label class="form-check-label" for="tommyHilfiger">
+                    Tommy Hilfiger
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Urban Coco" id="urbanCoco">
+                  <label class="form-check-label" for="urbanCoco">
+                    Urban Coco
+                  </label>
+                </div>
+
               </div>
             </div>
           </div>
@@ -270,17 +274,15 @@
             <!-- class product list is for controller.js to populate products from backend/database after fetching -->
 
             <!-- Original html for product list
-              <div class="col pb-4">
-                  <a href="#/" class="text-decoration-none text-dark">
-                      <div class="card h-100">
-                          <img class="card-img-top" src="image/women-gym-top.jpg" alt="Women gym top">
-                          <div class="card-body">
-                            <p class="card-title text-muted">Just Cool</p>
-                            <h5 class="card-text">Gym Training Top</h5>
-                            <p class="card-text">$10.48</p>
-                          </div>
-                      </div>
-                  </a>
+              <div class="bg-white">
+                <a href="product-id-${data[index].id}.html" class="text-decoration-none text-dark" target="product${data[index].id}page">
+                    <img class="card-img-top card-img-fit" src="image/${data[index].image}">
+                    <div class="px-3 pt-3">
+                        <p class="text-muted">${data[index].brand}</p>
+                        <h5 class="">${data[index].name}</h5>
+                        <p class="">$${data[index].price.toFixed(2)}</p>
+                     </div>
+                </a>
               </div> 
             -->
           </div>
@@ -288,23 +290,6 @@
       </div>
 
     </div>
-
-    <!-- ------------- Pagination section ------------- -->
-    <!-- <nav aria-label="Page navigation example" class="text-success bg-light py-1">
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#/">Previous</a>
-          </li>
-          <li class="page-item active" aria-current="page"><a class="page-link" href="#/">1</a></li>
-          <li class="page-item"><a class="page-link" href="#/">2</a></li>
-          <li class="page-item"><a class="page-link" href="#/">3</a></li>
-          <li class="page-item">
-          <li class="page-item"><a class="page-link" href="#/">4</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#/">Next</a>
-          </li>
-        </ul>
-    </nav> -->
 
     <!-- ------------- Footer section ------------- -->
             

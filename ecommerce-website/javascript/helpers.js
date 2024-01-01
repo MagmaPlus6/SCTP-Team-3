@@ -106,10 +106,10 @@ const searchProducts = async (string) => {
     }
 }
 
-// Function to sort products in ascending price
-const sortAllProductsByPriceAscend = async () => {
+// Function to sort products
+const sortAllProductsByPriceAscend = async (order) => {
     try {
-        const response = await fetch('http://localhost:8080/products/sortby_price_asc');
+        const response = await fetch(`http://localhost:8080/products/sortby_price_${order}`);
 
         if(response.ok) {
             const jsonResponse = await response.json();
@@ -126,25 +126,6 @@ const sortAllProductsByPriceAscend = async () => {
     }
 }
 
-// Function to sort products in descending price
-const sortAllProductsByPriceDescend = async () => {
-    try {
-        const response = await fetch('http://localhost:8080/products/sortby_price_desc');
-
-        if(response.ok) {
-            const jsonResponse = await response.json();
-            productsController.products = jsonResponse;
-            productsController.displayCart(jsonResponse);
-            productsController.storeDataToLocalStorage(jsonResponse);
-            // productsController.loadDataFromLocalStorage();
-
-            console.log('Success:', productsController.products);
-        }
-        // throw new Error('Request failed!');
-    } catch (error) {
-        console.log('Error:', error);
-    }
-}
 
 // Function to create a new order
 const createNewOrder = async (data) => {
