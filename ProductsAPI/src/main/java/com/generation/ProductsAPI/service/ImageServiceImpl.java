@@ -26,7 +26,7 @@ public class ImageServiceImpl implements ImageService{
     @Override
     public String uploadImageToFileSystem(MultipartFile imageFile) throws IOException {
 
-        Path uploadPath = Paths.get("../../image");
+        Path uploadPath = Paths.get("src/main/resources/static/image");
 
         String uniqueFileName = UUID.randomUUID() + "_" + imageFile.getOriginalFilename();
 
@@ -46,7 +46,7 @@ public class ImageServiceImpl implements ImageService{
     // To view an image
     @Override
     public byte[] getImage(String imageName) throws IOException {
-        Path imagePath = Paths.get("../../image").resolve(imageName);
+        Path imagePath = Paths.get("src/main/resources/static/image").resolve(imageName);
 
         if (Files.exists(imagePath)) {
             byte[] imageBytes = Files.readAllBytes(imagePath);
@@ -59,7 +59,7 @@ public class ImageServiceImpl implements ImageService{
     // Delete an image
     @Override
     public void deleteImage(String imageName) throws IOException {
-        Path imagePath = Paths.get("image").resolve(imageName);
+        Path imagePath = Paths.get("src/main/resources/static/image").resolve(imageName);
 
         Files.deleteIfExists(imagePath);
     }

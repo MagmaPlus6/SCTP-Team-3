@@ -2,7 +2,7 @@
 // Function to get all products
 const getAllProducts = async () => {
     try {
-        const response = await fetch('http://localhost:8080/products');
+        const response = await fetch('https://gensg-final-project.up.railway.app/api/products');
 
         if(response.ok) {
             const jsonResponse = await response.json();
@@ -22,7 +22,7 @@ const getAllProducts = async () => {
 // Function to get single product
 const getSingleProduct = async (id) => {
     try {
-        const response = await fetch(`http://localhost:8080/products/${id}`);
+        const response = await fetch(`https://gensg-final-project.up.railway.app/api/products/${id}`);
 
         if(response.ok) {
             const jsonResponse = await response.json();
@@ -38,7 +38,7 @@ const getSingleProduct = async (id) => {
 // Function to save product
 const saveProduct = async (data) => {
     try {
-        const response = await fetch('http://localhost:8080/products', {
+        const response = await fetch('https://gensg-final-project.up.railway.app/api/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const saveProduct = async (data) => {
 // Function to upload image
 const uploadImage = async (formData) => {
     try {
-        const response = await fetch('http://localhost:8080/image', {
+        const response = await fetch('https://gensg-final-project.up.railway.app/api/image', {
             method: 'POST',
             body: formData           
         });
@@ -78,7 +78,7 @@ const uploadImage = async (formData) => {
 //Function to get products based on search input
 const searchProducts = async (string) => {
     try {
-        const response = await fetch(`http://localhost:8080/products/?name=${string}`);
+        const response = await fetch(`https://gensg-final-project.up.railway.app/api/products/?name=${string}`);
 
         if(response.ok) {
             const jsonResponse = await response.json();
@@ -109,7 +109,7 @@ const searchProducts = async (string) => {
 // Function to sort products
 const sortAllProductsByPriceAscend = async (order) => {
     try {
-        const response = await fetch(`http://localhost:8080/products/sortby_price_${order}`);
+        const response = await fetch(`https://gensg-final-project.up.railway.app/api/products/sortby_price_${order}`);
 
         if(response.ok) {
             const jsonResponse = await response.json();
@@ -130,7 +130,7 @@ const sortAllProductsByPriceAscend = async (order) => {
 // Function to create a new order
 const createNewOrder = async (data) => {
     try {
-        const response = await fetch('http://localhost:8080/orders', {
+        const response = await fetch('https://gensg-final-project.up.railway.app/api/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ const createNewOrder = async (data) => {
 const placeProductsInNewOrder = async (orderId, productId, productData) => {
 
     try {
-        const response = await fetch(`http://localhost:8080/orders/${orderId}/products/${productId}/order-details`, {
+        const response = await fetch(`https://gensg-final-project.up.railway.app/api/orders/${orderId}/products/${productId}/order-details`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

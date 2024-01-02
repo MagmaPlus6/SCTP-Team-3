@@ -33,7 +33,7 @@ public class OrderDetailServiceController {
     }
 
 
-    @GetMapping("/order-details")
+    @GetMapping("/api/order-details")
     public ResponseEntity<Object> getAllOrderDetails() {
 
         List<OrderDetail> result = orderDetailService.getAllOrderDetails();
@@ -45,7 +45,7 @@ public class OrderDetailServiceController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping("/order-details/{id}")
+    @GetMapping("/api/order-details/{id}")
     public ResponseEntity<Object> getSingleOrderDetail(@PathVariable Integer id){
 
         OrderDetail result = orderDetailService.getOrderDetail(id).orElseThrow(() -> new ResourceNotFoundException("Order Detail of id " + id + " is not found"));
@@ -59,7 +59,7 @@ public class OrderDetailServiceController {
 //        return new ResponseEntity<>(orderDetailService.createNewOrderDetail(orderDetail), HttpStatus.CREATED);
 //    }
 
-    @PutMapping("/order-details/{id}")
+    @PutMapping("/api/order-details/{id}")
     public ResponseEntity<Object> updateOrderDetail(@PathVariable Integer id ,@Valid @RequestBody OrderDetail orderDetail) {
 
         OrderDetail result = orderDetailService.updateOrderDetail(id, orderDetail).orElseThrow(() -> new ResourceNotFoundException("Order Detail of id " + id + " is not found"));;
@@ -67,7 +67,7 @@ public class OrderDetailServiceController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @DeleteMapping("/order-details/{id}")
+    @DeleteMapping("/api/order-details/{id}")
     public ResponseEntity<String> deleteOrderDetail(@PathVariable Integer id) {
 
         orderDetailService.getOrderDetail(id).orElseThrow(() -> new ResourceNotFoundException("Order Detail of id " + id + " is not found"));
@@ -78,7 +78,7 @@ public class OrderDetailServiceController {
     }
 
 
-    @GetMapping("/orders/{orderId}/order-details")
+    @GetMapping("/api/orders/{orderId}/order-details")
     public ResponseEntity<Object> getAllOrderDetailsByOrderId(@PathVariable Integer orderId){
 
         orderService.getOrder(orderId).orElseThrow(() -> new ResourceNotFoundException("Order of id " + orderId + " is not found"));
@@ -92,7 +92,7 @@ public class OrderDetailServiceController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @PostMapping("/orders/{orderId}/products/{productId}/order-details")
+    @PostMapping("/api/orders/{orderId}/products/{productId}/order-details")
     public ResponseEntity<Object> createNewOrderDetailsByOrderId(@PathVariable Integer orderId, @PathVariable Integer productId, @Valid @RequestBody OrderDetail orderDetail) {
 
 //        OrderDetail result = orderService.getOrder(orderId).map(order -> {
@@ -112,7 +112,7 @@ public class OrderDetailServiceController {
         return new ResponseEntity<>(orderDetailService.createNewOrderDetail(orderDetail), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/orders/{orderId}/order-details")
+    @DeleteMapping("/api/orders/{orderId}/order-details")
     public ResponseEntity<String> deleteAllOrderDetailByOrderId(@PathVariable Integer orderId) {
 
         orderService.getOrder(orderId).orElseThrow(() -> new ResourceNotFoundException("Order of id " + orderId + " is not found"));
