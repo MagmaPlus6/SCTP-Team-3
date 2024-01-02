@@ -2,6 +2,10 @@
 // Function to get all products
 const getAllProducts = async () => {
     try {
+
+// https://gensg-final-project.up.railway.app/api/products
+// http://localhost:8080/api/products
+
         const response = await fetch('https://gensg-final-project.up.railway.app/api/products');
 
         if(response.ok) {
@@ -22,6 +26,10 @@ const getAllProducts = async () => {
 // Function to get single product
 const getSingleProduct = async (id) => {
     try {
+
+// https://gensg-final-project.up.railway.app/api/products/${id}
+// http://localhost:8080/api/products/${id}
+
         const response = await fetch(`https://gensg-final-project.up.railway.app/api/products/${id}`);
 
         if(response.ok) {
@@ -38,6 +46,10 @@ const getSingleProduct = async (id) => {
 // Function to save product
 const saveProduct = async (data) => {
     try {
+
+// http://localhost:8080/api/products
+// https://gensg-final-project.up.railway.app/api/products
+
         const response = await fetch('https://gensg-final-project.up.railway.app/api/products', {
             method: 'POST',
             headers: {
@@ -60,6 +72,10 @@ const saveProduct = async (data) => {
 // Function to upload image
 const uploadImage = async (formData) => {
     try {
+
+// http://localhost:8080/api/image
+// https://gensg-final-project.up.railway.app/api/image
+
         const response = await fetch('https://gensg-final-project.up.railway.app/api/image', {
             method: 'POST',
             body: formData           
@@ -78,6 +94,10 @@ const uploadImage = async (formData) => {
 //Function to get products based on search input
 const searchProducts = async (string) => {
     try {
+
+// https://gensg-final-project.up.railway.app/api/products/?name=${string}
+// http://localhost:8080/api/products/?name=${string}
+
         const response = await fetch(`https://gensg-final-project.up.railway.app/api/products/?name=${string}`);
 
         if(response.ok) {
@@ -109,6 +129,10 @@ const searchProducts = async (string) => {
 // Function to sort products
 const sortAllProductsByPrice = async (order) => {
     try {
+
+// https://gensg-final-project.up.railway.app/api/products/sortby_price_${order}
+// http://localhost:8080/api/products/sortby_price_${order}
+
         const response = await fetch(`https://gensg-final-project.up.railway.app/api/products/sortby_price_${order}`);
 
         if(response.ok) {
@@ -130,6 +154,10 @@ const sortAllProductsByPrice = async (order) => {
 // Function to create a new order
 const createNewOrder = async (data) => {
     try {
+
+//  https://gensg-final-project.up.railway.app/api/orders
+//  http://localhost:8080/api/orders
+
         const response = await fetch('https://gensg-final-project.up.railway.app/api/orders', {
             method: 'POST',
             headers: {
@@ -154,6 +182,10 @@ const createNewOrder = async (data) => {
 const placeProductsInNewOrder = async (orderId, productId, productData) => {
 
     try {
+
+// http://localhost:8080/api/orders/${orderId}/products/${productId}/order-details
+// https://gensg-final-project.up.railway.app/api/orders/${orderId}/products/${productId}/order-details
+
         const response = await fetch(`https://gensg-final-project.up.railway.app/api/orders/${orderId}/products/${productId}/order-details`, {
             method: 'POST',
             headers: {
