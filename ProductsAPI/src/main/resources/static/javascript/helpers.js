@@ -107,7 +107,7 @@ const searchProducts = async (string) => {
 }
 
 // Function to sort products
-const sortAllProductsByPriceAscend = async (order) => {
+const sortAllProductsByPrice = async (order) => {
     try {
         const response = await fetch(`https://gensg-final-project.up.railway.app/api/products/sortby_price_${order}`);
 
