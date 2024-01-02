@@ -14,7 +14,7 @@
 	<name>ProductsAPI</name>
 	<description>Final project for Generation FSD Programme</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>19</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
