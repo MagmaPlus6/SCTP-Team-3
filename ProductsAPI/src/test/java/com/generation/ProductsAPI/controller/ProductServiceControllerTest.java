@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
@@ -121,10 +120,6 @@ class ProductServiceControllerTest {
                 .andDo(print())
                 .andExpect(jsonPath("$[0].price", is(product1.getPrice().doubleValue())))
                 .andExpect(jsonPath("$[1].price", is(product2.getPrice().doubleValue())));
-    }
-
-    @Test
-    void getProductsWithName() {
     }
 
     @Test

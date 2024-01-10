@@ -18,6 +18,42 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
+
+    @Override
+    public Optional<Product> getProduct(Integer id) {
+        return productRepository.findById(id);
+    }
+
+    @Override
+    public List<Product> sortAllProductsByPriceAscend() {
+        return productRepository.findByOrderByPriceAsc();
+    }
+
+    @Override
+    public List<Product> sortAllProductsByPriceDescend() {
+        return productRepository.findByOrderByPriceDesc();
+    }
+
+
+    @Override
+    public List<Product> getProductsWithName(String productName) {
+        return productRepository.findByNameContaining(productName);
+    }
+
+    @Override
+    public List<Product> getProductsWithBrand(String productBrand) {
+        return productRepository.findByBrandContaining(productBrand);
+    }
+
+//    @Override
+//    public List<Product> searchProducts(String productName, String productBrand) {
+//        return productRepository.findByNameContainingOrBrandContaining(productName, productBrand);
+//    }
+
+    @Override
     public Product createNewProduct(Product product) {
         return productRepository.save(product);
     }
@@ -50,40 +86,5 @@ public class ProductServiceImpl implements ProductService {
     public void deleteProduct(Integer id) {
         productRepository.deleteById(id);
     }
-
-    @Override
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
-    }
-
-    @Override
-    public List<Product> sortAllProductsByPriceAscend() {
-        return productRepository.findByOrderByPriceAsc();
-    }
-
-    @Override
-    public List<Product> sortAllProductsByPriceDescend() {
-        return productRepository.findByOrderByPriceDesc();
-    }
-
-    @Override
-    public Optional<Product> getProduct(Integer id) {
-        return productRepository.findById(id);
-    }
-
-    @Override
-    public List<Product> getProductsWithName(String productName) {
-        return productRepository.findByNameContaining(productName);
-    }
-
-    @Override
-    public List<Product> getProductsWithBrand(String productBrand) {
-        return productRepository.findByBrandContaining(productBrand);
-    }
-
-//    @Override
-//    public List<Product> searchProducts(String productName, String productBrand) {
-//        return productRepository.findByNameContainingOrBrandContaining(productName, productBrand);
-//    }
 
 }

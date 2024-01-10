@@ -24,7 +24,7 @@ public class ImageServiceController {
     }
 
     @PostMapping()
-    public ResponseEntity<String> uploadImage(MultipartFile imageFile) throws IOException {
+    public ResponseEntity<String> uploadImage(@RequestBody MultipartFile imageFile) throws IOException {
         String result = imageService.uploadImageToFileSystem(imageFile);
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
