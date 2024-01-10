@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
@@ -74,18 +73,6 @@ public class ProductServiceController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-//    @GetMapping("/name/{productName}")
-//    public ResponseEntity<Object> getProductsWithName(@PathVariable String productName) {
-//
-//        List<Product> result = productService.getProductsWithName(productName);
-//
-//        if(result.isEmpty()) {
-//            throw new ResourceNotFoundException("There are no product(s) with name " + productName);
-//        }
-//
-//        return new ResponseEntity<>(result, HttpStatus.OK);
-//    }
-
     @GetMapping("/brand/{brandName}")
     public ResponseEntity<Object> getProductsWithBrand(@PathVariable String brandName) {
 
@@ -97,18 +84,6 @@ public class ProductServiceController {
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
-
-//    @GetMapping("/")
-//    public ResponseEntity<List<Product>> searchforProducts(@RequestParam String name, @RequestParam String brand) {
-//
-//        List<Product> result = productService.searchProducts(name, brand);
-//
-//        if(result.isEmpty()) {
-//            throw new ResourceNotFoundException("No product(s) found");
-//        }
-//
-//        return new ResponseEntity<>(result, HttpStatus.OK);
-//    }
 
     @GetMapping("/")
     public ResponseEntity<List<Product>> searchProducts(@RequestParam String name) {
@@ -127,14 +102,6 @@ public class ProductServiceController {
 
         return new ResponseEntity<>(productService.createNewProduct(product), HttpStatus.CREATED);
     }
-
-//    @PostMapping()
-//    public ResponseEntity<Object> createNewProduct(@Valid @RequestBody Product product, MultipartFile imageFile) throws IOException{
-//
-//        String newImageName = imageService.uploadImageToFileSystem(imageFile);
-//
-//        return new ResponseEntity<>(productService.createNewProduct(product, newImageName), HttpStatus.CREATED);
-//    }
 
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateProduct(@PathVariable Integer id ,@Valid @RequestBody Product product) {

@@ -2,6 +2,7 @@ package com.generation.ProductsAPI.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.generation.ProductsAPI.model.Product;
+import com.generation.ProductsAPI.service.ImageService;
 import com.generation.ProductsAPI.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 // this entire class is testing for request/routes, NOT testing for database persistence
-@WebMvcTest // place the @AutoConfigureMockMvc annotation on this class under test
+@WebMvcTest(ProductServiceController.class) // place the @AutoConfigureMockMvc annotation on this class under test
 class ProductServiceControllerTest {
 
     @Autowired
@@ -36,6 +37,9 @@ class ProductServiceControllerTest {
 
     @MockBean // annotate that ProductService is what we want to set up as a mock service
     private ProductService productService;
+
+    @MockBean
+    private ImageService imageService;
 
     private Product product1, product2, updatedProduct;
 
@@ -51,7 +55,7 @@ class ProductServiceControllerTest {
     }
 
     @Test
-    void getAllProducts() throws Exception{
+    void getAllProducts() throws Exception {
 
         // given - precondition or setup
         List<Product> list = new ArrayList<>(); // exists for this test only
@@ -61,7 +65,7 @@ class ProductServiceControllerTest {
         when(productService.getAllProducts()).thenReturn(list);
 
         // when -  action or the behaviour that we are going test
-        ResultActions response = mockMvc.perform(get("/products").contentType(MediaType.APPLICATION_JSON));
+        ResultActions response = mockMvc.perform(get("/api/products").contentType(MediaType.APPLICATION_JSON));
 
         // then - verify the output
         response.andExpect(status().isOk()) // if isOk changed to isNoContent, will show error 200
@@ -74,7 +78,7 @@ class ProductServiceControllerTest {
 
         when(productService.getProduct(any(Integer.class))).thenReturn(Optional.ofNullable(product1));
 
-        ResultActions response = mockMvc.perform(get("/products/{id}", 1).contentType(MediaType.APPLICATION_JSON));
+        ResultActions response = mockMvc.perform(get("/api/products/{id}", 1).contentType(MediaType.APPLICATION_JSON));
 
         response.andExpect(status().isOk())
                 .andDo(print())
@@ -86,11 +90,37 @@ class ProductServiceControllerTest {
     }
 
     @Test
-    void sortAllProductsByPriceAscend() {
+    void sortAllProductsByPriceAscend() throws Exception {
+
+        List<Product> list = new ArrayList<>();
+        list.add(product2);
+        list.add(product1);
+
+        when(productService.sortAllProductsByPriceAscend()).thenReturn(list);
+
+        ResultActions response = mockMvc.perform(get("/api/products/sortby_price_asc").contentType(MediaType.APPLICATION_JSON));
+
+        response.andExpect(status().isOk())
+                .andDo(print())
+                .andExpect(jsonPath("$[0].price", is(product2.getPrice().doubleValue())))
+                .andExpect(jsonPath("$[1].price", is(product1.getPrice().doubleValue())));
     }
 
     @Test
-    void sortAllProductsByPriceDescend() {
+    void sortAllProductsByPriceDescend() throws Exception {
+
+        List<Product> list = new ArrayList<>();
+        list.add(product1);
+        list.add(product2);
+
+        when(productService.sortAllProductsByPriceDescend()).thenReturn(list);
+
+        ResultActions response = mockMvc.perform(get("/api/products/sortby_price_desc").contentType(MediaType.APPLICATION_JSON));
+
+        response.andExpect(status().isOk())
+                .andDo(print())
+                .andExpect(jsonPath("$[0].price", is(product1.getPrice().doubleValue())))
+                .andExpect(jsonPath("$[1].price", is(product2.getPrice().doubleValue())));
     }
 
     @Test
@@ -98,15 +128,26 @@ class ProductServiceControllerTest {
     }
 
     @Test
-    void getProductsWithBrand() {
+    void searchProducts() throws Exception {
+
+        List<Product> list = new ArrayList<>();
+        list.add(product1);
+
+        when(productService.getProductsWithName(any(String.class))).thenReturn(list);
+
+        ResultActions response = mockMvc.perform(get("/api/products/").param("name", "casual").contentType(MediaType.APPLICATION_JSON));
+
+        response.andExpect(status().isOk())
+                .andDo(print())
+                .andExpect(jsonPath("$[0].name", is(product1.getName())));
     }
 
     @Test
-    void createNewProduct() throws Exception{
+    void createNewProduct() throws Exception {
 
         when(productService.createNewProduct(any(Product.class))).thenReturn(product1);
 
-        ResultActions response = mockMvc.perform(post("/products")
+        ResultActions response = mockMvc.perform(post("/api/products")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(product1)));
 
@@ -119,32 +160,14 @@ class ProductServiceControllerTest {
                 .andExpect(jsonPath("$.image", is(product1.getImage())));
     }
 
-//    @Test
-//    void createNewProduct() throws Exception{
-//
-//        when(productService.createNewProduct(any(Product.class), any(String.class))).thenReturn(product1);
-//
-//        ResultActions response = mockMvc.perform(post("/products")
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(objectMapper.writeValueAsString(product1)));
-//
-//        response.andDo(print())
-//                .andExpect(status().isCreated())
-//                .andExpect(jsonPath("$.id", is(product1.getId())))
-//                .andExpect(jsonPath("$.name", is(product1.getName())))
-//                .andExpect(jsonPath("$.brand", is(product1.getBrand())))
-//                .andExpect(jsonPath("$.price", is(product1.getPrice().doubleValue())))
-//                .andExpect(jsonPath("$.image", is(product1.getImage())));
-//    }
-
     @Test
-    void updateProduct() throws Exception{
+    void updateProduct() throws Exception {
 
         when(productService.updateProduct(any(Integer.class), any(Product.class)))
                 .thenReturn(Optional.ofNullable(updatedProduct));
 
         // this is what the unit test will perform and the expected output should be the same as the above unit test case
-        ResultActions response = mockMvc.perform(put("/products/{id}",1)
+        ResultActions response = mockMvc.perform(put("/api/products/{id}",1)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(updatedProduct)));
 
@@ -158,12 +181,12 @@ class ProductServiceControllerTest {
     }
 
     @Test
-    void deleteProduct() throws Exception{
+    void deleteProduct() throws Exception {
 
         when(productService.getProduct(any(Integer.class))).thenReturn(Optional.ofNullable(product1));
         doNothing().when(productService).deleteProduct(any(Integer.class));
 
-        ResultActions response = mockMvc.perform(delete("/products/{id}", 1));
+        ResultActions response = mockMvc.perform(delete("/api/products/{id}", 1));
 
         response.andExpect(status().isOk())
                 .andDo(print())

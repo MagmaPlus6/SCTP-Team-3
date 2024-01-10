@@ -48,14 +48,6 @@ public class OrderDetail {
     @Digits(integer = 10, fraction = 2, message = "Price must be in 2 decimal place.")
     private BigDecimal price;
 
-//    public OrderDetail(Order order, Product product, String size, Integer quantity, BigDecimal price) {
-//        this.order = order;
-//        this.product = product;
-//        this.size = size;
-//        this.quantity = quantity;
-//        this.price = price;
-//    }
-
     public OrderDetail(String size, Integer quantity, BigDecimal price) {
         this.size = size;
         this.quantity = quantity;
