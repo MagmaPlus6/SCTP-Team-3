@@ -50,12 +50,17 @@ public class ImageServiceImpl implements ImageService{
     public byte[] getImage(String imageName) throws IOException {
         Path imagePath = Paths.get(imageDirectory).resolve(imageName);
 
-        if (Files.exists(imagePath)) {
             byte[] imageBytes = Files.readAllBytes(imagePath);
             return imageBytes;
-        } else {
-            return null; // Handle missing images
-        }
+
+//        if (Files.exists(imagePath)) {
+//            byte[] imageBytes = Files.readAllBytes(imagePath);
+//            return imageBytes;
+//        } else {
+//            return null; // Handle missing images
+//        }
+
+
     }
 
     // Delete an image
