@@ -2,7 +2,6 @@ package com.generation.ProductsAPI.service;
 
 import com.generation.ProductsAPI.model.Order;
 import com.generation.ProductsAPI.model.OrderDetail;
-import com.generation.ProductsAPI.model.Product;
 import com.generation.ProductsAPI.repository.OrderDetailRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
