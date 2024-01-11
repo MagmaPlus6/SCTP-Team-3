@@ -1,7 +1,6 @@
 package com.generation.ProductsAPI.controller;
 
 import com.generation.ProductsAPI.exception.ResourceNotFoundException;
-import com.generation.ProductsAPI.model.Product;
 import com.generation.ProductsAPI.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,9 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 
 @RestController
 @CrossOrigin

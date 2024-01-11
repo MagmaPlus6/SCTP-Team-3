@@ -23,12 +23,11 @@ public class ImageServiceImpl implements ImageService{
     }
 
     String imageDirectory = "src/main/resources/static/image";
+    //  localhost: src/main/resources/static/image
+    //  railway:   /image
 
     @Override
     public String uploadImageToFileSystem(MultipartFile imageFile) throws IOException {
-
-//  localhost: src/main/resources/static/image
-//  railway:   /image
 
         Path uploadPath = Paths.get(imageDirectory);
 
@@ -59,7 +58,6 @@ public class ImageServiceImpl implements ImageService{
 //        } else {
 //            return null; // Handle missing images
 //        }
-
 
     }
 
