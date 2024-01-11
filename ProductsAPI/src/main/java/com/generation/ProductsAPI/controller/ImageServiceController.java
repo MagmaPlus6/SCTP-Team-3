@@ -1,5 +1,7 @@
 package com.generation.ProductsAPI.controller;
 
+import com.generation.ProductsAPI.exception.ResourceNotFoundException;
+import com.generation.ProductsAPI.model.Product;
 import com.generation.ProductsAPI.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,5 +40,20 @@ public class ImageServiceController {
 //    }
 
     // For delete image, refer to Product Service Controller
+
+    @GetMapping("/{imageName}")
+    public ResponseEntity<byte[]> getImage(@PathVariable String imageName) throws IOException {
+
+            byte[] imageBytes = imageService.getImage(imageName);
+            return new ResponseEntity<>(imageBytes, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{imageName}")
+    public ResponseEntity<String> deleteImage(@PathVariable String imageName) throws IOException {
+
+        imageService.deleteImage(imageName);
+
+        return new ResponseEntity<>("Image is deleted successfully.", HttpStatus.OK);
+    }
 
 }

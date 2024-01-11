@@ -22,15 +22,15 @@ public class ImageServiceImpl implements ImageService{
         this.productRepository = productRepository;
     }
 
-    // Save image in a local directory
+    String imageDirectory = "src/main/resources/static/image";
+
     @Override
     public String uploadImageToFileSystem(MultipartFile imageFile) throws IOException {
 
 //  localhost: src/main/resources/static/image
 //  railway:   /image
 
-
-        Path uploadPath = Paths.get("src/main/resources/static/image");
+        Path uploadPath = Paths.get(imageDirectory);
 
         String uniqueFileName = UUID.randomUUID() + "_" + imageFile.getOriginalFilename();
 
@@ -42,15 +42,13 @@ public class ImageServiceImpl implements ImageService{
 
         Files.copy(imageFile.getInputStream(), filePath);
 
-
-
         return uniqueFileName;
     }
 
     // To view an image
     @Override
     public byte[] getImage(String imageName) throws IOException {
-        Path imagePath = Paths.get("src/main/resources/static/image").resolve(imageName);
+        Path imagePath = Paths.get(imageDirectory).resolve(imageName);
 
         if (Files.exists(imagePath)) {
             byte[] imageBytes = Files.readAllBytes(imagePath);
@@ -63,7 +61,7 @@ public class ImageServiceImpl implements ImageService{
     // Delete an image
     @Override
     public void deleteImage(String imageName) throws IOException {
-        Path imagePath = Paths.get("src/main/resources/static/image").resolve(imageName);
+        Path imagePath = Paths.get(imageDirectory).resolve(imageName);
 
         Files.deleteIfExists(imagePath);
     }
