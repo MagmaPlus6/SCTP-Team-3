@@ -77,13 +77,15 @@ class Controller{
             }
         }
 
-        // (B) 
+        // (B)
+        // localhost: src="image/${data[index].image}"
+        // railway deploy: src="https://gensg-final-project.up.railway.app/api/image/${data[index].image}"
         for (let index = 0; index < data.length; index++) {
             let subProductList = document.createElement("div");
             subProductList.className = "bg-white";
             subProductList.innerHTML = `
                 <a href="product-id-${data[index].id}.html" class="text-decoration-none text-dark" target="product${data[index].id}page">
-                        <img class="card-img-top card-img-fit" src="image/${data[index].image}">
+                        <img class="card-img-top card-img-fit" src="https://gensg-final-project.up.railway.app/api/image/${data[index].image}">
                         <div class="px-3 pt-3">
                             <p class="text-muted">${data[index].brand}</p>
                             <h5 class="">${data[index].name}</h5>
