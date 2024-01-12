@@ -37,31 +37,21 @@ class OrderDetailServiceImplTest {
 
     @BeforeEach
     void init(){
-
-//        product1 = new Product("Grey casual shirt", "Tommy Hilfiger", new BigDecimal("50.10"), "casual-shirt.jpg");
-
-//        product2 = new Product("Blue khakis", "Adidas", new BigDecimal("27.83"), "blue-khakis.jpg");
-
         order1 = new Order("Darren", new BigDecimal("261.62"), new BigDecimal("4.99"), new BigDecimal("266.61"), Instant.parse("2023-12-26T10:15:30.00Z"));
         order1.setId(1);
 
         orderDetail1 = new OrderDetail("XL", 3, new BigDecimal("150.30"));
         orderDetail1.setId(1);
         orderDetail1.setOrder(order1);
-//        orderDetail1.setProduct(product1);
 
         orderDetail2 = new OrderDetail("M", 4, new BigDecimal("111.32"));
         orderDetail2.setId(2);
         orderDetail2.setOrder(order1);
-//        orderDetail2.setProduct(product2);
 
         updatedOrderDetail = new OrderDetail("XL", 5, new BigDecimal("250.50"));
         updatedOrderDetail.setId(1);
         updatedOrderDetail.setOrder(order1);
-//        updatedOrderDetail.setProduct(product1);
-
     }
-
 
     @Test
     void getAllOrderDetails() {
