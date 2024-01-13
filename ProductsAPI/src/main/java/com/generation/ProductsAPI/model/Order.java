@@ -67,11 +67,10 @@ public class Order {
 //    private Set<OrderDetail> orderDetails = new HashSet<>();
     private List<OrderDetail> orderDetails;
 
-    public Order(String username, BigDecimal subtotal, BigDecimal shippingFee, BigDecimal total, Instant orderDate) {
+    public Order(String username, BigDecimal subtotal, BigDecimal shippingFee, BigDecimal total) {
         this.username = username;
         this.subtotal = subtotal;
         this.shippingFee = shippingFee;
         this.total = total;
-        this.orderDate= orderDate;
     }
 }

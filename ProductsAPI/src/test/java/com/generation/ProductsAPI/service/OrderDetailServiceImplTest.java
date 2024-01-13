@@ -37,7 +37,7 @@ class OrderDetailServiceImplTest {
 
     @BeforeEach
     void init(){
-        order1 = new Order("Darren", new BigDecimal("261.62"), new BigDecimal("4.99"), new BigDecimal("266.61"), Instant.parse("2023-12-26T10:15:30.00Z"));
+        order1 = new Order("Darren", new BigDecimal("261.62"), new BigDecimal("4.99"), new BigDecimal("266.61"));
         order1.setId(1);
 
         orderDetail1 = new OrderDetail("XL", 3, new BigDecimal("150.30"));

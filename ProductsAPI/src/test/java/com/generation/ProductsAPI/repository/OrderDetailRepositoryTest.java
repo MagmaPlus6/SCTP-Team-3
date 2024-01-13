@@ -44,8 +44,9 @@ class OrderDetailRepositoryTest {
         productRepository.save(product1);
         productRepository.save(product2);
 
-        order1 = new Order("Darren", new BigDecimal("261.62"), new BigDecimal("4.99"), new BigDecimal("266.61"), Instant.parse("2023-12-26T10:15:30.00Z"));
-        order2 = new Order("Darren", new BigDecimal("112.80"), new BigDecimal("4.99"), new BigDecimal("117.79"), Instant.parse("2024-01-02T11:19:42.12Z"));
+        order1 = new Order("Darren", new BigDecimal("261.62"), new BigDecimal("4.99"), new BigDecimal("266.61"));
+        order2 = new Order("Darren", new BigDecimal("112.80"), new BigDecimal("4.99"), new BigDecimal("117.79"));
+
         orderRepository.save(order1);
         orderRepository.save(order2);
 

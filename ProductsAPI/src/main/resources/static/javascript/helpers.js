@@ -47,8 +47,8 @@ const getSingleProduct = async (id) => {
 const saveProduct = async (data) => {
     try {
 
-// http://localhost:8080/api/products
 // https://gensg-final-project.up.railway.app/api/products
+// http://localhost:8080/api/products
 
         const response = await fetch('https://gensg-final-project.up.railway.app/api/products', {
             method: 'POST',
@@ -73,8 +73,8 @@ const saveProduct = async (data) => {
 const uploadImage = async (formData) => {
     try {
 
-// http://localhost:8080/api/image
 // https://gensg-final-project.up.railway.app/api/image
+// http://localhost:8080/api/image
 
         const response = await fetch('https://gensg-final-project.up.railway.app/api/image', {
             method: 'POST',
@@ -183,8 +183,8 @@ const placeProductsInNewOrder = async (orderId, productId, productData) => {
 
     try {
 
-// http://localhost:8080/api/orders/${orderId}/products/${productId}/order-details
 // https://gensg-final-project.up.railway.app/api/orders/${orderId}/products/${productId}/order-details
+// http://localhost:8080/api/orders/${orderId}/products/${productId}/order-details
 
         const response = await fetch(`https://gensg-final-project.up.railway.app/api/orders/${orderId}/products/${productId}/order-details`, {
             method: 'POST',

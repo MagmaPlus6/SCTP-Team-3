@@ -66,7 +66,7 @@ public class OrderDetailServiceControllerTest {
 
         product2 = new Product("Blue khakis", "Adidas", new BigDecimal("27.83"), "blue-khakis.jpg");
 
-        order1 = new Order("Darren", new BigDecimal("261.62"), new BigDecimal("4.99"), new BigDecimal("266.61"), Instant.parse("2023-12-26T10:15:30.00Z"));
+        order1 = new Order("Darren", new BigDecimal("261.62"), new BigDecimal("4.99"), new BigDecimal("266.61"));
 
         orderDetail1 = new OrderDetail("XL", 3, new BigDecimal("150.30"));
         orderDetail1.setOrder(order1);

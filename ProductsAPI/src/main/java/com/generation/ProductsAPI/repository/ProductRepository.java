@@ -1,6 +1,7 @@
 package com.generation.ProductsAPI.repository;
 
 import com.generation.ProductsAPI.model.Product;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigDecimal;
@@ -20,4 +21,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 //    List<Product> findByPriceBetween(BigDecimal startPrice, BigDecimal endPrice);
 
 //    List<Product> findByNameContainingOrBrandContaining(String name, String brand);
+
+    @Transactional
+    void deleteByName(String name);
 }
