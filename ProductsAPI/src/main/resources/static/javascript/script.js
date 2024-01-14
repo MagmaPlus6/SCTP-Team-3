@@ -38,7 +38,7 @@ function checkedOrNot() {
   }
 }
 
-// ------------------------ Display uploaded image on the --------------------------------------------
+// ------------------------ Display uploaded image on the page --------------------------------------------
 
 productImage.onchange = evt => {
   const [file] = productImage.files

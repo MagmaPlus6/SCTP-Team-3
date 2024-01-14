@@ -203,3 +203,6 @@ const placeProductsInNewOrder = async (orderId, productId, productData) => {
         console.log('Error:', error);
     }
 }
+
+// ------------------------ Display current year --------------------------------------------
+document.querySelector('#display-year').innerHTML = new Date().getFullYear();
