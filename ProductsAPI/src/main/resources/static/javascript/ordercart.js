@@ -1,3 +1,13 @@
+const enablePurchaseButtonIfProductIsPresent = () => {
+
+	const orderPurchaseButton = document.querySelector('.order-purchase-button')
+    const orderList = document.querySelector('.order-list')
+
+	orderPurchaseButton.disabled = orderList.childElementCount == 0 ? true : false;
+}
+
+enablePurchaseButtonIfProductIsPresent();
+
 
 const selectProductSizeinCart = () => {
 	document.querySelectorAll('.btn-group a').forEach(function (element) {
@@ -41,6 +51,7 @@ const removeProductInCart = () => {
 
 			shoppingCartSummary();
 
+			enablePurchaseButtonIfProductIsPresent();
 		});
 	})
 }
@@ -144,9 +155,10 @@ const addProductToShoppingCart = async () => {
 		orderList.appendChild(subOrderList);
 	}
 	
-	selectProductSizeinCart()
+	selectProductSizeinCart();
 	removeProductInCart();
 	shoppingCartSummary();
+	enablePurchaseButtonIfProductIsPresent();
 	}
 }
 
@@ -221,7 +233,6 @@ const getDeliveryDates = (numberofDaysFromToday) => {
 const deliveryDates = document.querySelector('.delivery-dates');
 deliveryDates.innerHTML = getDeliveryDates(2) + ' - ' + getDeliveryDates(5)
 
-
 document.querySelector('.order-purchase-button').addEventListener('click', async function () {
 
     const stringSubtotal = document.querySelector('.subtotal').innerHTML
@@ -283,4 +294,6 @@ document.querySelector('.order-purchase-button').addEventListener('click', async
 		orderList.removeChild(orderList.firstChild);
 	}
 
+	shoppingCartSummary();
+	enablePurchaseButtonIfProductIsPresent();
 })
